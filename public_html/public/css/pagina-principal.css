@@ -1,0 +1,278 @@
+body {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+.img {
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.carrossel-img {
+    width: 100%;
+    height: 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #1B657A;
+    padding:50px 0 10px 0;
+}
+
+#pesquisa-container {
+    background-image: url("/img/fundo.png");
+    background-position: center 600px;
+    background-size: 100%;
+    padding:100px;
+}
+
+#filtro {
+    display:flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 3vh 1.5vw;
+    /* gap: 0; */
+
+    background-color: rgba(255, 255, 255, 0.13);
+backdrop-filter: blur(5.5px);
+}
+#filtro button {
+    width:18vw;
+    background-color: white;
+    border: none;
+}
+#filtro button:hover {
+    background-color: rgb(212, 212, 212);
+}
+#filtro input {
+    width: 100%;
+    border:none;
+    padding: 10px;
+
+}
+#filtro * {
+    height: 6vh;
+}
+#form-search {
+    width: 30%;
+
+}
+
+
+#destaques-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10vw;
+
+}
+
+.custom-icon{
+    width: 24px;
+    height: 24px;
+    background-image: url('/img/location.svg');
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#destaques-item {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #D9D9D9;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+#destaques-endereco-info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#destaque-endereco-info p {
+    text-align: center;
+}
+#endereco-info-cidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-dados {
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+}
+
+
+
+#ajuda {
+    background-color: #EDEDED;
+    margin-bottom: 100px;
+}
+
+#ajuda-itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap:5vw;
+    flex-wrap: wrap;
+}
+
+.ajuda-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajuda-item:hover{
+    cursor: pointer;
+}
+
+.ajuda-item p {
+    text-align: center;
+}
+.ajuda-icon {
+    width: 10vw;
+
+}
+
+/* Carosel */
+/* Estilos personalizados do carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    text-align: center;
+    color: #1B657A;
+    /* background: #EDEDED; */
+    padding: 10px;
+
+    border-radius: 15px;
+    border: solid 2px #1B657A;
+    margin: 0 10px; /* Adiciona um espaço horizontal de 10 pixels entre os itens */
+    flex: 0 0 33.33%; /* Distribui os itens igualmente em 3 colunas */
+    display: flex; /* Usa flexbox para alinhar verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+#destaque-endereco-info {
+    /* Estilos para o bloco de informações (ajuste conforme necessário) */
+    padding: 10px;
+}
+
+#item-dados {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* Estilos para o bloco de dados (ajuste conforme necessário) */
+    padding: 10px;
+}
+
+.btn-detalhes {
+    border: none;
+    background-color: #1B657A;
+    color: white;
+    padding: 10px 20px;
+    width:100%;
+    border-radius: 5px;
+    /* Estilos para o botão Detalhes (ajuste conforme necessário) */
+    cursor: pointer;
+}
+
+
+.slick-dots {
+    display: none !important;
+}
+
+.filtro-mobile {
+    display: none;
+}
+
+#filtro-input {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
+    z-index: 99;
+}
+
+/* <select> styles */
+#filtro-mobile {
+    display: none;
+    font: inherit;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+
+    cursor: pointer;
+    option {
+      color: inherit;
+      background-color: var(--option-bg);
+    }
+  }
+
+/* Caso a tela em questão seja menor que 600px */
+@media (max-width: 600px) {
+    .filtro-btn {
+        display: none;
+    }
+
+    #pesquisa-container {
+        background-image: url("/img/fundo.png");
+        background-position: center 0;
+        background-size: 100%;
+        /* padding:100px; */
+        padding: 100px 0;
+    }
+    
+
+    #ajuda-itens {
+        flex-direction: column;
+    }
+    #form-search {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    #filtro {
+        padding: 0;
+        width: 80%;
+        margin: auto;
+    }
+    .carousel-item {
+        flex: 0; /* Distribui os itens igualmente em 3 colunas */
+    }
+
+    .contato-container {
+        height: 90vh;
+        width: 90vw;
+    }
+    #contato-content {
+        width: 100%;
+    }
+    #filtro-mobile {
+        display: block
+    }
+
+}
