@@ -64,7 +64,7 @@
                     <p id="endereco-info-cidade"><span class="custom-icon"></span> <span class="endereco-localidade">{{ $iten->cidade}}</span></p>
                 </div>
                 <div id="item-dados">
-                    <p id="dados-area">{{ $iten->area }}m²</p>
+                    <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
                     @if ($iten->vendidoAlugado == null)
                         <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valor}}</p>
                     @else
