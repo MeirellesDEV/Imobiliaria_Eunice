@@ -77,7 +77,7 @@
         <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required>
 
         <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR" required>
+        <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
         <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
