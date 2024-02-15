@@ -120,7 +120,7 @@
                         <h2 class="detalhes-titulo">Localização</h2>
                         <p id="desc-texto">Cidade: {{ $detalhes->cidade }}</p>
                         <p id="desc-texto">Bairro: {{ $detalhes->bairro }}</p>
-                        <p id="desc-texto">Endereço: {{ $detalhes->ruaNumero }}</p>
+                        {{-- <p id="desc-texto">Endereço: {{ $detalhes->ruaNumero }}</p> --}}
                     </div>
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">
