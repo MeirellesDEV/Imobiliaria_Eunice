@@ -484,16 +484,16 @@ class adminController extends Controller
             
             exec("chmod -R 755 storage");
             
-            // CODIGO FUNCIONAL
+            // // CODIGO FUNCIONAL
             
-            $token = env("FACEBOOK_API");
-            $message = $catalogo->titulo . ".\n" . $catalogo->descricao . "\n" . "Saiba mais sobre este imóvel clicando no link: https://eunicesocolowskiimoveis.com.br/imoveis/{$catalogo->id}";
-            $url = "https://graph.facebook.com/v18.0/1599775110326748/photos?url=https://eunicesocolowskiimoveis.com.br/{$fileNamePrincipalFormat}&message={$message}&access_token={$token}";
+            // $token = env("FACEBOOK_API");
+            // $message = $catalogo->titulo . ".\n" . $catalogo->descricao . "\n" . "Saiba mais sobre este imóvel clicando no link: https://eunicesocolowskiimoveis.com.br/imoveis/{$catalogo->id}";
+            // $url = "https://graph.facebook.com/v18.0/1599775110326748/photos?url=https://eunicesocolowskiimoveis.com.br/{$fileNamePrincipalFormat}&message={$message}&access_token={$token}";
             
-            $response = Http::post($url);
-            // dd($response);
+            // $response = Http::post($url);
+            // // dd($response);
             
-            // CODIGO FUNCIONAL
+            // // CODIGO FUNCIONAL
             
             return redirect('admin');
         }else{
