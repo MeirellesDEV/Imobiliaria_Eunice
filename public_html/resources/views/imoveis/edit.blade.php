@@ -120,6 +120,7 @@
                         <h2 class="detalhes-titulo">Localização</h2>
                         <p id="desc-texto">Cidade: {{ $detalhes->cidade }}</p>
                         <p id="desc-texto">Bairro: {{ $detalhes->bairro }}</p>
+                        <p id="desc-texto">Endereço: {{ $detalhes->ruaNumero }}</p>
                     </div>
 
                     <div id="descricao-container" class="margin-spaced padding-spaced">
@@ -655,12 +656,6 @@
                             </div>
                             <h3>Características da Área Comum</h3>
                             <div class="area-container" id="db-check-container">
-
-                                @if($detalhes->churrasqueira == 1)
-                                <div class="area-content">
-                                    <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Churrasqueira</p>
-                                </div>
-                                @endif
 
                                 @if($detalhes->adega == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Adega</p> </div>

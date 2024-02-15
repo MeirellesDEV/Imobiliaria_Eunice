@@ -150,9 +150,7 @@
             <div class="check-item">
                 <input type="checkbox" name="guarita" id="guarita"><label for="guarita">Guarita</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
-            </div>
+            
             <div class="check-item">
                 <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
             </div>
@@ -203,9 +201,7 @@
             <div class="check-item">
                 <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
             </div>
-            <div class="check-item">
-                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
-            </div>
+            
             
 
             
