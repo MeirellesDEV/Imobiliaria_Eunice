@@ -73,7 +73,8 @@
                     <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdSacadasCobertas }}" id="sliderVagasCasa" class="add-input">
 
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Dormitorios:</p>
-                    <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdDorms }}" id="sliderVagasCasa" class="add-input">
+                    <input type="number" name="qtd_dorms" min="0" max="50" value="{{ $item->qtdDorms }}" id="sliderVagasCasa" class="add-input">
+                    
                     @if($item->id_tp_produto == 5)
                         <p id="qtd-vagas-label" class="slider-label">Quantidade de Elevadores:</p>
                         <input type="number" name="elevadores" min="0" max="50" value="{{ $item->elevadores }}" id="sliderVagasCasa" class="add-input">
