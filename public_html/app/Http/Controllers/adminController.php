@@ -124,7 +124,7 @@ class adminController extends Controller
         if($valor){
 
             $catalogo = new Catalogo();
-            
+
             if($request->id_produto == 1) {
                 $catalogo->cod_imovel = 'COD.TE'.substr(strval(hexdec(uniqid())),11,17);
             }
@@ -203,7 +203,7 @@ class adminController extends Controller
             $catalogo->quintal = ($request->quintal) ? true : false;
             $catalogo->cozinhaConjugada = ($request->cozinhaConjugada) ? true : false;
             $catalogo->porteiroEletronico = ($request->porteiroEletronico) ? true : false;
-            
+
             /* NOVOS CAMPOS */
             $catalogo->tvCabo = ($request->tvCabo) ? true : false;
             $catalogo->arCondicionado = ($request->arCondicionado) ? true : false;
@@ -257,7 +257,6 @@ class adminController extends Controller
             $catalogo->metragemFundo = intval(explode(',',str_replace('.','',$request->metragemFundo))[0]);
             $catalogo->metragemDireita = intval(explode(',',str_replace('.','',$request->metragemDireita))[0]);
             $catalogo->metragemEsquerda = intval(explode(',',str_replace('.','',$request->metragemEsquerda))[0]);
-            $catalogo->qtdDorms = $request->qtdDorms;
             $catalogo->formaTerreno = $request->formaTerreno;
             $catalogo->vegetacao = $request->vegetacao;
             $catalogo->protecao = $request->protecao;
@@ -397,104 +396,104 @@ class adminController extends Controller
             }else{
                 $msg = 'Apartamento cadastrado com sucesso';
             }
-            
+
             // // INICIO FACE LOGO
 
             // // Caminho para a sua logo
             // $marcaDagua = 'img/watermark.png';
-            
+
             // // Carregar a imagem da logo
             // $logoImg = imagecreatefrompng($marcaDagua);
-            
+
             // // Redimensionar a logo (ajuste conforme necessário)
             // $novaLarguraLogo = 150; // Nova largura desejada
             // $novaAlturaLogo = 170;  // Nova altura desejada
             // $logoImgRedimensionada = imagescale($logoImg, $novaLarguraLogo, $novaAlturaLogo);
-            
+
             // // Carregar a Imagem Principal
             // $principalImage = imagecreatefromjpeg($fileNamePrincipalFormat);
-            
+
             // // Redimensionar a Imagem Principal (ajuste conforme necessário)
             // $novaLarguraPrincipal = 1280; // Nova largura desejada
             // $novaAlturaPrincipal = 720;  // Nova altura desejada
             // $principalImage = imagescale($principalImage, $novaLarguraPrincipal, $novaAlturaPrincipal);
-            
+
             // // Calcular a posição X e Y para a logo no canto direito
             // $posXLogo = $novaLarguraPrincipal - $novaLarguraLogo; // Canto direito
             // $posYLogo = ($novaAlturaPrincipal - $novaAlturaLogo) / 2; // Meio vertical
-            
+
             // // Mesclar a Imagem Principal com a Logo
             // imagecopy($principalImage, $logoImgRedimensionada, $posXLogo, $posYLogo, 0, 0, $novaLarguraLogo, $novaAlturaLogo);
-            
+
             // // Salvar a Imagem Principal com a Logo
             // imagejpeg($principalImage, $fileNamePrincipalFormat);
-            
+
             // // Liberar memória
             // imagedestroy($principalImage);
             // imagedestroy($logoImg);
             // imagedestroy($logoImgRedimensionada);
-                        
+
             // // FINAL FACE LOGO
-            
+
             // INICIO FACE LOGO
 
             // Caminho para a sua logo
             $marcaDagua = 'img/watermark.png';
-            
+
             // Verifica se a imagem da logo existe
             if (!file_exists($marcaDagua)) {
                 die('A imagem da logo não foi encontrada.');
             }
-            
+
             // Carregar a imagem da logo
             $logoImg = imagecreatefrompng($marcaDagua);
-            
+
             // Verifica se o arquivo principal existe
             if (!file_exists($fileNamePrincipalFormat)) {
                 die('A imagem principal não foi encontrada.');
             }
-            
+
             // Carregar a Imagem Principal
             $principalImage = imagecreatefromjpeg($fileNamePrincipalFormat);
-            
+
             // Redimensionar a logo para 150x170
             $logoImgRedimensionada = imagescale($logoImg, 100, 120);
-            
+
             // Calcular a posição X e Y para a logo no canto direito
             $posXLogo = imagesx($principalImage) - imagesx($logoImgRedimensionada); // Canto direito
             $posYLogo = (imagesy($principalImage) - imagesy($logoImgRedimensionada)) / 2; // Meio vertical
-            
+
             // Mesclar a Imagem Principal com a Logo
             imagecopy($principalImage, $logoImgRedimensionada, $posXLogo, $posYLogo, 0, 0, imagesx($logoImgRedimensionada), imagesy($logoImgRedimensionada));
-            
+
             // Salvar a Imagem Principal com a Logo
             imagejpeg($principalImage, $fileNamePrincipalFormat);
-            
+
             // Liberar memória
             imagedestroy($principalImage);
             imagedestroy($logoImgRedimensionada);
             imagedestroy($logoImg);
-            
+
             // FINAL FACE LOGO
-            
+
 
             session()->flash('success', $msg);
 
             Session::forget('search');
-            
+
             exec("chmod -R 755 storage");
-            
+
             // // CODIGO FUNCIONAL
-            
+
             // $token = env("FACEBOOK_API");
             // $message = $catalogo->titulo . ".\n" . $catalogo->descricao . "\n" . "Saiba mais sobre este imóvel clicando no link: https://eunicesocolowskiimoveis.com.br/imoveis/{$catalogo->id}";
             // $url = "https://graph.facebook.com/v18.0/1599775110326748/photos?url=https://eunicesocolowskiimoveis.com.br/{$fileNamePrincipalFormat}&message={$message}&access_token={$token}";
-            
+
             // $response = Http::post($url);
             // // dd($response);
-            
+
             // // CODIGO FUNCIONAL
-            
+
             return redirect('admin');
         }else{
             //Para limpar a sessão
@@ -502,7 +501,7 @@ class adminController extends Controller
             return redirect('login');
         }
     }
-    
+
     public function vendidoAlugado(Request $request, $id){
         $valor = session('login');
 

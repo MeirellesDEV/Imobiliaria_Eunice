@@ -72,6 +72,8 @@
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Sacadas:</p>
                     <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdSacadasCobertas }}" id="sliderVagasCasa" class="add-input">
 
+                    <p id="qtd-vagas-label" class="slider-label">Quantidade de Dormitorios:</p>
+                    <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdDorms }}" id="sliderVagasCasa" class="add-input">
                     @if($item->id_tp_produto == 5)
                         <p id="qtd-vagas-label" class="slider-label">Quantidade de Elevadores:</p>
                         <input type="number" name="elevadores" min="0" max="50" value="{{ $item->elevadores }}" id="sliderVagasCasa" class="add-input">
@@ -113,7 +115,7 @@
                     <p id="valor-label">Características do Imóvel</p>
                     <div class="checkbox">
                         @if($item->id_tp_produto != 5)
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="agua" id="agua" @if ($item->agua == 1) checked @endif><label>Agua</label>
                         </div>
@@ -150,15 +152,15 @@
                         <div class="check-item">
                             <input type="checkbox" name="guarita" id="guarita" @if ($item->guarita == 1) checked @endif><label>Guarita</label>
                         </div>
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="areaLazer" id="areaLazer" @if ($item->areaLazer == 1) checked @endif><label>Área de lazer</label>
                         </div>
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="playground" id="playground" @if ($item->playground == 1) checked @endif><label>Playground</label>
                         </div>
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="varanda" id="varanda" @if ($item->varanda == 1) checked @endif><label>Varanda</label>
                         </div>
@@ -198,11 +200,11 @@
                         <div class="check-item">
                             <input type="checkbox" name="moveisPlanejados" id="moveisPlanejados" @if ($item->moveisPlanejados == 1) checked @endif><label>Moveis planejados</label>
                         </div>
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico" @if ($item->porteiroEletronico == 1) checked @endif><label>Porteiro eletronico</label>
                         </div>
-                        
+
                         <div class="check-item">
                             <input type="checkbox" name="areaLazer" id="areaLazer" @if ($item->areaLazer == 1) checked @endif><label for="areaLazer">Área de lazer</label>
                         </div>
@@ -225,7 +227,7 @@
                             <input type="checkbox" name="arCondicionado" id="arCondicionado" @if ($item->arCondicionado == 1) checked @endif><label for="arCondicionado">Ar Condicionado</label>
                         </div>
 
-                        
+
 
                         <div class="check-item">
                             <input type="checkbox" name="aguaSolar" id="aguaSolar" @if ($item->aguaSolar == 1) checked @endif><label for="aguaSolar">Agua Aquecida por Energia Solar</label>
@@ -388,7 +390,7 @@
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="portaria24" id="portaria24" @if ($item->portaria24h == 1) checked @endif><label>Portaria 24h</label>
-                        </div>  
+                        </div>
                         <div class="check-item">
                             <input type="checkbox" name="arCondicionado" id="arCondicionado" @if ($item->arCondicionado == 1) checked @endif><label for="arCondicionado">Ar Condicionado</label>
                         </div>
@@ -404,7 +406,7 @@
                         <div class="check-item">
                             <input type="checkbox" name="vigilancia24h" id="vigilancia24h" @if ($item->vigilancia24h == 1) checked @endif><label for="vigilancia24h">Vigilância 24h</label>
                         </div>
-                        
+
                         @endif
                     </div>
 
@@ -584,7 +586,7 @@
                         <div class="check-item">
                             <input type="checkbox" name="pavimentacao" id="pavimentacao" @if ($item->pavimentacao == 1) checked @endif><label>Pavimentação</label>
                         </div>
-            
+
                     </div>
                     <p id="valor-label">Infraestrutura do Condomínio</p>
                     <div class="checkbox">
@@ -754,7 +756,7 @@
         item.addEventListener('submit', function(event) {
             // Impede o envio padrão do formulário
             event.preventDefault();
-    
+
             // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
             if (formatNum()) {
                 this.submit(); // Isso envia o formulário
