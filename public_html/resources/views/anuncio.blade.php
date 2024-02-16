@@ -6,6 +6,10 @@
 
 <link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contato.css') }}">
+<script src="{{ asset('js/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <div id="modalContato" class="contato-container">
         <div id="contato-titulo">
@@ -27,9 +31,9 @@
             <input type="number" name="valor" id="" class="contato-input" placeholder="Insira o valor do imóvel">
 
             <p>Dados do proprietário</p>
-            <input type="text" name="nome" id="" class="contato-input" placeholder="nome" required>
-            <input type="text" name="telefone" id="" class="contato-input" placeholder="telefone" required>
-            <input type="email" name="email" id="" class="contato-input" placeholder="email">
+            <input type="text" name="nome" id="" class="contato-input" placeholder="Nome" required>
+            <input type="text" name="telefone" id="" class="contato-input" placeholder="Telefone" required>
+            <input type="email" name="email" id="" class="contato-input" placeholder="Email">
 
             <p>Dados do imóvel</p>
             <select name="tpImovel" id="" class="contato-input">
@@ -47,5 +51,11 @@
 
         </form>
     </div>
+
+@if(session('anuncio'))
+    <div class="alert alert-success" id="flash-message">
+        {{ session('anuncio') }}
+    </div>
+@endif
 
 @endsection
