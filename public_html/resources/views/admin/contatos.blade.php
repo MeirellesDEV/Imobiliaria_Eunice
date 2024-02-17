@@ -92,7 +92,8 @@
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
-                        <input class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}">
+                        {{-- <input id="dados-mensagem" class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}"> --}}
+                        <p class=" information-{{$cont->id}}">{{ $cont->mensagem}}</p>
                         @if($cont->resolvido == 1)
                             <td class="body-info divider-left information-{{$cont->id}}">Resolvido</td>
                         @else
@@ -150,10 +151,18 @@
         ]
         const info_array = document.getElementsByClassName(client_id)
 
-        for(let i=0; i<dados_array.length-1; i++) {
-            dados_array[i].innerHTML = info_array[i].innerHTML
-        }
-        dados_array[5].innerHTML = info_array[5].value
+        // for(let i=0; i<dados_array.length; i++) {
+        //     dados_array[i].innerHTML = info_array[i].innerHTML
+        // }
+        dados_array[0].innerHTML = info_array[0].innerHTML
+        dados_array[1].innerHTML = info_array[1].innerHTML
+        dados_array[2].innerHTML = info_array[2].innerHTML
+        dados_array[3].innerHTML = info_array[3].innerHTML
+        dados_array[4].innerHTML = info_array[4].innerHTML
+        dados_array[5].innerHTML = info_array[5].innerHTML
+
+        console.log(dados_array);
+        console.log(info_array);
     }
 
     function solucionar(event){
