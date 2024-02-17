@@ -38,6 +38,8 @@ class contatosController extends Controller
 
         $contato = Contatos::findOrFail($request->deletar);
 
+        dd($contato);
+
         $contato->delete();
 
         return redirect()->back();
