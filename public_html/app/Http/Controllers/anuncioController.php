@@ -35,6 +35,8 @@ class anuncioController extends Controller
 
         $anuncio->save();
 
-        return redirect("/anuncio");
+        Session::flash('anuncio', 'Cadastro enviado');
+
+        return redirect()->back();
     }
 }

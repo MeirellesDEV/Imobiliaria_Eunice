@@ -35,7 +35,7 @@
                 <hr>
             </div>
 
-            <a href="https://wa.me/5512991727948" target="_blank" style="text-align: center; text-decoration: none;" class="contato-enviar-whatsapp">Fale por Whatsapp</a>
+            <a href="https://wa.me/5512991852310" target="_blank" style="text-align: center; text-decoration: none;" class="contato-enviar-whatsapp">Fale por Whatsapp</a>
         </form>
     </div>
 

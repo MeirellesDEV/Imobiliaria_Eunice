@@ -11,6 +11,7 @@ class contatosController extends Controller
     public function index(){
 
         $contatos = Contatos::all();
+        // dd($contatos);
 
         $id_cliente = session('id');
 
@@ -36,6 +37,8 @@ class contatosController extends Controller
     public function destroy(Request $request){
 
         $contato = Contatos::findOrFail($request->deletar);
+
+        dd($contato);
 
         $contato->delete();
 
