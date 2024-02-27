@@ -298,7 +298,7 @@
                                 @if ($item->vendidoAlugado == null)
                                     <p class="produto-valor">R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
                                 @else
-                                    <p id="dados-valor" class="num-format troca-ponto">{{ $item->vendidoAlugado}}</p>
+                                    <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
