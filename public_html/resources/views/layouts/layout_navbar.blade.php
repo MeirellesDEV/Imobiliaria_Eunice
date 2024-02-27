@@ -29,22 +29,7 @@
             <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
             <a href="/contato"><button class="nav-btn">Contato</button></a>
 
-            @if(session('login'))
-                <select name="opcao" class="nav-btn" id="dropdown">
-                    <option disabled selected>{{ session('name') }}</option>
-                    <option value="" data-url="/">Home</option>
-                    <option value="" data-url="/admin">Meus imóveis</option>
-                    <option value="" data-url="/logout">Sair</option>
-                </select>
-
-
-                <form action="logout" method="POST">
-                    @csrf
-                    <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
-                </form>
-            @else
-                <!-- <a href="/login" id="btn-nav-entrar"><button class="nav-btn">Entrar  <span class="enter"></span></button></a> -->
-            @endif
+            
         </div>
     </div>
 
