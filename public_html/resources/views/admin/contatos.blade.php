@@ -91,7 +91,7 @@
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
-                        <td class="body-info divider-left information-{{$cont->id}}" style="display: none">{{ $cont->id }}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" style="display: none" id="table-id">{{ $cont->id }}</td>
                         {{-- <input id="dados-mensagem" class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}"> --}}
                         <p class=" information-{{$cont->id}}" style="display: none">{{ $cont->mensagem}}</p>
                         @if($cont->resolvido == 1)
@@ -154,6 +154,8 @@
         for(let i=0; i<dados_array.length; i++) {
             dados_array[i].innerHTML = info_array[i].innerHTML
         }
+
+        document.getElementById('dados-id').innerHTML = document.getElementById('table-id').innerHTML
     }
 
     function solucionar(event){
