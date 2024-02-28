@@ -15,6 +15,7 @@ class anuncioController extends Controller
         return view('anuncio');
     }
 
+    
     public function store(Request $request){
 
         $anuncio = new Anuncio;

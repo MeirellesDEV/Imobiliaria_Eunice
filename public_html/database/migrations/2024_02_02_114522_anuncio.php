@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('finalidade');
             $table->unsignedFloat('valor');
             $table->string('nome');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('telefone');
             $table->string('tpImovel');
-            $table->string('condominio');
+            $table->string('condominio')->nullable();
             $table->string('endereco');
             $table->string('bairro');
             $table->string('cidade');

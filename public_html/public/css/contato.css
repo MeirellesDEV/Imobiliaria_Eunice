@@ -95,6 +95,11 @@ input {
     cursor: pointer;
 }
 
+.required {
+    color: red;
+    margin-left: 3px;
+  }
+
 @media (min-width:850px) {
     .contato-container {
         max-width: 50%;

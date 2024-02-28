@@ -17,8 +17,8 @@
         </div>
 
         <form action="/anuncio" method="POST" id="contato-content" autocomplete="off">
-            <h1>Eu quero!</h1>
-            <h1 style="color:gray">Imóvel em Pindamonhangaba, fora da região somente sob consulta.</h1>
+            {{-- <h1>Eus quero!</h1> --}}
+            {{-- <h1 style="color:gray">Imóvel em Pindamonhangaba, fora da região somente sob consulta.</h1> --}}
             @csrf
 
             <p>Finalidade</p>
@@ -27,12 +27,12 @@
                 <option value="Alugar">Alugar</option>
             </select>
 
-            <p>Valor</p>
-            <input type="number" name="valor" id="" class="contato-input" placeholder="Insira o valor do imóvel">
+            <p>Valor <span class="required">*</span></p>
+            <input type="number" name="valor" id="" class="contato-input" placeholder="Insira o valor do imóvel" required>
 
             <p>Dados do proprietário</p>
-            <input type="text" name="nome" id="" class="contato-input" placeholder="Nome" required>
-            <input type="text" name="telefone" id="" class="contato-input" placeholder="Telefone" required>
+            <input type="text" name="nome" id="" class="contato-input" placeholder="Nome (Obrigatório)" required>
+            <input type="text" name="telefone" id="" class="contato-input" placeholder="Telefone (Obrigatório)" required>
             <input type="email" name="email" id="" class="contato-input" placeholder="Email">
 
             <p>Dados do imóvel</p>
@@ -42,10 +42,10 @@
             </select>
 
             <input type="text" name="condominio" id="" class="contato-input" placeholder="Condomínio">
-            <input type="text" name="endereco" id="" class="contato-input" placeholder="Endereço" required>
-            <input type="text" name="bairro" id="" class="contato-input" placeholder="Bairro" required>
-            <input type="text" name="cidade" id="" class="contato-input" placeholder="Cidade">
-            <textarea name="observacao" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="Observação" required></textarea>
+            <input type="text" name="endereco" id="" class="contato-input" placeholder="Endereço (Obrigatório)" required>
+            <input type="text" name="bairro" id="" class="contato-input" placeholder="Bairro (Obrigatório)" required>
+            <input type="text" name="cidade" id="" class="contato-input" placeholder="Cidade (Obrigatório)" required>
+            <textarea name="observacao" id="" cols="30" rows="10" class="contato-input" style="resize:none" placeholder="Observação (Obrigatório)" required></textarea>
 
             <button class="contato-enviar">Enviar</button>
 
