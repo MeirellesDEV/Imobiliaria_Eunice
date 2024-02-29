@@ -26,8 +26,8 @@
             <button id="btn-popup-fechar" onclick="fecharInfo()">X</button>
             <h1>Informações</h1>
             <div class="cliente-dados">
-                <div class="cliente-dados-container" style="display: none">
-                    <p class="dados-info" id="dados-id">XXXXXX</p>
+                <div class="cliente-dados-container">
+                    <p class="dados-info" id="dados-id" style="display: none">XXXXXX</p>
                 </div>
                 <div class="cliente-dados-container">
                     <p class="dados-title">Nome</p>
@@ -70,9 +70,9 @@
         </form>
 
         <div class="responsive">
-            
+
             <table cellspacing="0" id="request-table">
-    
+
                 <thead class="table-header" cellspacing="0">
                     <th class="table-title"></th>
                     <th class="table-title">Código do Imóvel</th>
@@ -82,7 +82,7 @@
                     <th class="table-title">Motivo do Contato</th>
                     <th class="table-title">Resolvido</th>
                 </thead>
-    
+
                 @foreach ($contatos as $cont)
                     <tr class="table-body solved-{{ $cont->resolvido }}">
                         <td class="body-info"><button class="button-info" id="information-{{$cont->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
@@ -91,7 +91,7 @@
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->telefone }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->email }}</td>
                         <td class="body-info divider-left information-{{$cont->id}}" >{{ $cont->motivoContato }}</td>
-                        <td class="body-info divider-left information-{{$cont->id}}" style="display: none" id="table-id">{{ $cont->id }}</td>
+                        <td class="body-info divider-left information-{{$cont->id}}" id="table-id" style="display: none">{{ $cont->id }}</td>
                         {{-- <input id="dados-mensagem" class=" information-{{$cont->id}}" type="hidden" name="" value="{{ $cont->mensagem}}"> --}}
                         <p class=" information-{{$cont->id}}" style="display: none">{{ $cont->mensagem}}</p>
                         @if($cont->resolvido == 1)
@@ -101,23 +101,23 @@
                         @endif
                     </tr>
                 @endforeach
-    
-    
-    
-    
-    
+
+
+
+
+
                 <!--
                     USANDO O INFORMATION ID NA HORA DE INTEGRAR
                     A CLASSE INFORMATION ID É IMPORTANTE PARA PUXAR AS INFORMAÇÕES PRO JS
                     O JAVASCRIPT CRIA UM ARRAY BASEADO NESSA CLASSE, PORTANTO, O NOME DA CLASSE DEVE SER "information-ID_DO_CLIENTE"
-    
+
                     FAVOR COMUNICAR O DIGAS CASO HAJA QUALQUER DÚVIDA
-    
+
                     APAGAR ESSA MENSAGEM APÓS SE CERTIFICAR DE QUE TUDO ESTÁ RODANDO CORRETAMENTE
                 -->
-    
+
             </table>
-            
+
         </div>
 
     </div>
@@ -140,6 +140,7 @@
     //carrega as informações
     function loadInfo(event) {
         const client_id = event.target.id
+
         //arrays
         const dados_array = [
             document.getElementById('dados-mensagem'),
@@ -155,13 +156,15 @@
             dados_array[i].innerHTML = info_array[i].innerHTML
         }
 
-        document.getElementById('dados-id').innerHTML = document.getElementById('table-id').innerHTML
+        document.getElementById('dados-id').innerHTML = event.target.parentElement.parentElement.children[6].innerHTML
     }
 
     function solucionar(event){
         var id = event.target.parentElement.parentElement.children[2].children[0].children[0].innerHTML;
         var button = document.getElementById('btn-solucionar');
         var input = document.getElementById('solucionar');
+
+        console.log(id);
 
         input.value = id;
         button.click();
