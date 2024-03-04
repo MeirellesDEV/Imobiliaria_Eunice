@@ -6,9 +6,7 @@ function trocaPonto() {
     const trocaveis = document.getElementsByClassName('troca-ponto')
 
     for (item of trocaveis) {
-        console.log("Função executada")
         item.innerHTML = item.innerHTML.replace('.',',')
-        console.log()
         if (!item.innerHTML.includes(',') && item.innerHTML != 'INDISPONÍVEL') {
             item.innerHTML += ',00'
         }

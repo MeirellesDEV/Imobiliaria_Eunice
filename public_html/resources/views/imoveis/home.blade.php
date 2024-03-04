@@ -294,7 +294,7 @@
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
-                                <p class="produto-valor">{{ $item->area }}m²</p>
+                                <p class="produto-valor item-area">{{ $item->area }}m²</p>
                                 @if ($item->vendidoAlugado == null)
                                     <p class="produto-valor">R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
                                 @else
@@ -329,7 +329,7 @@
     const imoveis_desc_list = document.getElementsByClassName('produto-descricao-texto')
     const imoveis_title_list = document.getElementsByClassName('produto-titulo')
 
-    console.log(widthLowerThan(600))
+    // console.log(widthLowerThan(600))
     if (!widthLowerThan(600)) {
         lim = 5
     }
@@ -363,6 +363,15 @@
             imoveis_title_list[i].innerHTML = limitarStringPorPalavras(imoveis_title_list[i].innerHTML , lim) + "...";
         }
 
+    }
+
+    // Caso área esteja zerada:
+    let areas = document.getElementsByClassName('item-area')
+
+    for(item of areas) {
+        if(item.innerHTML == '0m²') {
+            item.style.display = 'none'
+        }
     }
 
 </script>
