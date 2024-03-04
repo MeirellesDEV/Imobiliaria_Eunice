@@ -320,19 +320,20 @@ class adminController extends Controller
 
                 $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
 
-                $fileFormat = substr(strrchr($fileNameFormat, '.'), 1);
-
+                $fileFormat = pathinfo($fileNameFormat);
 
                 $imagemOriginal = $fileNameFormat;
 
                 // Busca pela marca d'água, geralmente ela se encontra em public/img
                 $marcaDagua = 'img/watermark.png';
 
+                // dd($fileFormat);
+
                 // Verifica o formato da imagem e a carrega adequadamente
-                if ($fileFormat === 'png') {
+                if ($fileFormat['extension'] === "png") {
                     $imagem = imagecreatefrompng($imagemOriginal);
                 }
-                else if ($fileFormat === 'jpg') {
+                else if ($fileFormat['extension'] === "jpg") {
                     $imagem = imagecreatefromjpeg($imagemOriginal);
                 }
 
@@ -453,8 +454,16 @@ class adminController extends Controller
                 die('A imagem principal não foi encontrada.');
             }
 
+            $path_info = pathinfo($fileNamePrincipalFormat);
+            
             // Carregar a Imagem Principal
-            $principalImage = imagecreatefromjpeg($fileNamePrincipalFormat);
+            if ($path_info['extension'] === "png") {
+                $principalImage = imagecreatefrompng($fileNamePrincipalFormat);
+
+            }
+            else if ($path_info['extension'] === "jpg") {
+                $principalImage = imagecreatefromjpeg($fileNamePrincipalFormat);
+            }
 
             // Redimensionar a logo para 150x170
             $logoImgRedimensionada = imagescale($logoImg, 100, 120);
