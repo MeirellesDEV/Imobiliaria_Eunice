@@ -218,6 +218,8 @@ class editController extends Controller
             }
         }
 
+        exec("chmod -R 755 storage");
+        
         session()->flash('editado', 'Item editado com sucesso');
 
         return redirect('admin');
