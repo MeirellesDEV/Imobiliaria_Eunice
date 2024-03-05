@@ -35,8 +35,6 @@ class clienteController extends Controller
                     ->where('cod_imovel', '=', $request->cod_imovel)
                     ->first();
 
-            // dd($imoveis);
-
             if($imoveis != null) {
 
                 $clientes = new Clientes;
@@ -61,9 +59,18 @@ class clienteController extends Controller
 
     public function destroy(Request $request){
 
-        $cliente = Clientes::findOrFail($request->deletar);
+        $anuncio = Anuncio::findOrFail($request->deletar);
 
-        $cliente->delete();
+        $anuncio->delete();
+
+        return redirect()->back();
+    }
+
+    public function solucionar(Request $request){
+
+        $anuncio = Anuncio::findOrFail($request->solucionar);
+
+
 
         return redirect()->back();
     }

@@ -49,17 +49,17 @@
     </div>
     <div class="cliente-botoes">
         <button title="Apaga o contato da lista, use caso já tenha resolvido" class="cliente-btn" id="cliente-apagar" onclick="deletar(event)">Apagar</button>
-        <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="solucionar(event)">Solucionar</button>
+        {{-- <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="solucionar(event)">Solucionar</button> --}}
     </div>
 </div>
 
-<form action="\admin\cliente" method="post">
+<form action="\admin\clientes\solucionar" method="post">
     @csrf
     <input type="hidden" id="solucionar" name="solucionar">
     <button id="btn-solucionar" type="submit" style="display: none"></button>
 </form>
 
-<form action="\admin\cliente\delete" method="post">
+<form action="\admin\clientes\delete" method="post">
     @csrf
     <input type="hidden" id="deletar" name="deletar">
     <button id="btn-deletar" type="submit" style="display: none"></button>
@@ -170,6 +170,7 @@
                     <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->condominio}} - {{$anuncio->endereco}} - {{$anuncio->bairro}} - {{$anuncio->cidade}} </td>
                     <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none">{{$anuncio->valor}}</td>
                     <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->observacao}}</td>
+                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->id}}</td>
                 </tr>
             @endforeach
             </table>
@@ -181,24 +182,23 @@
     <script>
         //carrega as informações e então abre o painel
         function mostrarInfo(event) {
-            console.log('TESTANDO')
             loadInfo(event);
             const popup = document.getElementById('popup-informacoes')
-    
+
             popup.style.display = 'flex'
 
         }
-    
+
         //fecha o painel
         function fecharInfo() {
             const popup = document.getElementById('popup-informacoes')
             popup.style.display = 'none'
         }
-    
+
         //carrega as informações
         function loadInfo(event) {
             const client_id = event.target.id
-    
+
             //arrays
             try {
 
@@ -213,35 +213,33 @@
                     document.getElementById('dados-mensagem')
                 ]
                 const info_array = document.getElementsByClassName(client_id)
-        
+
                 for(let i=0; i<dados_array.length; i++) {
                     dados_array[i].innerHTML = info_array[i].innerHTML
                 }
-        
-                document.getElementById('dados-id').innerHTML = event.target.parentElement.parentElement.children[6].innerHTML
+
+                document.getElementById('dados-id').innerHTML = event.target.parentElement.parentElement.children[9].innerHTML;
             }
             catch(e) {
                 console.log(e)
             }
-            
+
         }
-    
+
         function solucionar(event){
             var id = event.target.parentElement.parentElement.children[2].children[0].children[0].innerHTML;
             var button = document.getElementById('btn-solucionar');
             var input = document.getElementById('solucionar');
-    
-            console.log(id);
-    
+
             input.value = id;
             button.click();
         }
-    
+
         function deletar(event){
-            var id = event.target.parentElement.parentElement.children[2].children[0].children[0].innerHTML;
+            var id = event.target.parentElement.parentElement.children[2].children[0].children[0].innerHTML;;
             var button = document.getElementById('btn-deletar');
             var input = document.getElementById('deletar');
-    
+
             input.value = id;
             button.click();
         }
