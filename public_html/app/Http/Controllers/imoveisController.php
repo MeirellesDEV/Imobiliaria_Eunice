@@ -22,7 +22,8 @@ class imoveisController extends Controller
                     'catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao',
                     'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas',
                     'catalogos.qtdQuartos','catalogos.vendidoAlugado','catalogos.qtdSacadasCobertas',
-                    'catalogos.sacadaGourmet', 'catalogos.cod_imovel', 'catalogos.areaConstruida', 'catalogos.tp_contrato');
+                    'catalogos.sacadaGourmet', 'catalogos.cod_imovel', 'catalogos.areaConstruida',
+                    'catalogos.tp_contrato', 'catalogos.qtdDorms', 'catalogos.qtdSuites');
 
         $filtro = new \stdClass();
 

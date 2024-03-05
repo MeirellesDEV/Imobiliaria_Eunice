@@ -77,6 +77,11 @@
                     @else
                         <p id="dados-locacao">Venda</p>
                     @endif
+                    <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $iten->qtdDorms }}</p>
+                    <p id="dados-suites"><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdSuites }}</p>
+                    <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $iten->qtdBanheiros }}</p>
+                    <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $iten->qtdGaragemCobertas }}</p>
+                    <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $iten->qtdGaragemNaoCobertas }}</p>
                 </div>
 
                 <form action="/imoveis/{{ $iten->id }}" method="post">

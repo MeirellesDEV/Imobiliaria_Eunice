@@ -19,7 +19,7 @@ class masterController extends Controller
                 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao',
                 'catalogos.qtdBanheiros', 'catalogos.qtdGaragemCobertas', 'catalogos.qtdGaragemNaoCobertas',
                 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.cod_imovel',
-                'catalogos.areaConstruida', 'catalogos.tp_contrato')
+                'catalogos.areaConstruida', 'catalogos.tp_contrato', 'catalogos.qtdDorms', 'catalogos.qtdSuites')
             ->get();
 
         $imagem = DB::table('imagens_principais')

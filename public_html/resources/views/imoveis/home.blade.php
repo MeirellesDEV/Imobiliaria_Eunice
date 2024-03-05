@@ -305,6 +305,11 @@
                                 @else
                                     <p id="dados-locacao">Venda</p>
                                 @endif
+                                <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $item->qtdDorms }}</p>
+                                <p id="dados-suites"><span class="material-symbols-outlined">bathtub</span>{{ $item->qtdSuites }}</p>
+                                <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $item->qtdBanheiros }}</p>
+                                <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $item->qtdGaragemCobertas }}</p>
+                                <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $item->qtdGaragemNaoCobertas }}</p>
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
                                 @csrf
