@@ -68,7 +68,7 @@
                         <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
                     @endif
                     @if ($iten->vendidoAlugado == null)
-                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valor}}</p>
+                        <p id="dados-valor" class="num-format troca-ponto">{{ $iten->tp_contrato }} R${{ $iten->valor}}</p>
                     @else
                         <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                     @endif

@@ -296,7 +296,7 @@
                             <div class="produto-dados">
                                 <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor">R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
+                                    <p class="produto-valor">{{ $item->tp_contrato }} R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
                                 @else
                                     <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif
