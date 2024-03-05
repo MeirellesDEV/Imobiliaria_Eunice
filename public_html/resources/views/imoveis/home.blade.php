@@ -300,6 +300,11 @@
                                 @else
                                     <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif
+                                @if($item->tp_contrato == 'Aluguel')
+                                    <p id="dados-locacao">Locação</p>
+                                @else
+                                    <p id="dados-locacao">Venda</p>
+                                @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
                                 @csrf

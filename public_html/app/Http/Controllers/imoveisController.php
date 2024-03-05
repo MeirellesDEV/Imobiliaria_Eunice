@@ -18,7 +18,11 @@ class imoveisController extends Controller
 
         $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.vendidoAlugado','catalogos.qtdSacadasCobertas','catalogos.sacadaGourmet', 'catalogos.cod_imovel', 'catalogos.areaConstruida');
+                ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro',
+                    'catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao',
+                    'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas',
+                    'catalogos.qtdQuartos','catalogos.vendidoAlugado','catalogos.qtdSacadasCobertas',
+                    'catalogos.sacadaGourmet', 'catalogos.cod_imovel', 'catalogos.areaConstruida', 'catalogos.tp_contrato');
 
         $filtro = new \stdClass();
 

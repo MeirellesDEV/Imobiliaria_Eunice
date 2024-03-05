@@ -15,7 +15,11 @@ class masterController extends Controller
 
         $catalogo = DB::table('catalogos')
             ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao', 'catalogos.qtdBanheiros', 'catalogos.qtdGaragemCobertas', 'catalogos.qtdGaragemNaoCobertas', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.cod_imovel', 'catalogos.areaConstruida')
+            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro',
+                'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valor', 'produtos.descricao',
+                'catalogos.qtdBanheiros', 'catalogos.qtdGaragemCobertas', 'catalogos.qtdGaragemNaoCobertas',
+                'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.cod_imovel',
+                'catalogos.areaConstruida', 'catalogos.tp_contrato')
             ->get();
 
         $imagem = DB::table('imagens_principais')
@@ -47,7 +51,7 @@ class masterController extends Controller
             ->get();
 
         $filtro->imovel[] = 'Tipo de contrato';
-        
+
         if ($request->infoPesquisa == "Venda") {
             $filtro->imovel[] = 'Venda';
         } else {
