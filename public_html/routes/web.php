@@ -62,6 +62,7 @@ Route::post('/admin/contatos/delete', [contatosController::class, 'destroy']);
 
 Route::get('/admin/clientes', [clienteController::class, 'index']);
 Route::post('/admin/clientes', [clienteController::class, 'store']);
+Route::post('/admin/clientes/delete', [clienteController::class, 'destroy']);
 
 Route::post('/edit/imgPrincipal/{id}', [editController::class, 'alterarImgPrincipal']);
 Route::post('/salvar/{id}', [editController::class, 'update']);

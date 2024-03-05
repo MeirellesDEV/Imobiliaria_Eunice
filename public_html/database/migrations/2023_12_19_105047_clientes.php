@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tp_cliente');
             $table->string('cod_imovel');
             $table->unsignedBigInteger('idImovel');
+            $table->boolean('resolvido');
 
             $table->foreign('idImovel')->references('id')->on('catalogos');
 

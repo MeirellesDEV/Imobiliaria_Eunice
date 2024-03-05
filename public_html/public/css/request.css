@@ -115,6 +115,9 @@ body {
 
     z-index: 999;
     width: 50%;
+    
+    max-height: 80vh;
+    overflow-y: scroll;
 
     display: flex;
     flex-direction: column;

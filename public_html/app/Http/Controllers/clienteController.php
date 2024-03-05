@@ -58,4 +58,13 @@ class clienteController extends Controller
             return redirect()->back();
         }
     }
+
+    public function destroy(Request $request){
+
+        $cliente = Clientes::findOrFail($request->deletar);
+
+        $cliente->delete();
+
+        return redirect()->back();
+    }
 }
