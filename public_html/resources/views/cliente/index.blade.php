@@ -121,60 +121,64 @@
         </section>
 
         <section id="aba-clientes">
-            <table cellspacing="0" id="client-table">
+            <div class="table-div">
 
-                <thead class="table-header" cellspacing="0">
-                    <!-- <th class="table-title"></th> -->
-                    <th class="table-title">Nome</th>
-                    <th class="table-title">Email</th>
-                    <th class="table-title">Telefone</th>
-                    <th class="table-title">Tipo Cliente</th>
-                    <th class="table-title">Código do Imovel</th>
-                </thead>
-
-                @foreach ($clientes as $cli)
-                    <tr class="table-body solved">
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{$cli->nome}}</td>
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->email }}</td>
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->telefone }}</td>
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->tp_cliente }}</td>
-                        <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->cod_imovel }}</td>
-                    </tr>
-                @endforeach
-            </table>
+                <table cellspacing="0" id="client-table">
+    
+                    <thead class="table-header" cellspacing="0">
+                        <!-- <th class="table-title"></th> -->
+                        <th class="table-title">Nome</th>
+                        <th class="table-title">Email</th>
+                        <th class="table-title">Telefone</th>
+                        <th class="table-title">Tipo Cliente</th>
+                        <th class="table-title">Código do Imovel</th>
+                    </thead>
+    
+                    @foreach ($clientes as $cli)
+                        <tr class="table-body solved">
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{$cli->nome}}</td>
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->email }}</td>
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->telefone }}</td>
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->tp_cliente }}</td>
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->cod_imovel }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
         </section>
 
         <section id="aba-anuncio">
-            <table cellspacing="0" id="client-table">
+            <div class="table-div">
+                <table cellspacing="0" id="client-table">
 
-            <thead class="table-header" cellspacing="0">
-                <th class="table-title"></th>
-                <th class="table-title">Nome</th>
-                {{-- <th class="table-title">Email</th> --}}
-                <th class="table-title">Telefone</th>
-                <th class="table-title">Finalidade</th>
-                <th class="table-title">Tipo de imóvel</th>
-                {{-- <th class="table-title">Endereço</th> --}}
-                {{-- <th class="table-title">Valor</th> --}}
-                {{-- <th class="table-title">Observação</th> --}}
-            </thead>
+                    <thead class="table-header" cellspacing="0">
+                        <th class="table-title"></th>
+                        <th class="table-title">Nome</th>
+                        {{-- <th class="table-title">Email</th> --}}
+                        <th class="table-title">Telefone</th>
+                        <th class="table-title">Finalidade</th>
+                        <th class="table-title">Tipo de imóvel</th>
+                        {{-- <th class="table-title">Endereço</th> --}}
+                        {{-- <th class="table-title">Valor</th> --}}
+                        {{-- <th class="table-title">Observação</th> --}}
+                    </thead>
 
-            @foreach ($anuncios as $anuncio)
-                <tr class="table-body solved">
-                    <td class="body-info"><button class="button-info" id="information-{{$anuncio->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->nome}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->email}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->telefone}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->finalidade}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->tpImovel}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->condominio}} - {{$anuncio->endereco}} - {{$anuncio->bairro}} - {{$anuncio->cidade}} </td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none">{{$anuncio->valor}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->observacao}}</td>
-                    <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->id}}</td>
-                </tr>
-            @endforeach
-            </table>
-
+                    @foreach ($anuncios as $anuncio)
+                        <tr class="table-body solved">
+                            <td class="body-info"><button class="button-info" id="information-{{$anuncio->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->nome}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->email}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->telefone}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->finalidade}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->tpImovel}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->condominio}} - {{$anuncio->endereco}} - {{$anuncio->bairro}} - {{$anuncio->cidade}} </td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none">{{$anuncio->valor}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->observacao}}</td>
+                            <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->id}}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
         </section>
 
     </div>
