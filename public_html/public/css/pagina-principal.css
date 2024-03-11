@@ -119,7 +119,13 @@ backdrop-filter: blur(5.5px);
 #item-dados {
     display: flex;
     flex-direction: row;
-    gap:30px;
+    gap:5px;
+    flex-wrap: wrap;
+}
+
+#item-dados p{
+    flex: 1 0 20%;
+    max-width: 20%;
 }
 
 
@@ -245,7 +251,7 @@ backdrop-filter: blur(5.5px);
         /* padding:100px; */
         padding: 100px 0;
     }
-    
+
 
     #ajuda-itens {
         flex-direction: column;

@@ -296,7 +296,7 @@
                             <div class="produto-dados">
                                 <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor">{{ $item->tp_contrato }} R$<span class="num-format troca-ponto">{{ $item->valor }}</span></p>
+                                    <p class="produto-valor"><span class="num-format troca-ponto">R${{ $item->valor }}</span></p>
                                 @else
                                     <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif
@@ -305,11 +305,19 @@
                                 @else
                                     <p id="dados-locacao">Venda</p>
                                 @endif
+                                @if ($item->qtdDorms != 0)
                                 <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $item->qtdDorms }}</p>
-                                <p id="dados-suites"><span class="material-symbols-outlined">bathtub</span>{{ $item->qtdSuites }}</p>
-                                <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $item->qtdBanheiros }}</p>
-                                <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $item->qtdGaragemCobertas }}</p>
-                                <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $item->qtdGaragemNaoCobertas }}</p>
+                                @endif
+
+                                @if ($item->qtdBanheiros != 0)
+                                    <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $item->qtdBanheiros }}</p>
+                                @endif
+                                @if ($item->qtdGaragemCobertas != 0)
+                                    <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $item->qtdGaragemCobertas }}</p>
+                                @endif
+                                @if ($item->qtdGaragemNaoCobertas != 0)
+                                    <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $item->qtdGaragemNaoCobertas }}</p>
+                                @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
                                 @csrf

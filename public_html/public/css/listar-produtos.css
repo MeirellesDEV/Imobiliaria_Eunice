@@ -278,7 +278,15 @@ input[type='radio']:checked:after { /* quando selecionado */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    gap:15px;
+    flex-wrap: wrap;
 }
+
+.produto-dados p {
+    flex: 1 0 20%;
+    max-width: 20%;
+}
+
 .botao-detalhes {
     width: 100%;
 }
