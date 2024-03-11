@@ -53,13 +53,13 @@
     </div>
 </div>
 
-<form action="\admin\clientes\solucionar" method="post">
+<form action="\admin\clientes\solucionar" method="post" style="position: absolute;">
     @csrf
     <input type="hidden" id="solucionar" name="solucionar">
     <button id="btn-solucionar" type="submit" style="display: none"></button>
 </form>
 
-<form action="\admin\clientes\delete" method="post">
+<form action="\admin\clientes\delete" method="post" style="position: absolute;">
     @csrf
     <input type="hidden" id="deletar" name="deletar">
     <button id="btn-deletar" type="submit" style="display: none"></button>
