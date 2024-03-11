@@ -21,7 +21,7 @@
 <body>
     <div id="navbar">
         <div id="nav-logo">
-            <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
+            <a href="/admin"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
 
         </div>
         <div id="nav-buttons">
@@ -33,6 +33,7 @@
                     <option value="" data-url="/admin/contatos">Requisições</option>
                     <option value="" data-url="/admin/editUsuario">Perfil</option>
                     <option value="" data-url="/logout">Sair</option>
+                    <option value="" selected>Opções</option>
                 </select>
 
                 <form action="logout" method="POST">
