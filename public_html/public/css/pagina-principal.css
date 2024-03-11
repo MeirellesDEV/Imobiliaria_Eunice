@@ -3,14 +3,12 @@ body {
 }
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 h1 {
     text-align: center;
 }
-
-
 
 .img {
     width: 100%;
@@ -30,29 +28,29 @@ h1 {
 
 .section-title {
     font-size: 32px;
-    color: #1B657A;
-    padding:50px 0 10px 0;
+    color: #1b657a;
+    padding: 50px 0 10px 0;
 }
 
 #pesquisa-container {
     background-image: url("/img/fundo.png");
     background-position: center 600px;
     background-size: 100%;
-    padding:100px;
+    padding: 100px;
 }
 
 #filtro {
-    display:flex;
+    display: flex;
     text-align: center;
     justify-content: space-around;
     padding: 3vh 1.5vw;
     /* gap: 0; */
 
     background-color: rgba(255, 255, 255, 0.13);
-backdrop-filter: blur(5.5px);
+    backdrop-filter: blur(5.5px);
 }
 #filtro button {
-    width:18vw;
+    width: 18vw;
     background-color: white;
     border: none;
 }
@@ -61,49 +59,45 @@ backdrop-filter: blur(5.5px);
 }
 #filtro input {
     width: 100%;
-    border:none;
+    border: none;
     padding: 10px;
-
 }
 #filtro * {
     height: 6vh;
 }
 #form-search {
     width: 30%;
-
 }
-
 
 #destaques-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap:10vw;
-
+    gap: 10vw;
 }
 
-.custom-icon{
+.custom-icon {
     width: 24px;
     height: 24px;
-    background-image: url('/img/location.svg');
+    background-image: url("/img/location.svg");
     background-size: cover;
     display: inline-block;
     margin-right: 10px;
 }
 
 #destaques-item {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     padding: 30px;
     border-radius: 5px;
 }
 
 #destaques-endereco-info {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -119,19 +113,17 @@ backdrop-filter: blur(5.5px);
 #item-dados {
     display: flex;
     flex-direction: row;
-    gap:5px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
-#item-dados p{
+#item-dados p {
     flex: 1 0 20%;
     max-width: 20%;
 }
 
-
-
 #ajuda {
-    background-color: #EDEDED;
+    background-color: #ededed;
     margin-bottom: 100px;
 }
 
@@ -139,7 +131,7 @@ backdrop-filter: blur(5.5px);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap:5vw;
+    gap: 5vw;
     flex-wrap: wrap;
 }
 
@@ -150,7 +142,7 @@ backdrop-filter: blur(5.5px);
     align-items: center;
 }
 
-.ajuda-item:hover{
+.ajuda-item:hover {
     cursor: pointer;
 }
 
@@ -159,7 +151,6 @@ backdrop-filter: blur(5.5px);
 }
 .ajuda-icon {
     width: 10vw;
-
 }
 
 /* Carosel */
@@ -171,12 +162,12 @@ backdrop-filter: blur(5.5px);
 
 .carousel-item {
     text-align: center;
-    color: #1B657A;
+    color: #1b657a;
     /* background: #EDEDED; */
     padding: 10px;
 
     border-radius: 15px;
-    border: solid 2px #1B657A;
+    border: solid 2px #1b657a;
     margin: 0 10px; /* Adiciona um espaço horizontal de 10 pixels entre os itens */
     flex: 0 0 33.33%; /* Distribui os itens igualmente em 3 colunas */
     display: flex; /* Usa flexbox para alinhar verticalmente */
@@ -199,15 +190,14 @@ backdrop-filter: blur(5.5px);
 
 .btn-detalhes {
     border: none;
-    background-color: #1B657A;
+    background-color: #1b657a;
     color: white;
     padding: 10px 20px;
-    width:100%;
+    width: 100%;
     border-radius: 5px;
     /* Estilos para o botão Detalhes (ajuste conforme necessário) */
     cursor: pointer;
 }
-
 
 .slick-dots {
     display: none !important;
@@ -233,10 +223,10 @@ backdrop-filter: blur(5.5px);
 
     cursor: pointer;
     option {
-      color: inherit;
-      background-color: var(--option-bg);
+        color: inherit;
+        background-color: var(--option-bg);
     }
-  }
+}
 
 /* Caso a tela em questão seja menor que 600px */
 @media (max-width: 600px) {
@@ -251,7 +241,6 @@ backdrop-filter: blur(5.5px);
         /* padding:100px; */
         padding: 100px 0;
     }
-
 
     #ajuda-itens {
         flex-direction: column;
@@ -278,7 +267,6 @@ backdrop-filter: blur(5.5px);
         width: 100%;
     }
     #filtro-mobile {
-        display: block
+        display: block;
     }
-
 }

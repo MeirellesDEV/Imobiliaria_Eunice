@@ -64,19 +64,8 @@
                     <p id="endereco-info-cidade"><span class="custom-icon"></span> <span class="endereco-localidade">{{ $iten->cidade}}</span></p>
                 </div>
                 <div id="item-dados">
-                    @if ($iten->areaConstruida != null && $iten->areaConstruida != 0)
-                        <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
-                    @endif
-                    @if ($iten->vendidoAlugado == null)
-                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valor}}</p>
-                    @else
-                        <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
-                    @endif
-                    @if($iten->tp_contrato == 'Aluguel')
-                        <p id="dados-locacao">Locação</p>
-                    @else
-                        <p id="dados-locacao">Venda</p>
-                    @endif
+                    
+                    
                     @if ($iten->qtdDorms != 0)
                         <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $iten->qtdDorms }}</p>
                     @endif
@@ -91,6 +80,19 @@
                     @endif
                     @if ($iten->qtdGaragemNaoCobertas != 0)
                         <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $iten->qtdGaragemNaoCobertas }}</p>
+                    @endif
+                    @if($iten->tp_contrato == 'Aluguel')
+                        <p id="dados-locacao">Locação</p>
+                    @else
+                        <p id="dados-locacao">Venda</p>
+                    @endif
+                    @if ($iten->areaConstruida != null && $iten->areaConstruida != 0)
+                        <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
+                    @endif
+                    @if ($iten->vendidoAlugado == null)
+                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valor}}</p>
+                    @else
+                        <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                     @endif
                 </div>
 

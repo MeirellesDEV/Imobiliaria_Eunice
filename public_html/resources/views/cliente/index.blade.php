@@ -49,7 +49,7 @@
     </div>
     <div class="cliente-botoes">
         <button title="Apaga o contato da lista, use caso já tenha resolvido" class="cliente-btn" id="cliente-apagar" onclick="deletar(event)">Apagar</button>
-        {{-- <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="solucionar(event)">Solucionar</button> --}}
+        <button title="Marca o contato como solucionado, mas não o apaga da lista" class="cliente-btn" id="cliente-solucionar" onclick="solucionar(event)">Solucionar</button>
     </div>
 </div>
 
