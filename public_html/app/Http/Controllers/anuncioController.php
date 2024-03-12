@@ -31,6 +31,7 @@ class anuncioController extends Controller
         $anuncio->bairro = $request->bairro;
         $anuncio->cidade = $request->cidade;
         $anuncio->observacao = $request->observacao;
+        $anuncio->resolvido = false;
 
         // dd($anuncio);
 

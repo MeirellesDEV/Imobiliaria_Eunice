@@ -45,6 +45,7 @@ class clienteController extends Controller
                 $clientes->tp_cliente = $request->tp_cliente;
                 $clientes->idImovel = $imoveis->id;
                 $clientes->cod_imovel = $request->cod_imovel;
+                $clientes->resolvido = false;
 
                 $clientes->save();
 
@@ -69,8 +70,8 @@ class clienteController extends Controller
     public function solucionar(Request $request){
 
         $anuncio = Anuncio::findOrFail($request->solucionar);
-
-
+        $anuncio->resolvido = true;
+        $anuncio->save();
 
         return redirect()->back();
     }

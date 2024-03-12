@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('bairro');
             $table->string('cidade');
             $table->string('observacao', 5000);
+            $table->boolean('resolvido');
+
 
             $table->timestamps();
         });
