@@ -1,10 +1,10 @@
 body {
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
 }
 * {
     box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 /* Tabelas */
@@ -20,13 +20,13 @@ body {
 }
 .table-title {
     padding: 20px;
-    background-color: #B77922;
+    background-color: #b77922;
     color: white;
     font-size: 18px;
 }
 
 .table-body {
-    background-color: rgb(237, 237, 237)
+    background-color: rgb(237, 237, 237);
 }
 .body-info {
     padding: 20px;
@@ -34,14 +34,13 @@ body {
     border-bottom: #cfcfcf 1px solid;
 }
 
-
 .button-info {
     cursor: pointer;
-    border:none;
+    border: none;
     padding: 5px;
     text-decoration: underline;
-    background-color: rgba(0,0,0,0);
-    color: #1B657A;
+    background-color: rgba(0, 0, 0, 0);
+    color: #1b657a;
 }
 
 /* classes popup */
@@ -54,11 +53,10 @@ body {
 
     border-radius: 15px 15px 0 0;
     text-align: center;
-
 }
 .dados-info {
     margin: 0;
-    background-color: #DFDFDF;
+    background-color: #dfdfdf;
     padding: 10px;
 
     border-radius: 0 0 15px 15px;
@@ -86,21 +84,20 @@ body {
 
 /* IDs */
 #request-table {
-    overflow:hidden;
-    border-collapse:separate;
+    overflow: hidden;
+    border-collapse: separate;
     width: 90%;
     margin: auto;
     margin-top: 15px;
-    
 }
-#request-table tbody:nth-child(odd){
-    background-color: rgb(237, 237, 237);  
+#request-table tbody:nth-child(odd) {
+    background-color: rgb(237, 237, 237);
 }
-#request-table tbody:nth-child(even){
-    background-color: rgb(209, 209, 209);  
+#request-table tbody:nth-child(even) {
+    background-color: rgb(209, 209, 209);
 }
 
-#corpo{
+#corpo {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -118,7 +115,7 @@ body {
 
     z-index: 999;
     width: 50%;
-    
+
     max-height: 80vh;
     overflow-y: scroll;
 
@@ -126,24 +123,23 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
 }
 
 #cliente-apagar {
-    background-color: #E12B2B;
+    background-color: #e12b2b;
 }
 #cliente-apagar:hover {
     background-color: white;
-    color: #E12B2B;
+    color: #e12b2b;
     text-decoration: underline;
 }
 
 #cliente-solucionar {
-    background-color: #00CD15;
+    background-color: #00cd15;
 }
 #cliente-solucionar:hover {
     background-color: white;
-    color: #00CD15;
+    color: #00cd15;
     text-decoration: underline;
 }
 
@@ -160,12 +156,16 @@ body {
 }
 
 #btn-popup-fechar:hover {
-    color: #CE990F;
+    color: #ce990f;
     background-color: transparent;
 }
 
 .solved-1 {
     background-color: rgb(145, 255, 145);
+}
+
+.solved_new-1 {
+    background-color: rgb(145, 255, 145) !important;
 }
 
 /* teste */
@@ -175,10 +175,10 @@ body {
     margin: auto;
 }
 
-@media (min-width:767px) {
+@media (min-width: 767px) {
     .responsive {
-        overflow-y: hidden; 
-        overflow-x: hidden; 
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
     #request-table {
         border-radius: 15px;
@@ -189,5 +189,4 @@ body {
     #popup-informacoes {
         width: 100%;
     }
-
 }

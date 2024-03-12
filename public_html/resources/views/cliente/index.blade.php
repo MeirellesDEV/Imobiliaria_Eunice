@@ -164,7 +164,7 @@
                     </thead>
 
                     @foreach ($anuncios as $anuncio)
-                        <tr class="table-body solved">
+                        <tr class="table-body solved_new-{{$anuncio->resolvido}}" style="border-collapse:collapse">
                             <td class="body-info"><button class="button-info" id="information-{{$anuncio->id}}"  onclick="mostrarInfo(event)" >Ver</button></td>
                             <td class="body-info divider-left information-{{$anuncio->id}}" >{{$anuncio->nome}}</td>
                             <td class="body-info divider-left information-{{$anuncio->id}}" style="display: none" >{{$anuncio->email}}</td>

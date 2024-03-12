@@ -70,8 +70,8 @@ class clienteController extends Controller
     public function solucionar(Request $request){
 
         $anuncio = Anuncio::findOrFail($request->solucionar);
-
-
+        $anuncio->resolvido = true;
+        $anuncio->save();
 
         return redirect()->back();
     }
