@@ -115,6 +115,7 @@
                     <option value="cliente">Cliente</option>
                 </select>
                 <input type="text" name="cod_imovel" id="idImovel" placeholder="Insira o código do Imovel" class="cliente-input">
+                <input type="text" name="comentario" id="idComentario" placeholder="Comentário" class="cliente-input">
 
                 <button type="submit" class="cliente-input cliente-btn">Cadastrar</button>
             </form>
