@@ -45,6 +45,9 @@ class clienteController extends Controller
                 $clientes->tp_cliente = $request->tp_cliente;
                 $clientes->idImovel = $imoveis->id;
                 $clientes->cod_imovel = $request->cod_imovel;
+                $clientes->dtAtendimento = $request->data_contato_atendimento;
+                $clientes->dtCaptacao = $request->data_contato_captacao;
+                $clientes->comentario = $request->comentario;
                 $clientes->resolvido = false;
 
                 $clientes->save();
