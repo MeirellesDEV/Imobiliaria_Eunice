@@ -64,22 +64,21 @@
                     <p id="endereco-info-cidade"><span class="custom-icon"></span> <span class="endereco-localidade">{{ $iten->cidade}}</span></p>
                 </div>
                 <div id="item-dados">
-                    
-                    
+
                     @if ($iten->qtdDorms != 0)
-                        <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $iten->qtdDorms }}</p>
+                        <p id="dados-dorms"><span class="material-symbols-outlined">bed</span>{{ $iten->qtdDorms }}</p>
                     @endif
                     @if ($iten->qtdSuites != 0)
-                        <p id="dados-suites"><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdSuites }}</p>
+                        <p id="dados-suites"><span class="material-symbols-outlined">king_bed</span><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdSuites }}</p>
                     @endif
                     @if ($iten->qtdBanheiros != 0)
-                        <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $iten->qtdBanheiros }}</p>
+                        <p id="dados-banheiros"><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdBanheiros }}</p>
                     @endif
                     @if ($iten->qtdGaragemCobertas != 0)
-                        <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $iten->qtdGaragemCobertas }}</p>
+                        <p id="dados-vagas"><span class="material-symbols-outlined">garage</span><span class="material-symbols-outlined">garage_home</span>{{ $iten->qtdGaragemCobertas }}</p>
                     @endif
                     @if ($iten->qtdGaragemNaoCobertas != 0)
-                        <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $iten->qtdGaragemNaoCobertas }}</p>
+                        <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">garage</span>{{ $iten->qtdGaragemNaoCobertas }}</p>
                     @endif
                     @if($iten->tp_contrato == 'Aluguel')
                         <p id="dados-locacao">Locação</p>
