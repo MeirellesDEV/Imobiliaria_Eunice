@@ -148,8 +148,8 @@
                             <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->telefone }}</td>
                             <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->tp_cliente }}</td>
                             <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->cod_imovel }}</td>
-                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->dtAtendimento }}</td>
                             <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->dtCaptacao }}</td>
+                            <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->dtAtendimento }}</td>
                             <td class="body-info divider-left information-{{$cli->id}}" >{{ $cli->comentario }}</td>
                         </tr>
                     @endforeach
