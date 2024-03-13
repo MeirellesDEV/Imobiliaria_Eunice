@@ -123,7 +123,9 @@
 
         <section id="aba-clientes">
             <div class="table-div">
-                <input type="text" id="searchInput" oninput="searchTable()" placeholder="Pesquisar...">
+                <div class="input-div">
+                    <input type="text" id="searchInput" oninput="searchTable()" placeholder="Pesquisar...">
+                </div>
                 <table cellspacing="0" id="client-table">
 
                     <thead class="table-header" cellspacing="0">

@@ -155,6 +155,21 @@ body {
     font-size: 18px;
 }
 
+.input-div {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#searchInput {
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color:#cfcfcf;
+}
+
 #btn-popup-fechar:hover {
     color: #ce990f;
     background-color: transparent;
