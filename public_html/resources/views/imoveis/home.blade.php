@@ -294,29 +294,33 @@
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
-                                <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
-                                @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor"><span class="num-format troca-ponto">R${{ $item->valor }}</span></p>
-                                @else
-                                    <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
+                                
+                                @if ($item->qtdDorms != 0)
+                                <p id="dados-dorms"><span class="material-symbols-outlined">bed</span>{{ $item->qtdDorms }}</p>
+                                @endif
+
+                                @if ($item->qtdBanheiros != 0)
+                                    <p id="dados-banheiros"><span class="material-symbols-outlined">bathtub</span>{{ $item->qtdBanheiros }}</p>
+                                @endif
+                                @if ($item->qtdSuites != 0)
+                                    <p id="dados-suites"><span class="material-symbols-outlined">king_bed</span><span class="material-symbols-outlined">bathtub</span>{{ $item->qtdSuites }}</p>
+                                @endif
+                                @if ($item->qtdGaragemCobertas != 0)
+                                    <p id="dados-vagas"><span class="material-symbols-outlined">garage</span><span class="material-symbols-outlined">garage_home</span>{{ $item->qtdGaragemCobertas }}</p>
+                                @endif
+                                @if ($item->qtdGaragemNaoCobertas != 0)
+                                    <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">garage</span>{{ $item->qtdGaragemNaoCobertas }}</p>
                                 @endif
                                 @if($item->tp_contrato == 'Aluguel')
                                     <p id="dados-locacao">Locação</p>
                                 @else
                                     <p id="dados-locacao">Venda</p>
                                 @endif
-                                @if ($item->qtdDorms != 0)
-                                <p id="dados-dorms"><span class="material-symbols-outlined">home</span>{{ $item->qtdDorms }}</p>
-                                @endif
-
-                                @if ($item->qtdBanheiros != 0)
-                                    <p id="dados-banheiros"><span class="material-symbols-outlined">wc</span>{{ $item->qtdBanheiros }}</p>
-                                @endif
-                                @if ($item->qtdGaragemCobertas != 0)
-                                    <p id="dados-vagas"><span class="material-symbols-outlined">piano</span>{{ $item->qtdGaragemCobertas }}</p>
-                                @endif
-                                @if ($item->qtdGaragemNaoCobertas != 0)
-                                    <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">piano_off</span>{{ $item->qtdGaragemNaoCobertas }}</p>
+                                <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
+                                @if ($item->vendidoAlugado == null)
+                                    <p class="produto-valor"><span class="num-format troca-ponto">R${{ $item->valor }}</span></p>
+                                @else
+                                    <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif
                             </div>
                             <form action="/imoveis/{{ $item->id }}" class="botao-detalhes" method="post">
