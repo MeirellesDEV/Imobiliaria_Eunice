@@ -56,10 +56,13 @@
                     <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" required></textarea>
                     <input type="hidden" name="cod_imovel_form" value="{{ $detalhes->cod_imovel }}">
                     <button type="submit" id="interesse-btn">Enviar</button>
-                </form>
+                </form> 
+            </div>      
+            <div class="aviso">
+                <p>Valores sujeitos a alteração sem aviso prévio, bem como sua disponibilidade. As informações contidas neste site são fornecidas pelo proprietário do imóvel e pelas concessionárias administradoras.</p>
             </div>
         </section>
-
+        
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
@@ -115,6 +118,10 @@
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Descrição do Imóvel</h2>
                         <p id="desc-texto" class="alinhado">{{ $detalhes->desc }}</p>
+                    </div>
+                    <div id="descricao-container" class="margin-spaced padding-spaced aviso">
+                        <h2 class="detalhes-titulo">Aviso</h2>
+                        <p>Os valores e demais informações poderão sofrer alterações sem prévio aviso</p>
                     </div>
                     <div id="descricao-container" class="margin-spaced padding-spaced">
                         <h2 class="detalhes-titulo">Localização</h2>
@@ -764,6 +771,7 @@
 
                 </div>
             </div>
+            
             <div id="ajuda-container" class="background-blur">
                 <h1 class="section-title" style="text-align: center; font-size: 24px !important; margin-top: 50px">Como podemos ajudar?</h1>
                 <section id="ajuda">

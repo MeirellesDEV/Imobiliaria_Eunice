@@ -3,25 +3,25 @@ body {
     box-sizing: border-box;
 
     /* estilo */
-    background-color:#CBCBCB;
+    background-color: #cbcbcb;
 }
 * {
-    font-family: 'roboto', sans-serif;
+    font-family: "roboto", sans-serif;
     box-sizing: border-box;
 }
 /* flexbox grade */
 
 .area-container {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: start;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
     margin: 0 5px;
     padding: 0 10px;
 }
 
-#title-imovel{
+#title-imovel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,15 +35,14 @@ body {
     text-align: center;
 }
 
-
-#imovel-id{
+#imovel-id {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 28px;
     width: 50%;
 
-    background-color: #1B657A;
+    background-color: #1b657a;
     color: white;
     border-radius: 10px;
 }
@@ -59,19 +58,20 @@ body {
 .slick-arrow {
     border: none;
     padding: 10px;
-    color:white;;
-    background-color:rgba(255, 255, 255, 0.247);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.247);
 }
 .slick-arrow:hover {
-    background-color:rgba(255, 255, 255, 0.5);
-
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.slick-list, .slick-track{
+.slick-list,
+.slick-track {
     height: 100%;
 }
 
-#proxima-imagem, #anterior-imagem {
+#proxima-imagem,
+#anterior-imagem {
     height: 80.6%;
 }
 
@@ -127,7 +127,8 @@ body {
     width: 100%;
 }
 
-.seta-esquerda, .seta-direita {
+.seta-esquerda,
+.seta-direita {
     position: absolute;
     top: 47.5%;
     z-index: 1;
@@ -199,7 +200,8 @@ body {
         height: 350px;
     }
 
-    .seta-esquerda, .seta-direita {
+    .seta-esquerda,
+    .seta-direita {
         display: none;
     }
 
@@ -218,7 +220,7 @@ body {
     width: 100%;
     height: 100%;
 
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -255,7 +257,7 @@ body {
 
 /* ------------------ */
 
-#produto-carrossel-nav{
+#produto-carrossel-nav {
     width: 100%;
 }
 
@@ -269,7 +271,7 @@ body {
     justify-content: center;
 }
 
-.img-nav{
+.img-nav {
     width: 170px;
     height: 170px;
     background-size: cover;
@@ -279,8 +281,7 @@ body {
 
 /* mexendo */
 
-
-.img{
+.img {
     width: 650px;
     height: 380px;
     background-size: cover;
@@ -296,7 +297,7 @@ body {
     background-position: center;
 }
 
-.slick-dots{
+.slick-dots {
     display: none !important;
 }
 
@@ -304,12 +305,19 @@ body {
     margin: 1vh 0.5vw;
 }
 .padding-spaced {
-    padding: 2vh 1vw;
+    /* padding: 2vh 1vw; */
+}
+
+.aviso {
+    background-color: #fff;
+    margin-top: 6px;
+    padding: 4px 10px;
+    color: #000;
 }
 
 #interesse {
     position: sticky;
-    top: 1vh;
+    /* top: 1vh; */
     min-width: 100%;
 }
 
@@ -362,9 +370,8 @@ body {
     text-align: center;
 
     /* estilo */
-    background-color:white;
+    background-color: white;
 }
-
 
 .detalhes-itens {
     display: flex;
@@ -373,7 +380,9 @@ body {
 }
 
 #interesse-contato-container {
+    background-color: #fff;
     gap: 5px;
+    padding: 10px;
 }
 
 #interesse-contato-texto {
@@ -389,35 +398,33 @@ body {
 
 .semelhante-produto-card {
     padding: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 25vw;
 
     border-radius: 15px;
-    box-shadow: 0 0 0 2px #1B657A inset;
+    box-shadow: 0 0 0 2px #1b657a inset;
 }
-
-
 
 /* estilos */
 
 #imovel-titulo h1 {
-    color: #1B657A;
+    color: #1b657a;
 }
 
 #valor {
-    color: #1B657A;
+    color: #1b657a;
     font-size: 30px;
 }
 
-#mais-detalhes-container h3{
-    background-color: #D9D9D9;
+#mais-detalhes-container h3 {
+    background-color: #d9d9d9;
     border-radius: 5px;
     padding: 5px 0 5px 5px;
 }
 
-#logo{
+#logo {
     display: block;
     position: absolute;
     width: 12%;
@@ -429,8 +436,8 @@ body {
 }
 
 #descricao-container {
-     background-color: white;
-     padding:10px;
+    background-color: white;
+    padding: 10px;
 }
 
 #mais-detalhes {
@@ -438,7 +445,7 @@ body {
 }
 
 #interesse {
-    background-color: white;
+    /* background-color: white; */
 }
 
 #semelhantes {
@@ -446,25 +453,25 @@ body {
 }
 
 .detalhes-titulo {
-    color: #B77922;
+    color: #b77922;
     padding-bottom: 10px;
-    border-bottom: #B77922 solid 3px;
+    border-bottom: #b77922 solid 3px;
 }
 
 .mais-detalhes-subtitulo {
-    color: #B77922;
-    background-color: #D9D9D9;
+    color: #b77922;
+    background-color: #d9d9d9;
     padding: 0.5vh 1vw;
 }
 
 #interesse h1 {
-    color: #1B657A;
+    color: #1b657a;
 }
 
 .interesse-contato-input {
-    border: #1B657A solid 3px;
+    border: #1b657a solid 3px;
     background-color: white;
-    width:100%;
+    width: 100%;
 }
 #interesse-contato-container input {
     height: 5vh;
@@ -474,8 +481,8 @@ body {
     height: 50vh;
 }
 #interesse-btn {
-    background-color: #1B657A;
-    border:none;
+    background-color: #1b657a;
+    border: none;
     color: white;
     width: 100.5%;
     height: 6vh;
@@ -483,12 +490,12 @@ body {
 }
 #interesse-btn:hover {
     background-color: white;
-    color:#1B657A;
+    color: #1b657a;
     text-decoration: underline;
-    border:#1B657A solid 3px;
+    border: #1b657a solid 3px;
 }
 
-#semelhante-produto-card *{
+#semelhante-produto-card * {
     text-align: center;
 }
 
@@ -496,7 +503,7 @@ body {
     display: none;
 }
 .produto-saber-mais {
-    background-color:#1B657A;
+    background-color: #1b657a;
     padding: 5px 30px;
     color: white;
     border: none;
@@ -505,7 +512,7 @@ body {
 }
 
 #mostrar-container {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: end;
     align-items: start;
@@ -520,12 +527,12 @@ body {
     overflow-x: hidden;
 }
 .img-navigation {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     border: none;
 }
 .img-navigation:hover {
-    background-color:#1B657A;
+    background-color: #1b657a;
     color: white;
 }
 
@@ -538,12 +545,12 @@ body {
     right: 49px;
 }
 
-.alinhado{
+.alinhado {
     text-align: justify;
     padding-right: 20px !important;
 }
 
-#desc-texto{
+#desc-texto {
     padding: 0 10px;
 }
 
@@ -556,7 +563,7 @@ body {
     top: 0;
     left: 0;
 
-    background-color:rgba(0, 0, 0, 0.597);
+    background-color: rgba(0, 0, 0, 0.597);
     backdrop-filter: blur(10px);
     z-index: 5;
 
@@ -567,13 +574,12 @@ body {
 
 #fechar-imagem {
     position: absolute;
-
 }
 .section-title {
     font-size: 24px !important;
-    color: #1B657A;
+    color: #1b657a;
     text-align: center;
-    margin-top: 50px
+    margin-top: 50px;
 }
 #ajuda-container {
     width: 90%;
@@ -581,7 +587,7 @@ body {
 }
 
 #ajuda {
-    background-color: #EDEDED;
+    background-color: #ededed;
     border-radius: 15px;
     margin-bottom: 100px;
 }
@@ -590,10 +596,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap:5vw;
+    gap: 5vw;
     flex-wrap: wrap;
 }
-
 
 .ajuda-item {
     display: flex;
@@ -602,7 +607,7 @@ body {
     align-items: center;
 }
 
-.ajuda-item:hover{
+.ajuda-item:hover {
     cursor: pointer;
 }
 
@@ -614,13 +619,13 @@ body {
 }
 #icone-tela-cheia {
     color: white;
-    position:relative;
+    position: relative;
     top: 0;
     left: 0;
     font-size: 32px !important;
 }
 
-@media (max-width: 1250px){
+@media (max-width: 1250px) {
     #pagina-layout {
         width: 90%;
         margin: 0 auto;
@@ -633,13 +638,13 @@ body {
         display: block;
     }
     #fechar-icone-container {
-        display:block;
+        display: block;
         position: absolute;
         top: 0;
         right: 0;
     }
     #interesse {
-        display:none;
+        display: none;
         top: 0;
         left: 0;
         height: 99vh;
@@ -670,7 +675,8 @@ body {
     .galeria-item {
         flex-wrap: nowrap;
     }
-    .slick-list, .slick-track {
+    .slick-list,
+    .slick-track {
         height: 500px;
     }
     .terreno-area-container {
@@ -703,7 +709,7 @@ body {
         height: 40vh;
     }
 
-    .img{
+    .img {
         width: 380px !important;
         height: 280px !important;
         background-size: cover;
@@ -717,12 +723,12 @@ body {
             width: 100vw;
             height: 6vh;
             border-radius: 15px;
-    
+
             font-size: 18px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.597);
-    
+
             border: none;
-            background-color:#1B657A;
-        }
+            background-color: #1b657a;
         }
     }
+}
