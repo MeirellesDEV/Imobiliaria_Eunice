@@ -5,6 +5,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/font-standards.css') }}">
 <link rel="stylesheet" href="{{ asset('css/request.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <div id="popup-informacoes" style="display:none">
     <button id="btn-popup-fechar" onclick="fecharInfo()">X</button>
@@ -81,7 +82,6 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/manager.css') }}">
 
-
     <div id="imovel-header">
         <p id="hello-user">Gerenciador de clientes</p>
         <section id="header-botoes">
@@ -92,7 +92,6 @@
                 <button class="nav-btn" id="sair" type="submit" style="display: none"></button>
             </form>
         </section>
-
     </div>
 
     <div id="tab-buttons">
@@ -126,10 +125,10 @@
             <div class="table-div">
 
                 <table cellspacing="0" id="client-table">
-    
+
                     <thead class="table-header" cellspacing="0">
                         <!-- <th class="table-title"></th> -->
-                        <th class="table-title">Nome</th>
+                        <th class="table-title">Nome <span onclick="sortTable(0)" class="material-symbols-outlined" style="cursor: pointer">swap_vert</span></th>
                         <th class="table-title">Email</th>
                         <th class="table-title">Telefone</th>
                         <th class="table-title">Tipo Cliente</th>
@@ -139,7 +138,7 @@
                         <th class="table-title">Comentário</th>
 
                     </thead>
-    
+
                     @foreach ($clientes as $cli)
                         <tr class="table-body solved">
                             <td class="body-info divider-left information-{{$cli->id}}" >{{$cli->nome}}</td>
@@ -159,7 +158,6 @@
         <section id="aba-anuncio">
             <div class="table-div">
                 <table cellspacing="0" id="client-table">
-
                     <thead class="table-header" cellspacing="0">
                         <th class="table-title"></th>
                         <th class="table-title">Nome</th>
@@ -230,13 +228,11 @@
                 for(let i=0; i<dados_array.length; i++) {
                     dados_array[i].innerHTML = info_array[i].innerHTML
                 }
-
                 document.getElementById('dados-id').innerHTML = event.target.parentElement.parentElement.children[9].innerHTML;
             }
             catch(e) {
                 console.log(e)
             }
-
         }
 
         function solucionar(event){
@@ -256,6 +252,39 @@
             input.value = id;
             button.click();
         }
+
+        var direction = "asc";
+
+        function sortTable(colIndex){
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("client-table");
+            switching = true;
+
+            while(switching){
+                switching = false
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++){
+                    shouldSwitch = false
+                    x = rows[i].getElementsByTagName("td")[colIndex]
+                    y = rows[i + 1].getElementsByTagName("td")[colIndex]
+
+                    if (x && y) {
+                        if ((direction == "asc" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) ||
+                            (direction == "desc" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())) {
+
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if(shouldSwitch){
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i])
+                    switching = true;
+                }
+            }
+            direction = (direction == "asc") ? "desc" : "asc";
+        }
     </script>
 
 <script>
@@ -266,7 +295,6 @@
         document.getElementById('aba-anuncio')
     ]
     const botoes = document.getElementsByClassName('tab-button')
-
 
     openTab(0,'block')
 
@@ -295,16 +323,13 @@
         }
     }
 
-
-
-    // REMOVER ESSA LINHA DEPOIS
 </script>
 
 <script>
     // Sistema de datas
     const dataTypes = [document.getElementById('idData-captacao'), document.getElementById('idData-atendimento')]
 
-    document.getElementById('tipo-form').addEventListener('change', function() 
+    document.getElementById('tipo-form').addEventListener('change', function()
     {
         if (document.getElementById('tipo-form').value == 'cliente') {
             dataTypes[0].style.display = 'none'
@@ -326,6 +351,5 @@
         }
 
 </script>
-
 
 @endsection
