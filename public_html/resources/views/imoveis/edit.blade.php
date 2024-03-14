@@ -173,22 +173,22 @@
                             @if ($detalhes->descricao == 'Terreno')
                                 @if ($detalhes->metragemFrente != 0)
                                     <div class="area-content">
-                                        <p id="area"><span>Metragem dianteira:</span> {{ $detalhes->metragemFrente }} m</p>
+                                        <p id="area"><span>Metragem dianteira:</span> {{ $detalhes->metragemFrente }} m²</p>
                                     </div>
                                 @endif
                                 @if ($detalhes->metragemFundo != 0)
                                     <div class="area-content">
-                                        <p id="area"><span>Metragem Lateral:</span> {{ $detalhes->metragemFundo }} m</p>
+                                        <p id="area"><span>Metragem Lateral:</span> {{ $detalhes->metragemFundo }} m²</p>
                                     </div>
                                 @endif
                                 @if ($detalhes->metragemDireita != 0)
                                     <div class="area-content">
-                                        <p id="area"><span>Metragem Direita:</span> {{ $detalhes->metragemDireita }} m</p>
+                                        <p id="area"><span>Metragem Direita:</span> {{ $detalhes->metragemDireita }} m²</p>
                                     </div>
                                 @endif
                                 @if ($detalhes->metragemEsquerda != 0)
                                     <div class="area-content">
-                                        <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m</p>
+                                        <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m²</p>
                                     </div>
                                 @endif
                                 @if ($detalhes->posTerreno)
