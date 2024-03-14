@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('comentario');
             $table->boolean('resolvido');
 
-            $table->foreign('idImovel')->references('id')->on('catalogos');
+            // $table->foreign('idImovel')->references('id')->on('catalogos');
 
             $table->timestamps();
         });
