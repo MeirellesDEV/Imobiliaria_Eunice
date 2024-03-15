@@ -37,54 +37,7 @@
                 <option value="2">Casa</option>
                 <option value="3">Apartamento</option>
                 <option value="4">Chácara</option>
-                <option value="5">Ponto Comercial</option>
             </select>
-
-            <!-- <div class="radio-container">
-                <p class="lateral-title">Quantidade de quartos:</p>
-                <div class="radio-options-lateral">
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdQuartos" id=""> <label for="">1</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="qtdQuartos" id=""> <label for="">2</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" name="qtdQuartos" id=""> <label for="">3+</label>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="radio-container">
-                <p class="lateral-title">Quantidade de banheiros:</p>
-                <div class="radio-options-lateral">
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdBanheiros" id=""> <label for="">1</label>
-                    </div>
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdBanheiros" id=""> <label for="">2</label>
-                    </div>
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdBanheiros" id=""> <label for="">3+</label>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="radio-container">
-                <p class="lateral-title">Quantidade de vagas:</p>
-                <div class="radio-options-lateral">
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdVagas" id=""> <label for="">1</label>
-                    </div>
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdVagas" id=""> <label for="">2</label>
-
-                    </div>
-                    <div class="radio-option-lateral">
-                        <input type="radio" name="qtdVagas" id=""> <label for="">3+</label>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="radio-container">
                 <p class="lateral-title">Valor:</p>
@@ -146,7 +99,6 @@
                         <option value="2">Casa</option>
                         <option value="3">Apartamento</option>
                         <option value="4">Chácara</option>
-                        <option value="5">Ponto Comercial</option>
                     </select>
                     <div class="input-search-group">
                         <p>Código do imóvel</p>
