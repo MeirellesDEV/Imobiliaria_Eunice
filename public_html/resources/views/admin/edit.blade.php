@@ -72,6 +72,12 @@
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Sacadas:</p>
                     <input type="number" name="qtd_sacadasCobertas" min="0" max="50" value="{{ $item->qtdSacadasCobertas }}" id="sliderVagasCasa" class="add-input">
 
+                    <p id="qtd-vagas-label" class="slider-label">Quantidade de andares:</p>
+                    <input type="number" name="qtd_NumAndares" min="0" max="50" value="{{ $item->qtdNumAndares }}" id="sliderNumAndares" class="add-input">
+
+                    <p id="qtd-vagas-label" class="slider-label">Número do andar:</p>
+                    <input type="number" name="qtd_Andar" min="0" max="50" value="{{ $item->qtdAndar }}" id="sliderNumAndar" class="add-input">
+
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Dormitorios:</p>
                     <input type="number" name="qtd_dorms" min="0" max="50" value="{{ $item->qtdDorms }}" id="sliderVagasCasa" class="add-input">
                     
@@ -118,10 +124,16 @@
                         @if($item->id_tp_produto != 5)
 
                         <div class="check-item">
+                            <input type="checkbox" name="elevadores" id="elevadores" @if ($item->elevadores == 1) checked @endif><label>Elevadores</label>
+                        </div>
+                        <div class="check-item">
                             <input type="checkbox" name="agua" id="agua" @if ($item->agua == 1) checked @endif><label>Agua</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="energia" id="energia" @if ($item->energia == 1) checked @endif><label>Energia</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="mesanino" id="mesanino" @if ($item->mesanino == 1) checked @endif><label>Mezanimo</label>
                         </div>
                         <div class="check-item">
                             <input type="checkbox" name="esgoto" id="esgoto" @if ($item->esgoto == 1) checked @endif><label>Esgoto</label>

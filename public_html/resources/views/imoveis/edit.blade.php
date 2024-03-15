@@ -158,11 +158,11 @@
                                 </div>
                             @endif
 
-                            @if ($detalhes->elevadores != '')
+                            {{-- @if ($detalhes->elevadores != '')
                                 <div class="area-content">
                                     <p id="area"><span>Elevador(es):</span> {{ $detalhes->elevadores }}</p>
                                 </div>
-                            @endif
+                            @endif --}}
 
                             @if ($detalhes->descricao != 'Terreno' and $detalhes->areaConstruida != 0)
                                 <div class="area-content">
@@ -292,6 +292,16 @@
                                         <p id="quartos">{{ $detalhes->qtdDorms }} dormitório(s)</p>
                                     </div>
                                 @endif
+                                @if ($detalhes->qtdNumAndares != null or $detalhes->qtdNumAndares != 0)
+                                    <div class="area-content">
+                                        <p id="quartos">{{ $detalhes->qtdNumAndares }} andar(es)</p>
+                                    </div>
+                                @endif
+                                @if ($detalhes->qtdAndar != null or $detalhes->qtdAndar != 0)
+                                    <div class="area-content">
+                                        <p id="quartos"> Localizado no andar: {{ $detalhes->qtdAndar }}</p>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endif
@@ -332,11 +342,11 @@
                                     </div>
                                 @endif
 
-                                @if($detalhes->qtdSacadasCobertas == 1)
+                                {{-- @if($detalhes->qtdSacadasCobertas == 1)
                                     <div class="area-content">
                                         <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sacadas</p>
                                     </div>
-                                @endif
+                                @endif --}}
 
                                 @if($detalhes->areaServico == 1)
                                     <div class="area-content">

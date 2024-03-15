@@ -262,7 +262,8 @@ class adminController extends Controller
             $catalogo->protecao = $request->protecao;
             $catalogo->topografia = $request->topografia;
             $catalogo->tipoComercio = $request->tipoComercio;
-            $catalogo->elevadores = $request->elevadores;
+            // $catalogo->elevadores = $request->elevadores;
+            $catalogo->elevadores = ($request->elevadores) ? true : false;
             $catalogo->copa = ($request->copa) ? true : false;
             $catalogo->recepcao = ($request->recepcao) ? true : false;
             $catalogo->mesanino = ($request->mesanino) ? true : false;
@@ -276,6 +277,8 @@ class adminController extends Controller
             $catalogo->vigilancia24h = ($request->vigilancia24h) ? true : false;
             $catalogo->vestiario = ($request->vestiario) ? true : false;
             $catalogo->qtdSacadasCobertas = $request->qtdSacadasCobertas;
+            $catalogo->qtdNumAndares = $request->qtdNumAndares;
+            $catalogo->qtdAndar = $request->qtdAndar;
             $catalogo->extraInfo = $request->extraInfo;
 
             if($request->id_produto == 2 or $request->id_produto == 4){
@@ -305,6 +308,8 @@ class adminController extends Controller
                 $catalogo->areaUtil = 0;
                 $catalogo->areaConstruida = 0;
                 $catalogo->qtdSacadasCobertas = 0;
+                $catalogo->qtdNumAndares = 0;
+                $catalogo->qtdAndar = 0;
                 $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;
                 $catalogo->sistemaEsgoto = ($request->sistemaEsgoto) ? true : false;
             }

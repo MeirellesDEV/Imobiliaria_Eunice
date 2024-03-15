@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('qtdGaragemCobertas')->nullable();
             $table->integer('qtdGaragemNaoCobertas')->nullable();
             $table->integer('qtdSacadasCobertas')->nullable();
+            $table->integer('qtdNumAndares')->nullable();
+            $table->integer('qtdAndar')->nullable();
             $table->unsignedBigInteger('area');
             $table->unsignedBigInteger('areaUtil')->nullable();
             $table->unsignedBigInteger('areaTerreno')->nullable();

@@ -64,6 +64,12 @@
         <p id="qtd-vagas-label" class="slider-label">Quantidade de Sacadas:</p>
         <input type="number" name="qtdSacadasCobertas" min="0" max="50" value="1" id="sliderVagasCasa" class="add-input">
 
+        <p id="qtd-num_andares-label" class="slider-label">Número de andares:</p>
+        <input type="number" name="qtdNumAndares" min="0" max="50" value="1" id="sliderNumAndares" class="add-input">
+
+        <p id="qtd-num_andar-label" class="slider-label">Número do andar:</p>
+        <input type="number" name="qtdAndar" min="0" max="50" value="1" id="sliderNumAndar" class="add-input">
+
         <p id="local-label">Cidade</p>
         <input name="cidade" type="text" id="casa-local-input" class="add-input" required>
 
@@ -106,10 +112,16 @@
         <p id="valor-label">Caracterísitcas do imóvel</p>
         <div class="checkbox">
             <div class="check-item">
+                <input type="checkbox" name="elevadores" id="elevadores"><label for="elevadores">Elevadores</label>
+            </div>
+            <div class="check-item">
                 <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="energia" id="energia"><label for="energia">Energia</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="mesanino" id="mesanino"><label>Mezanimo</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="esgoto" id="esgoto"><label for="esgoto">Esgoto</label>
