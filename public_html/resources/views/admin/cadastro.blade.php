@@ -495,35 +495,40 @@
 
         <p id="tam-area-label">Posição do terreno</p>
         <select name="posTerreno" id="tipo-produto-ddl" class="add-input">
-            <option value="meio de quadra" selected>meio de quadra</option>
+            <option value="nao" selected>Não assinalada</option>
+            <option value="meio de quadra">meio de quadra</option>
             <option value="esquina">esquina</option>
             <option value="divisa com muro">divisa com muro</option>
         </select>
 
         <p id="tam-area-label">Forma do terreno</p>
         <select name="formaTerreno" id="tipo-produto-ddl" class="add-input">
-            <option value="regular" selected>regular</option>
+            <option value="nao" selected>Não assinalada</option>
+            <option value="regular">regular</option>
             <option value="irregular">irregular</option>
             <option value="poligonal">poligonal</option>
         </select>
 
         <p id="tam-area-label">Vegetação</p>
         <select name="vegetacao" id="tipo-produto-ddl" class="add-input">
-            <option value="mato" selected>mato</option>
+            <option value="nao" selected>Não assinalada</option>
+            <option value="mato">mato</option>
             <option value="gramado">gramado</option>
             <option value="limpo">limpo</option>
         </select>
 
         <p id="tam-area-label">Proteção</p>
         <select name="protecao" id="tipo-produto-ddl" class="add-input">
-            <option value="muro" selected>muro</option>
+            <option value="nao" selected>Não assinalada</option>
+            <option value="muro">muro</option>
             <option value="cerca">cerca</option>
             <option value="divisão com prédio">divisão com prédio</option>
         </select>
 
         <p id="tam-area-label">Topografia</p>
         <select name="topografia" id="tipo-produto-ddl" class="add-input">
-            <option value="plano" selected>plano</option>
+            <option value="nao" selected>Não assinalada</option>
+            <option value="plano">plano</option>
             <option value="aclive">aclive</option>
             <option value="declive">declive</option>
         </select>

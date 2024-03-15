@@ -56,13 +56,13 @@
                     <textarea name="mensagem" id="interesse-contato-texto" cols="30" rows="10" class="interesse-contato-input" placeholder="Texto (opcional)" required></textarea>
                     <input type="hidden" name="cod_imovel_form" value="{{ $detalhes->cod_imovel }}">
                     <button type="submit" id="interesse-btn">Enviar</button>
-                </form> 
-            </div>      
+                </form>
+            </div>
             <div class="aviso">
                 <p>Valores sujeitos a alteração sem aviso prévio, bem como sua disponibilidade. As informações contidas neste site são fornecidas pelo proprietário do imóvel e pelas concessionárias administradoras.</p>
             </div>
         </section>
-        
+
             <div id="produto-layout">
                 <section id="imovel-info-main" class="flex-center-center-column margin-spaced padding-spaced">
                     <div id="title-imovel">
@@ -108,7 +108,7 @@
                         <h2 class="detalhes-titulo">Tipo de contrato</h2>
                         <p id="desc-texto">{{ $detalhes->tp_contrato }}</p>
                     </div> -->
-                    
+
                     @if($detalhes->id_tp_produto == 5)
                         <div id="descricao-container" class="margin-spaced padding-spaced">
                             <h2 class="detalhes-titulo">Tipo de Comércio</h2>
@@ -191,27 +191,27 @@
                                         <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m²</p>
                                     </div>
                                 @endif
-                                @if ($detalhes->posTerreno)
+                                @if ($detalhes->posTerreno or $detalhes->posTerreno != 'nao')
                                     <div class="area-content">
                                         <p id="area"><span>Posição do Terreno:</span> {{ $detalhes->posTerreno }}</p>
                                     </div>
                                 @endif
-                                @if ($detalhes->formaTerreno)
+                                @if ($detalhes->formaTerreno or $detalhes->formaTerreno != 'nao')
                                     <div class="area-content">
                                         <p id="area"><span>Forma do terreno:</span> {{ $detalhes->formaTerreno }}</p>
                                     </div>
                                 @endif
-                                @if ($detalhes->vegetacao)
+                                @if ($detalhes->vegetacao or $detalhes->vegetacao != 'nao')
                                     <div class="area-content">
                                         <p id="area"><span>Vegetação:</span> {{ $detalhes->vegetacao }}</p>
                                     </div>
                                 @endif
-                                @if ($detalhes->protecao)
+                                @if ($detalhes->protecao or $detalhes->protecao != 'nao')
                                     <div class="area-content">
                                         <p id="area"><span>Proteção:</span> {{ $detalhes->protecao }}</p>
                                     </div>
                                 @endif
-                                @if ($detalhes->topografia)
+                                @if ($detalhes->topografia or $detalhes->topografia != 'nao')
                                     <div class="area-content">
                                         <p id="area"><span>Topografia:</span> {{ $detalhes->topografia }}</p>
                                     </div>
@@ -624,7 +624,7 @@
 
                                 @if($detalhes->salaJogos == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Jogos</p> </div>
-                                @endif   
+                                @endif
 
                                 @if($detalhes->acessoEnergia == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Acesso a energia Eletrica</p> </div>
@@ -741,7 +741,7 @@
                                 @endif
 
 
-                            </div> 
+                            </div>
 
                             <h3>Outras informações</h3>
                             <div class="area-container" id="extraDivCampo">
@@ -781,7 +781,7 @@
 
                 </div>
             </div>
-            
+
             <div id="ajuda-container" class="background-blur">
                 <h1 class="section-title" style="text-align: center; font-size: 24px !important; margin-top: 50px">Como podemos ajudar?</h1>
                 <section id="ajuda">
