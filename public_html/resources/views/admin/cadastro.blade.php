@@ -22,10 +22,18 @@
         <button id="btn-aba-apartamento" onclick="openApartamento()" class="aba-option">Pt. Comercial</button>
         <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">Terreno</button>
     </div>
-    
+
     <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
         @csrf
         <!-- <input type="hidden" name="id_produto" value="2" > -->
+
+        <p style="font-size: 20px !important;">Destaque</p>
+        <div class="check-item">
+            <div class="toggle-container">
+                <input type="checkbox" name="destaque" id="toggle" class="checkbox-input">
+                <label for="toggle" class="toggle"></label>
+            </div>
+        </div>
 
         <p for="" id="titulo-label" class="add-label">Título</p>
         <input type="text" id="casa-titulo-input" name="titulo" class="add-input" required>
@@ -162,14 +170,14 @@
             <div class="check-item">
                 <input type="checkbox" name="guarita" id="guarita"><label for="guarita">Guarita</label>
             </div>
-            
+
             <div class="check-item">
                 <input type="checkbox" name="varanda" id="varanda"><label for="varanda">Varanda</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="varandaGourmet" id="varandaGourmet"><label for="varandaGourmet">Varanda Gourmet</label>
             </div>
-            
+
             <div class="check-item">
                 <input type="checkbox" name="cozinhaConjugada" id="cozinhaConjugada"><label for="cozinhaConjugada">Cozinha conjugada</label>
             </div>
@@ -209,14 +217,14 @@
             <div class="check-item">
                 <input type="checkbox" name="porteiroEletronico" id="porteiroEletronico"><label for="porteiroEletronico">Porteiro eletronico</label>
             </div>
-            
+
             <div class="check-item">
                 <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
             </div>
-            
-            
 
-            
+
+
+
 
             <div class="check-item">
                 <input type="checkbox" name="tvCabo" id="tvCabo"><label for="tvCabo">TV a Cabo</label>
@@ -226,7 +234,7 @@
                 <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
             </div>
 
-            
+
 
             <div class="check-item">
                 <input type="checkbox" name="aguaSolar" id="aguaSolar"><label for="aguaSolar">Agua Aquecida por Energia Solar</label>
@@ -252,7 +260,7 @@
                 <input type="checkbox" name="edicula" id="edicula"><label for="edicula">Edícula</label>
             </div>
 
-            
+
 
             <div class="check-item">
                 <input type="checkbox" name="sacada" id="sacada"><label for="sacada">Sacada</label>
@@ -444,6 +452,14 @@
         @csrf
         <input type="hidden" name="id_produto" value="5">
 
+        <p style="font-size: 20px !important;">Destaque</p>
+        <div class="check-item">
+            <div class="toggle-container">
+                <input type="checkbox" name="destaque" id="toggle" class="checkbox-input">
+                <label for="toggle" class="toggle"></label>
+            </div>
+        </div>
+
         <p for="" id="titulo-label" class="add-label">Título</p>
         <input type="text" id="casa-titulo-input" name="titulo" class="add-input" required>
 
@@ -535,7 +551,7 @@
             </div>
             <div class="check-item">
                 <input type="checkbox" name="portaria24" id="portaria24" ><label>Portaria 24h</label>
-            </div>  
+            </div>
             <div class="check-item">
                 <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
             </div>
@@ -551,7 +567,7 @@
             <div class="check-item">
                 <input type="checkbox" name="vigilancia24h" id="vigilancia24h"><label for="vigilancia24h">Vigilância 24h</label>
             </div>
-            
+
         </div>
 
         <p id="valor-label">Características da Área Comum</p>
@@ -638,6 +654,14 @@
         @csrf
         <input type="hidden" name="id_produto" value="1">
 
+        <p style="font-size: 20px !important;">Destaque</p>
+        <div class="check-item">
+            <div class="toggle-container">
+                <input type="checkbox" name="destaque" id="toggle" class="checkbox-input">
+                <label for="toggle" class="toggle"></label>
+            </div>
+        </div>
+
         <p for="" id="titulo-label" class="add-label">Título</p>
         <input name="titulo" type="text" id="trn-titulo-input" class="add-input" required>
 
@@ -706,8 +730,8 @@
             <option value="declive">declive</option>
         </select>
 
-        
-        
+
+
         <p id="valor-label">Valor</p>
         <input type="text" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
 
@@ -789,8 +813,8 @@
             <div class="check-item">
                 <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
             </div>
-            
-            
+
+
         </div>
 
         <p id="local-label">Informações extras (separar por ponto e vírgula)</p>

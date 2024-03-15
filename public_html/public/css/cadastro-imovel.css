@@ -4,6 +4,50 @@ input::-webkit-inner-spin-button {
   margin: 10px 0;
 }
 
+/**/
+.toggle-container {
+    position: relative;
+    width: 60px;
+    height: 30px;
+  }
+
+  .checkbox-input {
+    display: none;
+  }
+
+  .toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 15px;
+    transition: 0.4s;
+  }
+
+  .checkbox-input:checked + .toggle {
+    background-color: #008000;
+  }
+
+  .toggle::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  .checkbox-input:checked + .toggle::before {
+    transform: translateX(30px);
+  }
+
+
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
@@ -277,7 +321,7 @@ h1 {
   border-radius: 5px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size:cover;  
+  background-size:cover;
   margin: auto;
 }
 #main-img {
@@ -287,7 +331,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
 
-  background-size: 100%;  
+  background-size: 100%;
 }
 
 .btn-delete-image {
@@ -353,7 +397,7 @@ h1 {
 }
 
 #tab-system {
-  
+
   width: 80%;
   margin: auto;
   margin-top: 10px;

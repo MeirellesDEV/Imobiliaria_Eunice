@@ -36,6 +36,14 @@
                 <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
                     @csrf
 
+                    <p style="font-size: 20px !important;">Destaque</p>
+                    <div class="check-item">
+                        <div class="toggle-container">
+                            <input type="checkbox" name="destaque" id="toggle" class="checkbox-input" @if ($item->destaque == 1) checked @endif>
+                            <label for="toggle" class="toggle"></label>
+                        </div>
+                    </div>
+
                     <input type="hidden" name="id_produto" value="{{ $item->id_tp_produto }}">
 
                     <p for="" id="titulo-label" class="add-label">Título</p>
@@ -80,7 +88,7 @@
 
                     <p id="qtd-vagas-label" class="slider-label">Quantidade de Dormitorios:</p>
                     <input type="number" name="qtd_dorms" min="0" max="50" value="{{ $item->qtdDorms }}" id="sliderVagasCasa" class="add-input">
-                    
+
                     @if($item->id_tp_produto == 5)
                         <p id="qtd-vagas-label" class="slider-label">Quantidade de Elevadores:</p>
                         <input type="number" name="elevadores" min="0" max="50" value="{{ $item->elevadores }}" id="sliderVagasCasa" class="add-input">
@@ -499,6 +507,14 @@
             @else
             <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">
                 @csrf
+
+                <p style="font-size: 20px !important;">Destaque</p>
+                <div class="check-item">
+                    <div class="toggle-container">
+                        <input type="checkbox" name="destaque" id="toggle" class="checkbox-input" @if ($item->destaque == 1) checked @endif>
+                        <label for="toggle" class="toggle"></label>
+                    </div>
+                </div>
 
                 <input type="hidden" name="id_produto" value="{{ $item->id_tp_produto }}">
 

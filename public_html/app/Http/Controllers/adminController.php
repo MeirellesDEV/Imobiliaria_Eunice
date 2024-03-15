@@ -167,6 +167,7 @@ class adminController extends Controller
             $catalogo->qtdSuites = $request->qtd_suites;
             $catalogo->valorCondominio = doubleval(str_replace('.',',',str_replace('.','',$request->valorCondominio)));
             $catalogo->iptuMensal = doubleval(str_replace('.',',',str_replace('.','',$request->iptu)));
+            $catalogo->destaque = ($request->destaque) ? true : false;
             $catalogo->agua = ($request->agua) ? true : false;
             $catalogo->energia = ($request->energia) ? true : false;
             $catalogo->esgoto = ($request->esgoto) ? true : false;
@@ -460,7 +461,7 @@ class adminController extends Controller
             }
 
             $path_info = pathinfo($fileNamePrincipalFormat);
-            
+
             // Carregar a Imagem Principal
             if ($path_info['extension'] === "png") {
                 $principalImage = imagecreatefrompng($fileNamePrincipalFormat);

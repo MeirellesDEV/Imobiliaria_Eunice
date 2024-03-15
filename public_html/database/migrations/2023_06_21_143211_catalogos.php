@@ -74,7 +74,7 @@ return new class extends Migration
             $table->boolean('quintal');
             $table->boolean('cozinhaConjugada');
             $table->boolean('porteiroEletronico');
-            
+
             $table->boolean('tvCabo');
             $table->boolean('arCondicionado');
             $table->boolean('alarme');
@@ -98,7 +98,7 @@ return new class extends Migration
             $table->boolean('pisoEmborrachado');
             $table->boolean('pisoTacoMadeira');
             $table->boolean('contraPiso');
-            $table->boolean('pisoTabua');            
+            $table->boolean('pisoTabua');
             $table->boolean('granito');
             $table->boolean('marmore');
             $table->boolean('armarioCozinha');
@@ -119,16 +119,16 @@ return new class extends Migration
             $table->boolean('salaGinastica');
             $table->boolean('estacionamentoVisita');
 
+            $table->boolean('destaque');
+
             $table->text('extraInfo', 3000)->nullable();
             $table->integer('qtdSalas')->nullable();
             $table->integer('qtdDorms')->nullable();
-            
-            $table->text('vendidoAlugado')->nullable();
-            
 
+            $table->text('vendidoAlugado')->nullable();
 
             // Opções do terreno
-                        
+
             $table->unsignedFloat('metragemFrente')->nullable();
             $table->unsignedFloat('metragemFundo')->nullable();
             $table->unsignedFloat('metragemDireita')->nullable();
@@ -143,7 +143,7 @@ return new class extends Migration
             $table->boolean('comercio')->nullable();
             $table->boolean('aguaEncanada')->nullable();
             $table->boolean('sistemaEsgoto')->nullable();
-            
+
             // Opções do comércio
             $table->integer('elevadores')->nullable();
             $table->string('tipoComercio',500)->nullable();
