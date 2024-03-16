@@ -502,6 +502,10 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Lareira</p> </div>
                                 @endif
 
+                                @if($detalhes->elevadores == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Elevador</p> </div>
+                                @endif
+
                                 @if($detalhes->caseiro == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Caseiro</p> </div>
                                 @endif

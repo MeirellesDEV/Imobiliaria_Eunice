@@ -120,7 +120,7 @@
         <p id="valor-label">Caracterísitcas do imóvel</p>
         <div class="checkbox">
             <div class="check-item">
-                <input type="checkbox" name="elevadores" id="elevadores"><label for="elevadores">Elevadores</label>
+                <input type="checkbox" name="elevadores" id="elevadores"><label for="elevadores">Elevador</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="agua" id="agua"><label for="agua">Agua</label>
