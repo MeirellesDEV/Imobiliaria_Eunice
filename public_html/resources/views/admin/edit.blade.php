@@ -284,6 +284,27 @@
                         <div class="check-item">
                             <input type="checkbox" name="hidromassagem" id="hidromassagem" @if ($item->hidromassagem == 1) checked @endif><label for="hidromassagem">Hidromassagem</label>
                         </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="vagaFixa" id="vagaFixa" @if ($item->vagaFixa == 1) checked @endif><label for="vagaFixa">Vaga Fixa</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="dormEmpregado" id="dormEmpregado" @if ($item->dormEmpregado == 1) checked @endif><label for="dormEmpregado">Dorm. de empregados</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="carpeteAcri" id="carpeteAcri" @if ($item->carpeteAcri == 1) checked @endif><label for="carpeteAcri">Carpete de acrilico</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="carpeteMadeira" id="carpeteMadeira" @if ($item->carpeteMadeira == 1) checked @endif><label for="carpeteMadeira">Carpete de madeira</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="carpeteNylon" id="carpeteNylon" @if ($item->carpeteNylon == 1) checked @endif><label for="carpeteNylon">Carpete de nylon</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="corredor" id="corredor" @if ($item->corredor == 1) checked @endif><label for="corredor">Corredor</label>
+                        </div>
+                        <div class="check-item">
+                            <input type="checkbox" name="vagaRotativa" id="vagaRotativa" @if ($item->vagaRotativa == 1) checked @endif><label for="vagaRotativa">Vaga Rotativa</label>
+                        </div>
 
                         <div class="check-item">
                             <input type="checkbox" name="jardimInverno" id="jardimInverno" @if ($item->jardimInverno == 1) checked @endif><label for="jardimInverno">Jardim de Inverno</label>

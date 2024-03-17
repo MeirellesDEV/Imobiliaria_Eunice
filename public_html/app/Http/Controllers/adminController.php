@@ -219,6 +219,13 @@ class adminController extends Controller
             $catalogo->piscinaCondominio = ($request->piscinaCondominio) ? true : false;
             $catalogo->terraco = ($request->terraco) ? true : false;
             $catalogo->hidromassagem = ($request->hidromassagem) ? true : false;
+            $catalogo->vagaFixa = ($request->vagaFixa) ? true : false;
+            $catalogo->dormEmpregado = ($request->dormEmpregado) ? true : false;
+            $catalogo->carpeteAcri = ($request->carpeteAcri) ? true : false;
+            $catalogo->carpeteMadeira = ($request->carpeteMadeira) ? true : false;
+            $catalogo->carpeteNylon = ($request->carpeteNylon) ? true : false;
+            $catalogo->corredor = ($request->corredor) ? true : false;
+            $catalogo->vagaRotativa = ($request->vagaRotativa) ? true : false;
             $catalogo->jardimInverno = ($request->jardimInverno) ? true : false;
             $catalogo->pisoAquecido = ($request->pisoAquecido) ? true : false;
             $catalogo->pisoArdosia = ($request->pisoArdosia) ? true : false;

@@ -277,6 +277,27 @@
             <div class="check-item">
                 <input type="checkbox" name="hidromassagem" id="hidromassagem"><label for="hidromassagem">Hidromassagem</label>
             </div>
+            <div class="check-item">
+                <input type="checkbox" name="vagaFixa" id="vagaFixa"><label for="vagaFixa">Vaga Fixa</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="dormEmpregado" id="dormEmpregado"><label for="dormEmpregado">Dorm. de empregados</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="carpeteAcri" id="carpeteAcri"><label for="carpeteAcri">Carpete de acrilico</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="carpeteMadeira" id="carpeteMadeira"><label for="carpeteMadeira">Carpete de madeira</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="carpeteNylon" id="carpeteNylon"><label for="carpeteNylon">Carpete de nylon</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="corredor" id="corredor"><label for="corredor">Corredor</label>
+            </div>
+            <div class="check-item">
+                <input type="checkbox" name="vagaRotativa" id="vagaRotativa"><label for="vagaRotativa">Vaga Rotativa</label>
+            </div>
 
             <div class="check-item">
                 <input type="checkbox" name="jardimInverno" id="jardimInverno"><label for="jardimInverno">Jardim de Inverno</label>

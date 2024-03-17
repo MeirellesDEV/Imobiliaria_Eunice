@@ -526,6 +526,34 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Hidromassagem</p> </div>
                                 @endif
 
+                                @if($detalhes->vagaFixa == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Vaga Fixa</p> </div>
+                                @endif
+
+                                @if($detalhes->dormEmpregado == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Dorm. de empregados</p> </div>
+                                @endif
+
+                                @if($detalhes->carpeteAcri == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Carpete de acrilico</p> </div>
+                                @endif
+
+                                @if($detalhes->carpeteMadeira == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Carpete de madeira</p> </div>
+                                @endif
+
+                                @if($detalhes->carpeteNylon == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Carpete de nylon</p> </div>
+                                @endif
+
+                                @if($detalhes->corredor == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Corredor</p> </div>
+                                @endif
+
+                                @if($detalhes->vagaRotativa == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Vaga Rotativa</p> </div>
+                                @endif
+
                                 @if($detalhes->jardimInverno == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Jardim de Inverno</p> </div>
                                 @endif
@@ -622,9 +650,7 @@
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Adega</p> </div>
                                 @endif
 
-                                @if($detalhes->campFut == 1)
-                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Campo de futebool</p> </div>
-                                @endif
+                                
 
                                 @if($detalhes->salaJogos == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Salão de Jogos</p> </div>
@@ -690,6 +716,10 @@
 
                                 @if($detalhes->sauna == 1)
                                 <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Sauna</p> </div>
+                                @endif
+
+                                @if($detalhes->campFut == 1)
+                                <div class="area-content"> <p class="p-align-icon"><span class="material-symbols-outlined">check_circle</span>Campo de futebool</p> </div>
                                 @endif
 
                                 @if($detalhes->vestiario == 1)

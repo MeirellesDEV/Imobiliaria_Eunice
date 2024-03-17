@@ -88,6 +88,13 @@ return new class extends Migration
             $table->boolean('piscinaCondominio');
             $table->boolean('terraco');
             $table->boolean('hidromassagem');
+            $table->boolean('vagaFixa');
+            $table->boolean('dormEmpregado');
+            $table->boolean('carpeteAcri');
+            $table->boolean('carpeteMadeira');
+            $table->boolean('carpeteNylon');
+            $table->boolean('corredor');
+            $table->boolean('vagaRotativa');
             $table->boolean('jardimInverno');
             $table->boolean('pisoAquecido');
             $table->boolean('pisoArdosia');

@@ -36,7 +36,7 @@ class editController extends Controller
                       'catalogos.quintal', 'catalogos.tvCabo', 'catalogos.arCondicionado', 'catalogos.alarme',
                       'catalogos.aguaSolar', 'catalogos.mobiliado', 'catalogos.depEmpregados', 'catalogos.lareira',
                       'catalogos.caseiro', 'catalogos.edicula', 'catalogos.piscina', 'catalogos.piscinaCondominio',
-                      'catalogos.terraco', 'catalogos.hidromassagem', 'catalogos.jardimInverno', 'catalogos.pisoAquecido',
+                      'catalogos.terraco', 'catalogos.hidromassagem','catalogos.vagaFixa', 'catalogos.dormEmpregado', 'catalogos.carpeteAcri', 'catalogos.carpeteMadeira', 'catalogos.carpeteNylon', 'catalogos.corredor', 'catalogos.vagaRotativa', 'catalogos.jardimInverno', 'catalogos.pisoAquecido',
                       'catalogos.pisoArdosia', 'catalogos.pisoBioquete', 'catalogos.pisoCarpete', 'catalogos.pisoCeramica',
                       'catalogos.pisoCimentoQueimado', 'catalogos.pisoEmborrachado', 'catalogos.pisoTacoMadeira',
                       'catalogos.contraPiso', 'catalogos.pisoTabua', 'catalogos.granito', 'catalogos.marmore',
@@ -162,6 +162,13 @@ class editController extends Controller
         $catalogo->piscinaCondominio = ($request->piscinaCondominio) ? true : false;
         $catalogo->terraco = ($request->terraco) ? true : false;
         $catalogo->hidromassagem = ($request->hidromassagem) ? true : false;
+        $catalogo->vagaFixa = ($request->vagaFixa) ? true : false;
+        $catalogo->dormEmpregado = ($request->dormEmpregado) ? true : false;
+        $catalogo->carpeteAcri = ($request->carpeteAcri) ? true : false;
+        $catalogo->carpeteMadeira = ($request->carpeteMadeira) ? true : false;
+        $catalogo->carpeteNylon = ($request->carpeteNylon) ? true : false;
+        $catalogo->corredor = ($request->corredor) ? true : false;
+        $catalogo->vagaRotativa = ($request->vagaRotativa) ? true : false;
         $catalogo->jardimInverno = ($request->jardimInverno) ? true : false;
         $catalogo->pisoAquecido = ($request->pisoAquecido) ? true : false;
         $catalogo->pisoArdosia = ($request->pisoArdosia) ? true : false;
