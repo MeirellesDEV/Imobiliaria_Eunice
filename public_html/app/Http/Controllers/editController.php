@@ -108,6 +108,7 @@ class editController extends Controller
         $catalogo->cep = $request->cep;
         $catalogo->qtdSuites = $request->qtd_suites;
 
+        $catalogo->destaque = ($request->destaque) ? true : false;
         $catalogo->sistemaEsgoto = ($request->sistemaEsgoto) ? true : false;
         $catalogo->agua = ($request->agua) ? true : false;
         $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;

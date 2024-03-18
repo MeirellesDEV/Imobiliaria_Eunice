@@ -21,6 +21,7 @@ class masterController extends Controller
                 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.cod_imovel',
                 'catalogos.areaConstruida', 'catalogos.tp_contrato', 'catalogos.qtdDorms', 'catalogos.qtdSuites')
             ->where('catalogos.destaque', '=', True)
+            ->limit(10)
             ->get();
 
         $imagem = DB::table('imagens_principais')
