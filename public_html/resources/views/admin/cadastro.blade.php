@@ -222,10 +222,6 @@
                 <input type="checkbox" name="areaLazer" id="areaLazer"><label for="areaLazer">Área de lazer</label>
             </div>
 
-
-
-
-
             <div class="check-item">
                 <input type="checkbox" name="tvCabo" id="tvCabo"><label for="tvCabo">TV a Cabo</label>
             </div>
@@ -233,8 +229,6 @@
             <div class="check-item">
                 <input type="checkbox" name="arCondicionado" id="arCondicionado"><label for="arCondicionado">Ar Condicionado</label>
             </div>
-
-
 
             <div class="check-item">
                 <input type="checkbox" name="aguaSolar" id="aguaSolar"><label for="aguaSolar">Agua Aquecida por Energia Solar</label>
@@ -259,8 +253,6 @@
             <div class="check-item">
                 <input type="checkbox" name="edicula" id="edicula"><label for="edicula">Edícula</label>
             </div>
-
-
 
             <div class="check-item">
                 <input type="checkbox" name="sacada" id="sacada"><label for="sacada">Sacada</label>
