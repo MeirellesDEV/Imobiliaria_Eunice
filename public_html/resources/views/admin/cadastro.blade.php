@@ -116,9 +116,9 @@
         </select>
 
 
-        <input type="text" name="valor-aluguel" id="valor-aluguel" class="add-input input-format" step=".01" lang="pt-BR"  placeholder="Valor de aluguel" required style="margin-top:">
+        <input type="text" name="valor-aluguel" id="valor-aluguel" class="add-input input-format" step=".01" lang="pt-BR"  placeholder="Valor de aluguel" required style="margin-top:10px">
 
-        <input type="number" name="valor-venda" id="valor-venda" class="add-input input-format" step=".01" lang="pt-BR" placeholder="Valor de venda" required style="margin-top:">
+        <input type="number" name="valor-venda" id="valor-venda" class="add-input input-format" step=".01" lang="pt-BR" placeholder="Valor de venda" required style="margin-top:10px">
 
         <p id="valor-label">Valor condominio</p>
         <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
