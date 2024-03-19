@@ -43,6 +43,19 @@
             <option value="2" selected>Casa</option>
             <option value="3">Apartamento</option>
             <option value="4">Chácara</option>
+            <option value="5">Barracão</option>
+            <option value="6">Galpão</option>
+            <option value="7">Prédio</option>
+            <option value="8">Sala</option>
+            <option value="9">Salão</option>
+            <option value="10">Loja</option>
+            <option value="11">Sítio</option>
+            <option value="12">Hotel</option>
+            <option value="13">Área</option>
+            <option value="14">Cobertura</option>
+            <option value="15">Flat</option>
+            <option value="16">Kitnet</option>
+            <option value="17">Studio</option>
         </select>
 
         <p>Em condomínio</p>
@@ -138,7 +151,7 @@
                 <input type="checkbox" name="energia" id="energia"><label for="energia">Energia</label>
             </div>
             <div class="check-item">
-                <input type="checkbox" name="mesanino" id="mesanino"><label>Mezanimo</label>
+                <input type="checkbox" name="mesanino" id="mesanino"><label for="mesanino">Mezanimo</label>
             </div>
             <div class="check-item">
                 <input type="checkbox" name="esgoto" id="esgoto"><label for="esgoto">Esgoto</label>
