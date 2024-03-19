@@ -82,8 +82,10 @@
                     @endif
                     @if($iten->tp_contrato == 'Aluguel')
                         <p id="dados-locacao">Locação</p>
-                    @else
+                    @elseif($iten->tp_contrato == 'Venda')
                         <p id="dados-locacao">Venda</p>
+                    @else
+                        <p id="dados-locacao">Venda e Aluguel</p>
                     @endif
                     @if ($iten->areaConstruida != null && $iten->areaConstruida != 0)
                         <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
