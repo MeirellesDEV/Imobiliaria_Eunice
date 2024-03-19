@@ -45,6 +45,12 @@
             <option value="4">Chácara</option>
         </select>
 
+        <p>Em condomínio</p>
+        <select name="em_conominio" id="tipo-produto-ddl" class="add-input">
+            <option value="sim" selected>Sim</option>
+            <option value="nao" selected>Não</option>
+        </select>
+
         <p for="" id="desc-label" class="add-label">Descrição</p>
         <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required></textarea>
 
@@ -103,16 +109,19 @@
         <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p>Aluguel ou Venda</p>
-        <select name="tp_contrato" id="" class="add-input" required>
+        <select name="aluguel_venda" id="aluguel_venda" class="add-input" required>
             <option value="Aluguel">Aluguel</option>
             <option value="Venda">Venda</option>
+            <option value="Aluguel/Venda">Aluguel/Venda</option>
         </select>
 
-        <p id="valor-label">Valor</p>
-        <input type="text" name="valor" id="casa-valor-input" class="add-input input-format" step=".01" lang="pt-BR" required>
+
+        <input type="text" name="valor-aluguel" id="valor-aluguel" class="add-input input-format" step=".01" lang="pt-BR"  placeholder="Valor de aluguel" required style="margin-top:">
+
+        <input type="number" name="valor-venda" id="valor-venda" class="add-input input-format" step=".01" lang="pt-BR" placeholder="Valor de venda" required style="margin-top:">
 
         <p id="valor-label">Valor condominio</p>
-        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
+        <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
 
         <p id="valor-label">IPTU mensal</p>
         <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
@@ -668,16 +677,37 @@
     </script>
 
 <script>
+    // Sistema de datas
+    const dataTypes = [document.getElementById('valor-aluguel'), document.getElementById('valor-venda')]
 
-    // document.getElementById('adicionar-casa-container').addEventListener('submit', function(event) {
-    //     // Impede o envio padrão do formulário
-    // event.preventDefault();
+    document.getElementById('aluguel_venda').addEventListener('change', function()
+    {
+        if (document.getElementById('aluguel_venda').value == 'Venda') {
+            dataTypes[0].style.display = 'none'
+            dataTypes[1].style.display = 'block'
+        }
+        else if (document.getElementById('aluguel_venda').value == 'Aluguel') {
+            dataTypes[0].style.display = 'block'
+            dataTypes[1].style.display = 'none'
+        }
+        else if (document.getElementById('aluguel_venda').value == 'Aluguel/Venda') {
+            dataTypes[0].style.display = 'block'
+            dataTypes[1].style.display = 'block'
+        }
+    })
 
-    //     // Chame a função antesDoEnvio() e envie o formulário apenas se a função retornar true
-    //     if (formatarInput()) {
-    //     this.submit(); // Isso envia o formulário
-    //     }
-    // })
+    if (document.getElementById('aluguel_venda').value == 'Venda') {
+        dataTypes[0].style.display = 'none'
+        dataTypes[1].style.display = 'block'
+    }
+    else if (document.getElementById('aluguel_venda').value == 'Aluguel') {
+        dataTypes[0].style.display = 'block'
+        dataTypes[1].style.display = 'none'
+    }
+    else if (document.getElementById('aluguel_venda').value == 'Aluguel/Venda') {
+        dataTypes[0].style.display = 'block'
+        dataTypes[1].style.display = 'block'
+    }
 
 </script>
 
