@@ -30,7 +30,7 @@ return new class extends Migration
             $table->unsignedBigInteger('areaUtil')->nullable();
             $table->unsignedBigInteger('areaTerreno')->nullable();
             $table->unsignedFloat('areaConstruida')->nullable();
-            $table->unsignedFloat('valor');
+            // $table->unsignedFloat('valor');
             $table->unsignedFloat('valorCondominio')->nullable();
             $table->unsignedFloat('iptuMensal')->nullable();
             $table->string('cidade');
@@ -166,6 +166,10 @@ return new class extends Migration
             $table->boolean('aquecimentoCentral');
             $table->boolean('vigilancia24h');
             $table->boolean('vestiario');
+            
+            $table->text('emCondominio');
+            $table->unsignedFloat('valorAluguel');
+            $table->unsignedFloat('valorVenda');
 
 
             $table->timestamps();

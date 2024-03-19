@@ -46,7 +46,7 @@
         </select>
 
         <p>Em condomínio</p>
-        <select name="em_conominio" id="tipo-produto-ddl" class="add-input">
+        <select name="emConominio" id="tipo-produto-ddl" class="add-input">
             <option value="sim" selected>Sim</option>
             <option value="nao" selected>Não</option>
         </select>
@@ -116,9 +116,9 @@
         </select>
 
 
-        <input type="text" name="valor-aluguel" id="valor-aluguel" class="add-input input-format" step=".01" lang="pt-BR"  placeholder="Valor de aluguel" required style="margin-top:10px">
+        <input type="text" name="valorAluguel" id="valor-aluguel" class="add-input input-format" step=".01" lang="pt-BR"  placeholder="Valor de aluguel" required style="margin-top:10px">
 
-        <input type="number" name="valor-venda" id="valor-venda" class="add-input input-format" step=".01" lang="pt-BR" placeholder="Valor de venda" required style="margin-top:10px">
+        <input type="number" name="valorVenda" id="valor-venda" class="add-input input-format" step=".01" lang="pt-BR" placeholder="Valor de venda" required style="margin-top:10px">
 
         <p id="valor-label">Valor condominio</p>
         <input type="number" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR" step=".01">
