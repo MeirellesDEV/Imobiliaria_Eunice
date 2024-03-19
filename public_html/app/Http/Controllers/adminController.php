@@ -169,6 +169,8 @@ class adminController extends Controller
             $catalogo->ruaNumero = $request->ruaNumero;
             $catalogo->cep = $request->cep;
             $catalogo->qtdSuites = $request->qtd_suites;
+
+            $catalogo->emCondominio = $request->emCondominio;
             // $catalogo->valorCondominio = doubleval(str_replace('.',',',str_replace('.','',$request->valorCondominio)));
             // $catalogo->iptuMensal = doubleval(str_replace('.',',',str_replace('.','',$request->iptu)));
             $catalogo->destaque = ($request->destaque) ? true : false;

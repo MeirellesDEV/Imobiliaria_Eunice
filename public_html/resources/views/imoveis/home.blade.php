@@ -246,7 +246,7 @@
                             <p class="produto-titulo">{{ $item->titulo }}</p>
                             <p class="produto-descricao"><span class="material-symbols-outlined">location_on</span> <span class="produto-descricao-texto">{{ $item->cidade }}</span> </p>
                             <div class="produto-dados">
-                                
+
                                 @if ($item->qtdDorms != 0)
                                 <p id="dados-dorms"><span class="material-symbols-outlined">bed</span>{{ $item->qtdDorms }}</p>
                                 @endif
@@ -270,7 +270,13 @@
                                 @endif
                                 <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    <p class="produto-valor"><span class="num-format troca-ponto">R${{ $item->valor }}</span></p>
+                                    @if ($iten->valorVenda == '')
+                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorVenda}}</p>
+                                    @endif
+
+                                    @if ($iten->valorVenda == '')
+                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorAluguel}}</p>
+                                    @endif
                                 @else
                                     <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
                                 @endif

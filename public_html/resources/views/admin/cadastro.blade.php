@@ -46,8 +46,8 @@
         </select>
 
         <p>Em condomínio</p>
-        <select name="emConominio" id="tipo-produto-ddl" class="add-input">
-            <option value="sim" selected>Sim</option>
+        <select name="emCondominio" id="tipo-produto-ddl" class="add-input">
+            <option value="sim" >Sim</option>
             <option value="nao" selected>Não</option>
         </select>
 
@@ -109,7 +109,7 @@
         <input name="areaTerreno" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
         <p>Aluguel ou Venda</p>
-        <select name="aluguel_venda" id="aluguel_venda" class="add-input" required>
+        <select name="tp_contrato" id="aluguel_venda" class="add-input" required>
             <option value="Aluguel">Aluguel</option>
             <option value="Venda">Venda</option>
             <option value="Aluguel/Venda">Aluguel/Venda</option>
@@ -554,8 +554,6 @@
             <option value="aclive">aclive</option>
             <option value="declive">declive</option>
         </select>
-
-
 
         <p id="valor-label">Valor</p>
         <input type="text" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
