@@ -27,14 +27,14 @@ class adminController extends Controller
             if($dadosUsuario->id_permissao == 2){
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->where('titulo', 'like','%'. $search.'%')
                                 ->get();
 
                 }else{
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
                                 ->where('id_cliente', '=', $id_cliente)
                                 ->get();
                 }
@@ -52,12 +52,12 @@ class adminController extends Controller
             }else{
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
                                 ->where('titulo', 'like','%'. $search .'%')
                                 ->get();
                 }else{
                     $itens = DB::table('catalogos')
-                                    ->select('id','id_tp_produto','titulo','descricao','area','valor', 'vendidoAlugado', 'cod_imovel')
+                                    ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
                                     ->get();
                 }
 
@@ -146,10 +146,14 @@ class adminController extends Controller
             $catalogo->titulo = $request->titulo;
             $catalogo->descricao = $request->descricao;
             $catalogo->area = intval(explode(',',str_replace('.','',$request->area))[0]);
-            if($catalogo->valor != doubleval(str_replace(',','.',str_replace('.','',$request->valor)))) {
-                $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
+            if($catalogo->valorVenda != doubleval(str_replace(',','.',str_replace('.','',$request->valorVenda)))) {
+                $catalogo->valorVenda = doubleval(str_replace(',','.',str_replace('.','',$request->valorVenda)));
             }
-            $catalogo->valor = doubleval(str_replace(',','.',$request->valor));
+            $catalogo->valorVenda = doubleval(str_replace(',','.',$request->valorVenda));
+            if($catalogo->valorAluguel != doubleval(str_replace(',','.',str_replace('.','',$request->valorAluguel)))) {
+                $catalogo->valorAluguel = doubleval(str_replace(',','.',str_replace('.','',$request->valorAluguel)));
+            }
+            $catalogo->valorAluguel = doubleval(str_replace(',','.',$request->valorAluguel));
 
             if($catalogo->valorcondominio != doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)))) {
                 $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
@@ -165,8 +169,8 @@ class adminController extends Controller
             $catalogo->ruaNumero = $request->ruaNumero;
             $catalogo->cep = $request->cep;
             $catalogo->qtdSuites = $request->qtd_suites;
-            $catalogo->valorCondominio = doubleval(str_replace('.',',',str_replace('.','',$request->valorCondominio)));
-            $catalogo->iptuMensal = doubleval(str_replace('.',',',str_replace('.','',$request->iptu)));
+            // $catalogo->valorCondominio = doubleval(str_replace('.',',',str_replace('.','',$request->valorCondominio)));
+            // $catalogo->iptuMensal = doubleval(str_replace('.',',',str_replace('.','',$request->iptu)));
             $catalogo->destaque = ($request->destaque) ? true : false;
             $catalogo->agua = ($request->agua) ? true : false;
             $catalogo->energia = ($request->energia) ? true : false;

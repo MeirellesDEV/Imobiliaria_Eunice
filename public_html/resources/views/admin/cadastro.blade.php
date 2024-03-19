@@ -477,8 +477,8 @@
         <p style="font-size: 20px !important;">Destaque</p>
         <div class="check-item">
             <div class="toggle-container">
-                <input type="checkbox" name="destaque" id="toggle" class="checkbox-input">
-                <label for="toggle" class="toggle"></label>
+                <input type="checkbox" name="destaque" id="toggle-ter" class="checkbox-input">
+                <label for="toggle-ter" class="toggle"></label>
             </div>
         </div>
 
