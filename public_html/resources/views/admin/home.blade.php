@@ -66,7 +66,11 @@
                             <p id="imovel-titulo" style="color: gray; margin-bottom: 7px;">{{ $item->cod_imovel }}</p>
                             <p id="imovel-titulo">{{ $item->titulo }}</p>
                             <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
-                            <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valor }}</span></p>
+                            @if($item->tp_contrato == "Venda")
+                                <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorVenda }}</span></p>
+                            @else
+                                <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorAluguel }}</span></p>
+                            @endif
                         </section>
 
                         <section id="imovel-botoes" class="produto-item-flex">

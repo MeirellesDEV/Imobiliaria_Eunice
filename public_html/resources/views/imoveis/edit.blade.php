@@ -98,7 +98,11 @@
                         @if($detalhes->vendidoAlugado != null)
                             <h1 id="valor" class="num-format">INDISPONÍVEL</h1>
                         @else
-                            <h1 id="valor" class="num-format troca-ponto">R${{ $detalhes->valor }}</h1>
+                            @if($detalhes->tp_contrato == "Aluguel")
+                                <h1 id="valor" class="num-format troca-ponto">R${{ $detalhes->valorAluguel }}</h1>
+                            @else
+                                <h1 id="valor" class="num-format troca-ponto">R${{ $detalhes->valorVenda }}</h1>
+                            @endif
                         @endif
                     </div>
                 </section>
@@ -280,7 +284,7 @@
                                         <p id="quartos">{{ $detalhes->qtdSacadasCobertas }} sacada(s)</p>
                                     </div>
                                 @endif
-
+                                
                                 @if ($detalhes->qtdSalas != null or $detalhes->qtdSalas != 0)
                                     <div class="area-content">
                                         <p id="quartos">{{ $detalhes->qtdSalas }} sala(s)</p>
@@ -800,8 +804,12 @@
                                         <p class="semelhante-produto-localidade">{{ $sem->cidade }}</p>
                                         <div id="semelhante-produto-info" class="flex-row">
                                             <p class="semelhante-produto-area">{{ $sem->area }}m²</p>
-                                            <p class="semelhante-produto-vagas troca-ponto">R${{ $sem->valor }}</p>
-                                        </div>
+                                            @if($sem->tp_contrato == "Aluguel")
+                                                <p class="semelhante-produto-vagas troca-ponto">R${{ $sem->valorAluguel }}</p>
+                                            @else
+                                                <p class="semelhante-produto-vagas troca-ponto">R${{ $sem->valorVenda }}</p>
+                                            @endif
+                                            </div>
                                         <form action="/imoveis/{{ $sem->id }}" method="post">
                                             @csrf
                                             <input type="hidden" name="idImovel">

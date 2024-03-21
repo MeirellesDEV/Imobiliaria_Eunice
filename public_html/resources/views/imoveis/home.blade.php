@@ -270,12 +270,12 @@
                                 @endif
                                 <p class="produto-valor item-area">{{ $item->areaConstruida }}m²</p>
                                 @if ($item->vendidoAlugado == null)
-                                    @if ($iten->valorVenda == '')
-                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorVenda}}</p>
+                                    @if ($item->valorVenda == '')
+                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorVenda}}</p>
                                     @endif
 
-                                    @if ($iten->valorVenda == '')
-                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorAluguel}}</p>
+                                    @if ($item->valorVenda == '')
+                                        <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorAluguel}}</p>
                                     @endif
                                 @else
                                     <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>

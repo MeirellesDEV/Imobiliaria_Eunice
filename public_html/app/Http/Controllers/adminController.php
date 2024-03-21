@@ -52,12 +52,12 @@ class adminController extends Controller
             }else{
                 if($search){
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
+                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
                                 ->where('titulo', 'like','%'. $search .'%')
                                 ->get();
                 }else{
                     $itens = DB::table('catalogos')
-                                    ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
+                                    ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
                                     ->get();
                 }
 

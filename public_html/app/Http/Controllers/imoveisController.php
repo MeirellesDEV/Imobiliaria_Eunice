@@ -19,7 +19,7 @@ class imoveisController extends Controller
         $imoveis = DB::table('catalogos')
                 ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                 ->select('catalogos.id','catalogos.titulo','catalogos.cidade','catalogos.bairro',
-                    'catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao',
+                    'catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valorVenda', 'catalogos.valorAluguel','produtos.descricao',
                     'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas',
                     'catalogos.qtdQuartos','catalogos.vendidoAlugado','catalogos.qtdSacadasCobertas','catalogos.qtdNumAndares', 'catalogos.qtdAndar',
                     'catalogos.sacadaGourmet', 'catalogos.cod_imovel', 'catalogos.areaConstruida',
@@ -281,7 +281,7 @@ class imoveisController extends Controller
 
         $semelhante = DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao', 'vendidoAlugado')
+                    ->select('catalogos.id','catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo','catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valorVenda','catalogos.valorAluguel','produtos.descricao', 'vendidoAlugado','catalogos.tp_contrato')
                     ->where('catalogos.id','!=',$id)
                     ->where('produtos.descricao','=',$item->descricao)
                     ->limit(2)
