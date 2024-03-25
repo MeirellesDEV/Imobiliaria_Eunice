@@ -61,7 +61,14 @@
         <p>Em condomínio</p>
         <select name="emCondominio" id="tipo-produto-ddl" class="add-input">
             <option value="sim" >Sim</option>
-            <option value="nao" selected>Não</option>
+            <option value="não" selected>Não</option>
+        </select>
+
+        <p>Mobiliado</p>
+        <select name="mobiliado_ddl" id="tipo-produto-ddl" class="add-input">
+            <option value="mobiliado" >Mobiliado</option>
+            <option value="semi-mobiliado">Semi Mobiliado</option>
+            <option value="vazio" selected>Vazio</option>
         </select>
 
         <p for="" id="desc-label" class="add-label">Descrição</p>

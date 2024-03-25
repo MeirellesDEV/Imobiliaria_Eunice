@@ -123,6 +123,17 @@
                         <h2 class="detalhes-titulo">Descrição do Imóvel</h2>
                         <p id="desc-texto" class="alinhado">{{ $detalhes->desc }}</p>
                     </div>
+
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Em Condomínio</h2>
+                        <p id="desc-texto" class="alinhado">{{ $detalhes->emCondominio }}</p>
+                    </div>
+
+                    <div id="descricao-container" class="margin-spaced padding-spaced">
+                        <h2 class="detalhes-titulo">Mobiliado</h2>
+                        <p id="desc-texto" class="alinhado">{{ $detalhes->mobiliado_ddl }}</p>
+                    </div>
+
                     <div id="descricao-container" class="margin-spaced padding-spaced aviso">
                         <h2 class="detalhes-titulo">Aviso</h2>
                         <p>Os valores e demais informações poderão sofrer alterações sem prévio aviso</p>
@@ -239,6 +250,23 @@
                                 @if ($detalhes->iptuMensal != null)
                                 <div class="area-content">
                                     <p>IPTU mensal:<span class="num-format troca-ponto">R${{ $detalhes->iptuMensal }}</span></p>
+                                </div>
+                                @endif
+
+                                @if($detalhes->tp_contrato == 'Aluguel')
+                                <div class="area-content">
+                                    <p>Valor do Aluguel:<span class="num-format troca-ponto">R${{ $detalhes->valorAluguel }}</span></p>
+                                </div>
+                                @elseif($detalhes->tp_contrato == 'Venda')
+                                <div class="area-content">
+                                    <p>Valor da Venda:<span class="num-format troca-ponto">R${{ $detalhes->valorVenda }}</span></p>
+                                </div>
+                                    @else
+                                <div class="area-content">
+                                    <p>Valor do Aluguel:<span class="num-format troca-ponto">R${{ $detalhes->valorAluguel }}</span></p>
+                                </div>
+                                <div class="area-content">
+                                    <p>Valor da Venda:<span class="num-format troca-ponto">R${{ $detalhes->valorVenda }}</span></p>
                                 </div>
                                 @endif
                             </div>

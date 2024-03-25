@@ -168,6 +168,7 @@ return new class extends Migration
             $table->boolean('vestiario');
             
             $table->text('emCondominio');
+            $table->text('mobiliado_ddl') ->nullable();
             $table->unsignedFloat('valorAluguel');
             $table->unsignedFloat('valorVenda');
 

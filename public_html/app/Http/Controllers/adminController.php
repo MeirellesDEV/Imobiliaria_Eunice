@@ -295,6 +295,8 @@ class adminController extends Controller
             $catalogo->qtdAndar = $request->qtdAndar;
             $catalogo->extraInfo = $request->extraInfo;
 
+            $catalogo->mobiliado_ddl = $request->mobiliado_ddl;
+
             if($request->id_produto == 2 or $request->id_produto == 4){
                 $catalogo->tp_contrato = $request->tp_contrato;
                 $catalogo->qtdBanheiros = $request->qtd_banheiros;
