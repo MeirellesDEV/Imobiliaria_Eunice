@@ -22,7 +22,7 @@ class editController extends Controller
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
                       'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo',
-                      'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valor','produtos.descricao','catalogos.qtdSuites',
+                      'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valorVenda','catalogos.valorAluguel','produtos.descricao','catalogos.qtdSuites',
                       'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
                       'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
                       'catalogos.pavimentacao','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',

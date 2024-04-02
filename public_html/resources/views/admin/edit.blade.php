@@ -118,8 +118,11 @@
                     <p id="tam-area-label">Tamanho da área do terreno (m<sup>2</sup>)</p>
                     <input name="areaTerreno" type="text" id="casa-tam-area-input" value="{{ $item->areaTerreno }}" class="add-input">
 
-                    <label class="add-label">Valor</label>
-                    <input type="text" name="valor" id="valor" value="{{ $item->valor }}" class="add-input input-format-edit">
+                    <label class="add-label">Valor Aluguel</label>
+                    <input type="text" name="valorAluguel" id="valor" value="{{ $item->valorAluguel }}" class="add-input input-format-edit">
+
+                    <label class="add-label">Valor Venda</label>
+                    <input type="text" name="valorVenda" id="valor" value="{{ $item->valorVenda }}" class="add-input input-format-edit">
 
                     <p id="valor-label">Valor condomínio</p>
                     <input type="text" name="valorCondominio" id="casa-valor-input" value="{{ $item->valorCondominio }}" class="add-input input-format-edit">
