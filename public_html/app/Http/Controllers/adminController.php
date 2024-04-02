@@ -427,14 +427,7 @@ class adminController extends Controller
             }
 
             /* Imagem Principal */
-            if($request->id_produto == 1 ){
-                $filePrincipal = $request->imagemTerrenoPrincipal;
-            }else if($request->id_produto == 2 or $request->id_produto == 3 or $request->id_produto == 4){
-                $filePrincipal = $request->imagemCasaPrincipal;
-            }
-            else{
-                $filePrincipal = $request->imagemApPrincipal;
-            }
+            $filePrincipal = $request->imagemCasaPrincipal;
 
             $fileNamePrincipal = $filePrincipal->store('public/img/'. $folderName);
 

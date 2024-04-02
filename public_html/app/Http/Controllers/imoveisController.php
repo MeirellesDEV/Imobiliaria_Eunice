@@ -158,12 +158,24 @@ class imoveisController extends Controller
             }
 
             if($id_tp_produto != "Todos") {
-                $imoveis->where('catalogos.id_tp_produto','=',$id_tp_produto);
+                if($id_tp_produto == 1){
+                    $imoveis->whereIn('catalogos.id_tp_produto',[1,3,2,4,11,14,15,16,7,17,13]);
 
-                $tp_imovel_label = ["Terreno","Casa","Apartamento","Chácara","Ponto Comercial"];
+                    $filtro->id_tp_produto[] = "Tipo de imóvel";
+                    $filtro->id_tp_produto[] = "Residencial";
 
-                $filtro->id_tp_produto[] = "Tipo de imóvel";
-                $filtro->id_tp_produto[] = $tp_imovel_label[$id_tp_produto-1];
+                }else if($id_tp_produto == 2){
+                    $imoveis->whereIn('catalogos.id_tp_produto',[2,1,5,6,7,8,9,10,4,11,12,13]);
+
+                    $filtro->id_tp_produto[] = "Tipo de imóvel";
+                    $filtro->id_tp_produto[] = "Comercial";
+
+                }else if($id_tp_produto == 2){
+                    $imoveis->whereIn('catalogos.id_tp_produto',[2,1,5,6,7,8,9,10,11,12,13,3,4,14,15,16,17]);
+
+                    $filtro->id_tp_produto[] = "Tipo de imóvel";
+                    $filtro->id_tp_produto[] = "Misto";
+                }
             }
 
             if($tp_contrato != "Todos") {

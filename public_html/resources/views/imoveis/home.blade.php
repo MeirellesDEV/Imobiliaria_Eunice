@@ -32,11 +32,10 @@
 
             <p>Tipo de imóvel</p>
             <select name="id_tp_produto" id="" class="input-text">
-                <option value="Todos" selected>Todos</option>
-                <option value="1">Terreno</option>
-                <option value="2">Casa</option>
-                <option value="3">Apartamento</option>
-                <option value="4">Chácara</option>
+                <option value="Todos" seleced>Todos</option>
+                <option value="1">Residencial</option>
+                <option value="2">Comercial</option>
+                <option value="3">Misto</option>
             </select>
 
             <div class="radio-container">
@@ -95,10 +94,9 @@
                     <p>Tipo de imóvel</p>
                     <select name="id_tp_produto" id="" class="input-text">
                         <option value="Todos" seleced>Todos</option>
-                        <option value="1">Terreno</option>
-                        <option value="2">Casa</option>
-                        <option value="3">Apartamento</option>
-                        <option value="4">Chácara</option>
+                        <option value="1">Residencial</option>
+                        <option value="2">Comercial</option>
+                        <option value="3">Misto</option>
                     </select>
                     <div class="input-search-group">
                         <p>Código do imóvel</p>
