@@ -12,64 +12,179 @@ use Illuminate\Support\Facades\DB;
 class editController extends Controller
 {
 
-    public function index(){
+    public function index()
+    {
         return view('admin/edit');
     }
 
-    public function processaDados($id){
+    public function processaDados($id)
+    {
 
         $item =  DB::table('catalogos')
-                    ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
-                    ->select('catalogos.id','catalogos.descricao as desc','catalogos.id_tp_produto',
-                      'catalogos.qtdBanheiros','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas','catalogos.qtdQuartos','catalogos.titulo',
-                      'catalogos.cidade','catalogos.bairro','catalogos.ruaNumero','catalogos.cep','catalogos.area','catalogos.valorVenda','catalogos.valorAluguel','produtos.descricao','catalogos.qtdSuites',
-                      'catalogos.areaUtil','catalogos.areaTerreno','catalogos.areaConstruida','catalogos.valorCondominio',
-                      'catalogos.iptuMensal','catalogos.agua','catalogos.energia','catalogos.esgoto','catalogos.murado',
-                      'catalogos.pavimentacao','catalogos.areaServico','catalogos.gasEncanado','catalogos.banheiroEmpregada',
-                      'catalogos.cozinha','catalogos.cozinhaPlanejada','catalogos.despensa','catalogos..lavanderias',
-                      'catalogos.guarita','catalogos.portaria24h','catalogos.areaLazer','catalogos.churrasqueira','catalogos.churrasqueiraCondominio',
-                      'catalogos.playground','catalogos.quadra','catalogos.varanda','catalogos.varandaGourmet','catalogos.sacadaGourmet',
-                      'catalogos.lavado','catalogos.roupeiro','catalogos.suiteMaster','catalogos.closet','catalogos.pisoFrio',
-                      'catalogos.porcelanato','catalogos.entradaServico','catalogos.jardim','catalogos.escritorio',
-                      'catalogos.moveisPlanejados','catalogos.portaoEletronico','catalogos.quintal', 'catalogos.qtdSacadasCobertas',
-                      'catalogos.qtdNumAndares', 'catalogos.qtdAndar', 'catalogos.cozinhaConjugada', 'catalogos.porteiroEletronico',
-                      'catalogos.quintal', 'catalogos.tvCabo', 'catalogos.arCondicionado', 'catalogos.alarme',
-                      'catalogos.aguaSolar', 'catalogos.mobiliado', 'catalogos.depEmpregados', 'catalogos.lareira',
-                      'catalogos.caseiro', 'catalogos.edicula', 'catalogos.piscina', 'catalogos.piscinaCondominio',
-                      'catalogos.terraco', 'catalogos.hidromassagem','catalogos.vagaFixa', 'catalogos.dormEmpregado', 'catalogos.carpeteAcri', 'catalogos.carpeteMadeira', 'catalogos.carpeteNylon', 'catalogos.corredor', 'catalogos.vagaRotativa', 'catalogos.jardimInverno', 'catalogos.pisoAquecido',
-                      'catalogos.pisoArdosia', 'catalogos.pisoBioquete', 'catalogos.pisoCarpete', 'catalogos.pisoCeramica',
-                      'catalogos.pisoCimentoQueimado', 'catalogos.pisoEmborrachado', 'catalogos.pisoTacoMadeira',
-                      'catalogos.contraPiso', 'catalogos.pisoTabua', 'catalogos.granito', 'catalogos.marmore',
-                      'catalogos.armarioCozinha', 'catalogos.armarioCorredor', 'catalogos.armarioCloset',
-                      'catalogos.armarioQuarto', 'catalogos.armarioBanheiro', 'catalogos.armarioSala',
-                      'catalogos.armarioEscritorio', 'catalogos.armarioDepEmp', 'catalogos.armarioAreaServico',
-                      'catalogos.salaCinema', 'catalogos.adega', 'catalogos.sauna', 'catalogos.campFut', 'catalogos.salaJogos',
-                      'catalogos.salaFestas', 'catalogos.salaGinastica', 'catalogos.estacionamentoVisita',
-                      'catalogos.acessoEnergia', 'catalogos.escola', 'catalogos.comercio', 'catalogos.elevadores',
-                      'catalogos.copa', 'catalogos.recepcao', 'catalogos.mesanino', 'catalogos.luminarias',
-                      'catalogos.acessoDeficiente', 'catalogos.geradorEnergia', 'catalogos.telefonia', 'catalogos.rede',
-                      'catalogos.qtdSalas', 'catalogos.qtdDorms', 'catalogos.metragemFrente', 'catalogos.metragemFundo',
-                      'catalogos.metragemDireita','catalogos.metragemEsquerda','catalogos.posTerreno','catalogos.formaTerreno',
-                      'catalogos.topografia', 'catalogos.vegetacao', 'catalogos.protecao','catalogos.tipoComercio',
-                      'catalogos.sistemaIncendio', 'catalogos.aquecimentoCentral','catalogos.vigilancia24h',
-                      'catalogos.vestiario','catalogos.extraInfo','catalogos.aguaEncanada','catalogos.sistemaEsgoto',
-                      'catalogos.destaque')
-                    ->where('catalogos.id','=',$id)
-                    ->first();
+            ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
+            ->select(
+                'catalogos.id',
+                'catalogos.descricao as desc',
+                'catalogos.id_tp_produto',
+                'catalogos.qtdBanheiros',
+                'catalogos.qtdGaragemCobertas',
+                'catalogos.qtdGaragemNaoCobertas',
+                'catalogos.qtdQuartos',
+                'catalogos.titulo',
+                'catalogos.cidade',
+                'catalogos.bairro',
+                'catalogos.ruaNumero',
+                'catalogos.cep',
+                'catalogos.area',
+                'catalogos.valorVenda',
+                'catalogos.valorAluguel',
+                'produtos.descricao',
+                'catalogos.qtdSuites',
+                'catalogos.areaUtil',
+                'catalogos.areaTerreno',
+                'catalogos.areaConstruida',
+                'catalogos.valorCondominio',
+                'catalogos.iptuMensal',
+                'catalogos.agua',
+                'catalogos.energia',
+                'catalogos.esgoto',
+                'catalogos.murado',
+                'catalogos.pavimentacao',
+                'catalogos.areaServico',
+                'catalogos.gasEncanado',
+                'catalogos.banheiroEmpregada',
+                'catalogos.cozinha',
+                'catalogos.cozinhaPlanejada',
+                'catalogos.despensa',
+                'catalogos..lavanderias',
+                'catalogos.guarita',
+                'catalogos.portaria24h',
+                'catalogos.areaLazer',
+                'catalogos.churrasqueira',
+                'catalogos.churrasqueiraCondominio',
+                'catalogos.playground',
+                'catalogos.quadra',
+                'catalogos.varanda',
+                'catalogos.varandaGourmet',
+                'catalogos.sacadaGourmet',
+                'catalogos.lavado',
+                'catalogos.roupeiro',
+                'catalogos.suiteMaster',
+                'catalogos.closet',
+                'catalogos.pisoFrio',
+                'catalogos.porcelanato',
+                'catalogos.entradaServico',
+                'catalogos.jardim',
+                'catalogos.escritorio',
+                'catalogos.moveisPlanejados',
+                'catalogos.portaoEletronico',
+                'catalogos.quintal',
+                'catalogos.qtdSacadasCobertas',
+                'catalogos.qtdNumAndares',
+                'catalogos.qtdAndar',
+                'catalogos.cozinhaConjugada',
+                'catalogos.porteiroEletronico',
+                'catalogos.quintal',
+                'catalogos.tvCabo',
+                'catalogos.arCondicionado',
+                'catalogos.alarme',
+                'catalogos.aguaSolar',
+                'catalogos.mobiliado',
+                'catalogos.depEmpregados',
+                'catalogos.lareira',
+                'catalogos.caseiro',
+                'catalogos.edicula',
+                'catalogos.piscina',
+                'catalogos.piscinaCondominio',
+                'catalogos.terraco',
+                'catalogos.hidromassagem',
+                'catalogos.vagaFixa',
+                'catalogos.dormEmpregado',
+                'catalogos.carpeteAcri',
+                'catalogos.carpeteMadeira',
+                'catalogos.carpeteNylon',
+                'catalogos.corredor',
+                'catalogos.vagaRotativa',
+                'catalogos.jardimInverno',
+                'catalogos.pisoAquecido',
+                'catalogos.pisoArdosia',
+                'catalogos.pisoBioquete',
+                'catalogos.pisoCarpete',
+                'catalogos.pisoCeramica',
+                'catalogos.pisoCimentoQueimado',
+                'catalogos.pisoEmborrachado',
+                'catalogos.pisoTacoMadeira',
+                'catalogos.contraPiso',
+                'catalogos.pisoTabua',
+                'catalogos.granito',
+                'catalogos.marmore',
+                'catalogos.armarioCozinha',
+                'catalogos.armarioCorredor',
+                'catalogos.armarioCloset',
+                'catalogos.armarioQuarto',
+                'catalogos.armarioBanheiro',
+                'catalogos.armarioSala',
+                'catalogos.armarioEscritorio',
+                'catalogos.armarioDepEmp',
+                'catalogos.armarioAreaServico',
+                'catalogos.salaCinema',
+                'catalogos.adega',
+                'catalogos.sauna',
+                'catalogos.campFut',
+                'catalogos.salaJogos',
+                'catalogos.salaFestas',
+                'catalogos.salaGinastica',
+                'catalogos.estacionamentoVisita',
+                'catalogos.acessoEnergia',
+                'catalogos.escola',
+                'catalogos.comercio',
+                'catalogos.elevadores',
+                'catalogos.copa',
+                'catalogos.recepcao',
+                'catalogos.mesanino',
+                'catalogos.luminarias',
+                'catalogos.acessoDeficiente',
+                'catalogos.geradorEnergia',
+                'catalogos.telefonia',
+                'catalogos.rede',
+                'catalogos.qtdSalas',
+                'catalogos.qtdDorms',
+                'catalogos.metragemFrente',
+                'catalogos.metragemFundo',
+                'catalogos.metragemDireita',
+                'catalogos.metragemEsquerda',
+                'catalogos.posTerreno',
+                'catalogos.formaTerreno',
+                'catalogos.topografia',
+                'catalogos.vegetacao',
+                'catalogos.protecao',
+                'catalogos.tipoComercio',
+                'catalogos.sistemaIncendio',
+                'catalogos.aquecimentoCentral',
+                'catalogos.vigilancia24h',
+                'catalogos.vestiario',
+                'catalogos.extraInfo',
+                'catalogos.aguaEncanada',
+                'catalogos.sistemaEsgoto',
+                'catalogos.destaque'
+            )
+            ->where('catalogos.id', '=', $id)
+            ->first();
 
         $imagem = DB::table('imagens')
-                ->select('id','chave','path')
-                ->get();
+            ->select('id', 'chave', 'path')
+            ->get();
 
         $imagemPrincipal = DB::table('imagens_principais')
-                ->select('id','chave','path')
-                ->where('chave','=', $id)
-                ->first();
+            ->select('id', 'chave', 'path')
+            ->where('chave', '=', $id)
+            ->first();
 
-        return view('admin/edit',['item' => $item, 'imagem' => $imagem, 'imagemPrincipal' => $imagemPrincipal]);
+        return view('admin/edit', ['item' => $item, 'imagem' => $imagem, 'imagemPrincipal' => $imagemPrincipal]);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
 
         $catalogo = Catalogo::findOrFail($id);
 
@@ -79,25 +194,29 @@ class editController extends Controller
         $catalogo->id_cliente = $id_cliente;
         $catalogo->titulo = $request->titulo;
         $catalogo->descricao = $request->descricao;
-        $catalogo->area = intval(explode(',',str_replace('.','',$request->area))[0]);
-        $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
-        $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
-        $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
+        $catalogo->area = intval(explode(',', str_replace('.', '', $request->area))[0]);
+        $catalogo->areaUtil = intval(explode(',', str_replace('.', '', $request->areaUtil))[0]);
+        $catalogo->areaConstruida = intval(explode(',', str_replace('.', '', $request->areaConstruida))[0]);
+        $catalogo->areaTerreno = intval(explode(',', str_replace('.', '', $request->areaTerreno))[0]);
 
-        if($catalogo->valor != doubleval(str_replace(',','.',str_replace('.','',$request->valor)))) {
-            $catalogo->valor = doubleval(str_replace(',','.',str_replace('.','',$request->valor)));
+        if ($catalogo->valorVenda != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorVenda)))) {
+            $catalogo->valorVenda = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorVenda)));
         }
-        $catalogo->valor = doubleval(str_replace(',','.',$request->valor));
+        if ($catalogo->valorAluguel != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorAluguel)))) {
+            $catalogo->valorAluguel = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorAluguel)));
+        }
+        $catalogo->valorVenda = doubleval(str_replace(',', '.', $request->valorVenda));
+        $catalogo->valorAluguel = doubleval(str_replace(',', '.', $request->valorAluguel));
 
-        if($catalogo->valorcondominio != doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)))) {
-            $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
+        if ($catalogo->valorcondominio != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorCondominio)))) {
+            $catalogo->valorCondominio = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorCondominio)));
         }
-        $catalogo->valorCondominio = doubleval(str_replace(',','.',$request->valorCondominio));
+        $catalogo->valorCondominio = doubleval(str_replace(',', '.', $request->valorCondominio));
 
-        if($catalogo->iptuMensal != doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)))) {
-            $catalogo->iptuMensal = doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)));
+        if ($catalogo->iptuMensal != doubleval(str_replace(',', '.', str_replace('.', '', $request->iptuMensal)))) {
+            $catalogo->iptuMensal = doubleval(str_replace(',', '.', str_replace('.', '', $request->iptuMensal)));
         }
-        $catalogo->iptuMensal = doubleval(str_replace(',','.',$request->iptu));
+        $catalogo->iptuMensal = doubleval(str_replace(',', '.', $request->iptu));
 
         $catalogo->qtdSacadasCobertas = $request->qtd_sacadasCobertas;
         $catalogo->qtdNumAndares = $request->qtd_NumAndares;
@@ -209,10 +328,10 @@ class editController extends Controller
         $catalogo->qtdGaragemCobertas = $request->qtd_garagemCobertas;
         $catalogo->qtdGaragemNaoCobertas = $request->qtd_garagemNaoCobertas;
         $catalogo->qtdQuartos = $request->qtd_quartos;
-        $catalogo->metragemFrente = intval(explode(',',str_replace('.','',$request->metragemFrente))[0]);
-        $catalogo->metragemFundo = intval(explode(',',str_replace('.','',$request->metragemFundo))[0]);
-        $catalogo->metragemDireita = intval(explode(',',str_replace('.','',$request->metragemDireita))[0]);
-        $catalogo->metragemEsquerda = intval(explode(',',str_replace('.','',$request->metragemEsquerda))[0]);
+        $catalogo->metragemFrente = intval(explode(',', str_replace('.', '', $request->metragemFrente))[0]);
+        $catalogo->metragemFundo = intval(explode(',', str_replace('.', '', $request->metragemFundo))[0]);
+        $catalogo->metragemDireita = intval(explode(',', str_replace('.', '', $request->metragemDireita))[0]);
+        $catalogo->metragemEsquerda = intval(explode(',', str_replace('.', '', $request->metragemEsquerda))[0]);
         $catalogo->formaTerreno = $request->formaTerreno;
         $catalogo->vegetacao = $request->vegetacao;
         $catalogo->protecao = $request->protecao;
@@ -231,16 +350,16 @@ class editController extends Controller
 
         $catalogo->save();
 
-        $folderName = $id_cliente.'_'.uniqid();
+        $folderName = $id_cliente . '_' . uniqid();
 
-        if($request->allFiles() != []){
+        if ($request->allFiles() != []) {
 
-            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
+            for ($i = 0; $i < count($request->allFiles()['imagem']); $i++) {
                 $file = $request->allFiles()['imagem'][$i];
 
-                $fileName = $file->store('public/img/'. $folderName);
+                $fileName = $file->store('public/img/' . $folderName);
 
-                $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
+                $fileNameFormat = str_replace('public/img/', 'storage/img/', $fileName);
 
                 $imagem = new Imagens();
                 $imagem->chave = $id;
@@ -257,7 +376,8 @@ class editController extends Controller
         return redirect('admin');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
 
         $item = Catalogo::findOrFail($id);
 
@@ -266,29 +386,29 @@ class editController extends Controller
         session()->flash('excluir', 'Item excluido com sucesso');
 
         return redirect('admin');
-
     }
 
-    public function destroyImg($id){
+    public function destroyImg($id)
+    {
 
         $item = Imagens::findOrFail($id);
 
         $item->delete();
 
         return response()->json(['mensagem' => 'Item excluído com sucesso']);
-
     }
 
-    public function alterarImgPrincipal($id){
+    public function alterarImgPrincipal($id)
+    {
 
         $imagem = Imagens::findOrFail($id);
 
         $chave = $imagem->chave;
 
         $imagemPrincipal = DB::table('imagens_principais')
-                ->select('id','chave','path')
-                ->where('chave','=', $chave)
-                ->first();
+            ->select('id', 'chave', 'path')
+            ->where('chave', '=', $chave)
+            ->first();
 
         $itenAlterado = ImagensPrincipais::findOrFail($imagemPrincipal->id);
 
@@ -298,5 +418,4 @@ class editController extends Controller
 
         return response()->json(['mensagem' => 'Imagem principal alterada com sucesso']);
     }
-
 }
