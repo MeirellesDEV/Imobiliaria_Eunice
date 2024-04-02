@@ -138,7 +138,43 @@ class adminController extends Controller
                 $catalogo->cod_imovel = 'COD.CH'.substr(strval(hexdec(uniqid())),11,17);
             }
             else if($request->id_produto == 5) {
-                $catalogo->cod_imovel = 'COD.PC'.substr(strval(hexdec(uniqid())),11,17);
+                $catalogo->cod_imovel = 'COD.BR'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 6) {
+                $catalogo->cod_imovel = 'COD.GA'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 7) {
+                $catalogo->cod_imovel = 'COD.PR'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 8) {
+                $catalogo->cod_imovel = 'COD.SL'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 9) {
+                $catalogo->cod_imovel = 'COD.SÃ'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 10) {
+                $catalogo->cod_imovel = 'COD.LJ'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 11) {
+                $catalogo->cod_imovel = 'COD.ST'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 12) {
+                $catalogo->cod_imovel = 'COD.HT'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 13) {
+                $catalogo->cod_imovel = 'COD.AR'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 14) {
+                $catalogo->cod_imovel = 'COD.CB'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 15) {
+                $catalogo->cod_imovel = 'COD.FT'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 16) {
+                $catalogo->cod_imovel = 'COD.KT'.substr(strval(hexdec(uniqid())),11,17);
+            }
+            else if($request->id_produto == 17) {
+                $catalogo->cod_imovel = 'COD.ST'.substr(strval(hexdec(uniqid())),11,17);
             }
 
             $catalogo->id_tp_produto = $request->id_produto;
