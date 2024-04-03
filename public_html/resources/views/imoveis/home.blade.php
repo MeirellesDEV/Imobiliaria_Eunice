@@ -97,12 +97,35 @@
                 <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                     @csrf
                     <p>Finalidade</p>
-                    <select name="id_tp_produto" id="" class="input-text">
+                    <select name="id_tp_produto" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
                         <option value="" selected></option>
                         <option value="1">Residencial</option>
                         <option value="2">Comercial</option>
                         <option value="3">Misto</option>
                     </select>
+
+                    <p>Tipo de Imovel</p>
+                    <select name="id_tp_produto" id="tp_imoveis" class="input-text">
+                        <option value="" selected></option>
+                        <option value="1">Terreno</option>
+                        <option value="2">Casa</option>
+                        <option value="3">Apartamento</option>
+                        <option value="4">Chacara</option>
+                        <option value="5">Barracão</option>
+                        <option value="6">Galpão</option>
+                        <option value="7">Prédio</option>
+                        <option value="8">Sala</option>
+                        <option value="9">Salão</option>
+                        <option value="10">Loja</option>
+                        <option value="11">Sítio</option>
+                        <option value="12">Hotel</option>
+                        <option value="13">Area</option>
+                        <option value="14">Cobertura</option>
+                        <option value="15">Flat</option>
+                        <option value="16">Kitnet</option>
+                        <option value="17">Studio</option>
+                    </select>
+
                     <div class="input-search-group">
                         <p>Código do imóvel</p>
                         <input type="text" name="cod_imovel" class="input-text" id="painel-titulo"
@@ -124,7 +147,7 @@
 
                     <p>Em condominio</p>
                     <select name="condominio" id="" class="input-text">
-                        <option value="" selected ></option>
+                        <option value="" selected></option>
                         <option value="não">Não</option>
                         <option value="sim">Sim</option>
                     </select>
@@ -298,11 +321,12 @@
 
                             @if ($item->vendidoAlugado == null)
                                 @if ($item->valorVenda != 0)
-                                    <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorVenda}}</p>
+                                    <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorVenda }}</p>
                                 @endif
 
                                 @if ($item->valorAluguel != 0)
-                                    <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorAluguel}}</p>
+                                    <p id="dados-valor" class="num-format troca-ponto">R${{ $item->valorAluguel }}
+                                    </p>
                                 @endif
                             @else
                                 <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
@@ -386,6 +410,72 @@
 
 <script>
     trocaPonto()
+
+    function filtrarSegundoSelect() {
+        var primeiroSelect = document.getElementById("finalidade");
+        var segundoSelect = document.getElementById("tp_imoveis");
+
+        segundoSelect.innerHTML = '';
+
+        if (primeiroSelect.value === "1") {
+            var opcoes = [
+                { text: "Terreno", value: 1 },
+                { text: "Apartamento", value: 3 },
+                { text: "Casa", value: 2 },
+                { text: "Sitio", value: 11 },
+                { text: "Cobertura", value: 14 },
+                { text: "Flat", value: 15 },
+                { text: "Kitnet", value: 16 },
+                { text: "Prédio", value: 7 },
+                { text: "Studio", value: 17 },
+                { text: "Area", value: 13 }
+            ];
+
+        } else if (primeiroSelect.value === "2") {
+            var opcoes = [
+                { text: "Casa", value: 2 },
+                { text: "Terreno", value: 1 },
+                { text: "Barracão", value: 5 },
+                { text: "Galpão", value: 6 },
+                { text: "Prédio", value: 7 },
+                { text: "Sala", value: 8 },
+                { text: "Salão", value: 9 },
+                { text: "Loja", value: 10 },
+                { text: "Chacara", value: 4 },
+                { text: "Sitio", value: 11 },
+                { text: "Hotel", value: 12 },
+                { text: "Area", value: 13 }
+            ];
+
+        } else if (primeiroSelect.value === "3") {
+            var opcoes = [
+                { text: "Casa", value: 2 },
+                { text: "Terreno", value: 1 },
+                { text: "Barracão", value: 5 },
+                { text: "Galpão", value: 6 },
+                { text: "Prédio", value: 7 },
+                { text: "Sala", value: 8 },
+                { text: "Salão", value: 9 },
+                { text: "Loja", value: 10 },
+                { text: "Hotel", value: 12 },
+                { text: "Area", value: 13 },
+                { text: "Apartamento", value: 3 },
+                { text: "Chacara", value: 4 },
+                { text: "Cobertura", value: 14 },
+                { text: "Flat", value: 15 },
+                { text: "Kitnet", value: 16 },
+                { text: "Studio", value: 17 },
+            ];
+
+        }
+
+        for (var i = 0; i < opcoes.length; i++) {
+            var option = document.createElement("option");
+            option.text = opcoes[i].text;
+            option.value = opcoes[i].value;
+            segundoSelect.add(option);
+        }
+    }
 </script>
 
 @endsection
