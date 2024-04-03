@@ -68,38 +68,45 @@
                     @if ($iten->qtdDorms != 0)
                         <p id="dados-dorms"><span class="material-symbols-outlined">bed</span>{{ $iten->qtdDorms }}</p>
                     @endif
+
                     @if ($iten->qtdSuites != 0)
                         <p id="dados-suites"><span class="material-symbols-outlined">king_bed</span><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdSuites }}</p>
                     @endif
+
                     @if ($iten->qtdBanheiros != 0)
                         <p id="dados-banheiros"><span class="material-symbols-outlined">bathtub</span>{{ $iten->qtdBanheiros }}</p>
                     @endif
+
                     @if ($iten->qtdGaragemCobertas != 0)
                         <p id="dados-vagas"><span class="material-symbols-outlined">garage</span><span class="material-symbols-outlined">garage_home</span>{{ $iten->qtdGaragemCobertas }}</p>
                     @endif
+
                     @if ($iten->qtdGaragemNaoCobertas != 0)
                         <p id="dados-vagasDescobertas"><span class="material-symbols-outlined">garage</span>{{ $iten->qtdGaragemNaoCobertas }}</p>
                     @endif
+
                     @if($iten->tp_contrato == 'Aluguel')
                         <p id="dados-locacao">Locação</p>
                     @elseif($iten->tp_contrato == 'Venda')
                         <p id="dados-locacao">Venda</p>
                     @else
-                        <p id="dados-locacao">Venda e Aluguel</p>
+                        <p id="dados-locacao">Venda e Locação</p>
                     @endif
-                    @if ($iten->areaConstruida != null && $iten->areaConstruida != 0)
-                        <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
-                    @endif
+
                     @if ($iten->vendidoAlugado == null)
-                        @if ($iten->valorVenda == '')
+                        @if ($iten->valorVenda != 0)
                             <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorVenda}}</p>
                         @endif
 
-                        @if ($iten->valorVenda == '')
+                        @if ($iten->valorAluguel != 0)
                             <p id="dados-valor" class="num-format troca-ponto">R${{ $iten->valorAluguel}}</p>
                         @endif
                     @else
                         <p id="dados-valor" class="num-format troca-ponto">INDISPONÍVEL</p>
+                    @endif
+
+                    @if ($iten->areaConstruida != null && $iten->areaConstruida != 0)
+                        <p id="dados-area">{{ $iten->areaConstruida }}m²</p>
                     @endif
                 </div>
 
