@@ -63,7 +63,7 @@ class masterController extends Controller
             ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
             ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro',
                     'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valorVenda',
-                    'catalogos.valorVenda', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado',
+                    'catalogos.valorAluguel', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado',
                     'catalogos.tp_contrato', 'produtos.descricao', 'catalogos.cod_imovel', 'catalogos.qtdDorms',
                     'catalogos.qtdSuites','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas',
                     'catalogos.areaConstruida')

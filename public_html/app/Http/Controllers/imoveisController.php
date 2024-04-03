@@ -12,7 +12,7 @@ use function PHPUnit\Framework\isEmpty;
 class imoveisController extends Controller
 {
     public function index(){
-        Session::forget('search');
+        // Session::forget('search');
         $search = session('search');
         $nItens = session('nItens');
 
@@ -42,6 +42,7 @@ class imoveisController extends Controller
             $cod_imovel = $search[0]->cod_imovel;
             $tp_contrato = $search[0]->tp_contrato;
             $id_tp_produto = $search[0]->id_tp_produto;
+            $condominio = $search[0]->condominio;
 
             if ($titulo != null) {
                 $imoveis->where('catalogos.titulo', 'like','%'.$titulo.'%');
@@ -109,23 +110,51 @@ class imoveisController extends Controller
             }
 
             if($valor == 1 and $valor != null){
-                $imoveis->where('catalogos.valor','<',100000);
 
-                $filtro->valor[] = 'valor';
+                if($tp_contrato == 'Aluguel'){
+                    $imoveis->where('catalogos.valorAluguel','<',100000);
+
+                }elseif($tp_contrato == 'Venda'){
+                    $imoveis->where('catalogos.valorVenda','<',100000);
+
+                }else{
+                    $imoveis->where('catalogos.valorAluguel','<',100000);
+                    $imoveis->where('catalogos.valorVenda','<',100000);
+                }
+
+                $filtro->valor[] = 'Valor';
                 $filtro->valor[] = 'Até R$100.000';
             }
 
             if($valor == 2 and $valor != null){
-                $imoveis->whereBetween('catalogos.valor',[100000, 300000]);
+                if($tp_contrato == 'Aluguel'){
+                    $imoveis->whereBetween('catalogos.valorAluguel',[100000, 300000]);
 
-                $filtro->valor[] = 'valor';
+                }elseif($tp_contrato == 'Venda'){
+                    $imoveis->whereBetween('catalogos.valorVenda',[100000, 300000]);
+
+                }else{
+                    $imoveis->whereBetween('catalogos.valorAluguel',[100000, 300000]);
+                    $imoveis->whereBetween('catalogos.valorVenda',[100000, 300000]);
+                }
+
+                $filtro->valor[] = 'Valor';
                 $filtro->valor[] = 'Entre R$100.000 e R$ 300.000';
             }
 
             if($valor == 3 and $valor != null){
-                $imoveis->where('catalogos.valor','>',300000);
+                if($tp_contrato == 'Aluguel'){
+                    $imoveis->where('catalogos.valorAluguel','>',300000);
 
-                $filtro->valor[] = 'valor';
+                }elseif($tp_contrato == 'Venda'){
+                    $imoveis->where('catalogos.valorVenda','>',300000);
+
+                }else{
+                    $imoveis->where('catalogos.valorAluguel','>',300000);
+                    $imoveis->where('catalogos.valorVenda','>',300000);
+                }
+
+                $filtro->valor[] = 'Valor';
                 $filtro->valor[] = 'Acima de R$ 300.000';
             }
 
@@ -157,7 +186,7 @@ class imoveisController extends Controller
                 $filtro->cod_imovel[] = $cod_imovel;
             }
 
-            if($id_tp_produto != "Todos") {
+            if($id_tp_produto != "") {
                 if($id_tp_produto == 1){
                     $imoveis->whereIn('catalogos.id_tp_produto',[1,3,2,4,11,14,15,16,7,17,13]);
 
@@ -185,6 +214,13 @@ class imoveisController extends Controller
                 $filtro->tp_contrato[] = $tp_contrato;
             }
 
+            if($condominio != ""){
+                $imoveis->where('catalogos.emCondominio','=',$condominio);
+
+                $filtro->condominio[] = "Em condominio";
+                $filtro->condominio[] = $condominio;
+            }
+
         }
 
         if($nItens == null){
@@ -200,8 +236,6 @@ class imoveisController extends Controller
                 $imoveis->limit($nItens);
             }
         }
-
-        // dd($nItens);
 
         $imoveis = $imoveis->get();
 
@@ -228,8 +262,8 @@ class imoveisController extends Controller
            $request->titulo != null or $request->localidade != null or $request->bairro != null or
            $request->qtdQuartos != null or $request->qtdBanheiros != null or
            $request->vagas != null or $request->valor != null or $request->area != null or
-           $request->cod_imovel != null or $request->id_tp_produto != "Todos" or
-           $request->tp_contrato != "Todos"
+           $request->cod_imovel != null or $request->id_tp_produto != "" or
+           $request->tp_contrato != "Todos" or $request->condominio != ""
         ){
 
             $search = [
@@ -244,7 +278,8 @@ class imoveisController extends Controller
                     'area' => $request->area,
                     'cod_imovel' => $request->cod_imovel,
                     'id_tp_produto' => $request->id_tp_produto,
-                    'tp_contrato' => $request->tp_contrato
+                    'tp_contrato' => $request->tp_contrato,
+                    'condominio' => $request->condominio
                 ],
             ];
 

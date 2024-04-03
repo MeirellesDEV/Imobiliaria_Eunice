@@ -22,7 +22,7 @@ class logoutController extends Controller
         $search = session('search');
         $filtro = $request->filtro;
 
-        // dd($search[0]);
+        // dd($filtro);
 
         if($filtro == 'titulo'){
             if(isset($search[0])){
@@ -32,8 +32,28 @@ class logoutController extends Controller
             }
         }
 
+        if($filtro == 'código'){
+            $search[0]->cod_imovel = null;
+        }
+
         if($filtro == 'localidade'){
             $search[0]->localidade = null;
+        }
+
+        if($filtro == 'Em condominio'){
+            $search[0]->condominio = null;
+        }
+
+        if($filtro == 'bairro'){
+            $search[0]->bairro = null;
+        }
+
+        if($filtro == 'Tipo de contrato'){
+            $search[0]->tp_contrato = null;
+        }
+
+        if($filtro == 'Tipo de imóvel'){
+            $search[0]->id_tp_produto = null;
         }
 
         if($filtro == 'quartos'){
@@ -56,21 +76,35 @@ class logoutController extends Controller
             $search[0]->area = null;
         }
 
-        if($filtro != 'Tipo Imovel' and isset($search[0])){
-            if(
-                $search[0]->titulo == null and $search[0]->localidade == null and
-                $search[0]->quartos == null and $search[0]->banheiros == null and
-                $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null)
-            {
-                Session::forget('search');
-            }
-        }else{
+        // dd($search[0]);
 
-            if($search != 1 or $search != 2 or $search != 3){
-                Session::forget('search');
-            }
-
+        if(
+            $search[0]->titulo == null and $search[0]->localidade == null and
+            $search[0]->quartos == null and $search[0]->banheiros == null and
+            $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null and
+            $search[0]->tp_contrato == "Todos" and $search[0]->bairro == null and
+            $search[0]->condominio == null and $search[0]->cod_imovel == null and
+            $search[0]->id_tp_produto == null
+        ){
+            Session::forget('search');
+            // dd("cheguei");
         }
+
+        // if($filtro != 'Tipo Imovel' and isset($search[0])){
+        //     if(
+        //         $search[0]->titulo == null and $search[0]->localidade == null and
+        //         $search[0]->quartos == null and $search[0]->banheiros == null and
+        //         $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null)
+        //     {
+        //         Session::forget('search');
+        //     }
+        // }else{
+
+        //     if($search != 1 or $search != 2 or $search != 3){
+        //         Session::forget('search');
+        //     }
+
+        // }
 
         return redirect('/imoveis');
     }

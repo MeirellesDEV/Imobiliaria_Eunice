@@ -17,7 +17,7 @@
             <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
                 placeholder="Pesquisar imóvel">
             <p>Cidade:</p>
-            <input type="text" name="cidade" id="painel-local-lateral" class="input-text"
+            <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
             <p>Bairro:</p>
             <input type="text" name="bairro" id="painel-local-lateral" class="input-text"
@@ -31,6 +31,12 @@
                 <option value="Todos" selected>Todos</option>
                 <option value="Aluguel">Aluguel</option>
                 <option value="Venda">Venda</option>
+            </select>
+
+            <p>Em condominio</p>
+            <select name="condominio" id="" class="input-text">
+                <option value="não" selected>Não</option>
+                <option value="sim">Sim</option>
             </select>
 
             <p>Tipo de imóvel</p>
@@ -95,6 +101,7 @@
                     @csrf
                     <p>Finalidade</p>
                     <select name="id_tp_produto" id="" class="input-text">
+                        <option value="" selected></option>
                         <option value="1">Residencial</option>
                         <option value="2">Comercial</option>
                         <option value="3">Misto</option>
@@ -107,7 +114,7 @@
                         <input type="text" name="titulo" class="input-text" id="painel-titulo"
                             placeholder="Pesquisar imóvel">
                         <p>Cidade:</p>
-                        <input type="text" name="cidade" id="painel-local-lateral" class="input-text"
+                        <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                             placeholder="Pesquisar cidade">
                         <p>Bairro:</p>
                         <input type="text" name="bairro" id="painel-local-lateral" class="input-text"
@@ -121,6 +128,12 @@
                         <option value="Venda">Venda</option>
                     </select>
 
+                    <p>Em condominio</p>
+                    <select name="condominio" id="" class="input-text">
+                        <option value="" selected ></option>
+                        <option value="não">Não</option>
+                        <option value="sim">Sim</option>
+                    </select>
 
                     <p class="search-title input-title ">Quantidade de quartos</p>
                     <div class="radio-options search-body">
