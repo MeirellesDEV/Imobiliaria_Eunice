@@ -55,7 +55,7 @@
             <option value="15">Flat</option>
             <option value="16">Kitnet</option>
             <option value="17">Studio</option>
-            <option value="18">Terreno</option>
+            <option value="1">Terreno</option>
         </select>
 
         <p>Em condomínio</p>

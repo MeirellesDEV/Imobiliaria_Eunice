@@ -49,16 +49,26 @@
                     <p for="" id="titulo-label" class="add-label">Título</p>
                     <input type="text" id="casa-titulo-input" name="titulo" class="add-input" value="{{ $item->titulo }}" required>
 
-                    @if($item->id_tp_produto == 5)
-                        <!-- <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
-                        <input type="text" name="tipoComercio" class="add-input"  value="{{ $item->tipoComercio }}"required> -->
-                        <!-- <select name="tipoComercio" id="tipoComercio" class="add-input">
-                            <option value="Escritório" @if($item->tipoComercio == "Escritório") selected @endif>Escritório</option>
-                            <option value="Salão" @if($item->tipoComercio == "Salão") selected @endif>Salão</option>
-                            <option value="Loja em Shopping" @if($item->tipoComercio == "Loja em Shopping") selected @endif>Loja em Shopping</option>
-                            <option value="Loja em centro comercial" @if($item->tipoComercio == "Loja em centro comercial") selected @endif>Loja em centro comercial</option>
-                        </select> -->
-                    @endif
+                    <p>Tipo do imóvel</p>
+                    <select name="id_produto" id="tipo-produto-ddl" class="add-input">
+                        <option value="2"  @if($item->id_tp_produto == 2) selected @endif >Casa</option>
+                        <option value="3"  @if($item->id_tp_produto == 3) selected @endif>Apartamento</option>
+                        <option value="4"  @if($item->id_tp_produto == 4) selected @endif>Chácara</option>
+                        <option value="5"  @if($item->id_tp_produto == 5) selected @endif>Barracão</option>
+                        <option value="6"  @if($item->id_tp_produto == 6) selected @endif>Galpão</option>
+                        <option value="7"  @if($item->id_tp_produto == 7) selected @endif>Prédio</option>
+                        <option value="8"  @if($item->id_tp_produto == 8) selected @endif>Sala</option>
+                        <option value="9"  @if($item->id_tp_produto == 9) selected @endif>Salão</option>
+                        <option value="10" @if($item->id_tp_produto == 10) selected @endif>Loja</option>
+                        <option value="11" @if($item->id_tp_produto == 11) selected @endif>Sítio</option>
+                        <option value="12" @if($item->id_tp_produto == 12) selected @endif>Hotel</option>
+                        <option value="13" @if($item->id_tp_produto == 13) selected @endif>Área</option>
+                        <option value="14" @if($item->id_tp_produto == 14) selected @endif>Cobertura</option>
+                        <option value="15" @if($item->id_tp_produto == 15) selected @endif>Flat</option>
+                        <option value="16" @if($item->id_tp_produto == 16) selected @endif>Kitnet</option>
+                        <option value="17" @if($item->id_tp_produto == 17) selected @endif>Studio</option>
+                        <option value="1" @if($item->id_tp_produto == 1) selected @endif>Terreno</option>
+                    </select>
                     <p for="" id="desc-label" class="add-label">Descrição</p>
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
 
