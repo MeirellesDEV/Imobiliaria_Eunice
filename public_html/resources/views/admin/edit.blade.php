@@ -50,8 +50,8 @@
                     <input type="text" id="casa-titulo-input" name="titulo" class="add-input" value="{{ $item->titulo }}" required>
 
                     @if($item->id_tp_produto == 5)
-                        <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
-                        <input type="text" name="tipoComercio" class="add-input"  value="{{ $item->tipoComercio }}"required>
+                        <!-- <p for="" id="desc-label" class="add-label">Tipo de Comércio</p>
+                        <input type="text" name="tipoComercio" class="add-input"  value="{{ $item->tipoComercio }}"required> -->
                         <!-- <select name="tipoComercio" id="tipoComercio" class="add-input">
                             <option value="Escritório" @if($item->tipoComercio == "Escritório") selected @endif>Escritório</option>
                             <option value="Salão" @if($item->tipoComercio == "Salão") selected @endif>Salão</option>

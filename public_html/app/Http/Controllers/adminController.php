@@ -12,70 +12,66 @@ use App\Models\ImagensPrincipais;
 
 class adminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         //Pegar valor da sessão
         $valor = session('login');
         $id_cliente = session('id');
         $search = session('search');
 
         $dadosUsuario = DB::table('usuarios')
-                    ->select('id_permissao','name','email')
-                    ->where('id', '=', $id_cliente)
-                    ->first();
+            ->select('id_permissao', 'name', 'email')
+            ->where('id', '=', $id_cliente)
+            ->first();
 
-        if($dadosUsuario != null){
-            if($dadosUsuario->id_permissao == 2){
-                if($search){
+        if ($dadosUsuario != null) {
+            if ($dadosUsuario->id_permissao == 2) {
+                if ($search) {
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
-                                ->where('id_cliente', '=', $id_cliente)
-                                ->where('titulo', 'like','%'. $search.'%')
-                                ->get();
-
-                }else{
+                        ->select('id', 'id_tp_produto', 'titulo', 'descricao', 'area', 'valorVenda', 'valorAluguel', 'vendidoAlugado', 'cod_imovel')
+                        ->where('id_cliente', '=', $id_cliente)
+                        ->where('titulo', 'like', '%' . $search . '%')
+                        ->get();
+                } else {
                     $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel')
-                                ->where('id_cliente', '=', $id_cliente)
-                                ->get();
+                        ->select('id', 'id_tp_produto', 'titulo', 'descricao', 'area', 'valorVenda', 'valorAluguel', 'vendidoAlugado', 'cod_imovel')
+                        ->where('id_cliente', '=', $id_cliente)
+                        ->get();
                 }
 
-                if($itens->isEmpty()){
+                if ($itens->isEmpty()) {
                     $imagem = new \stdClass();
                     $imagem->chave = 0;
-
-                }else{
+                } else {
                     $imagem = DB::table('imagens_principais', 'cod_imovel')
-                                ->select('chave','path')
-                                ->get();
+                        ->select('chave', 'path')
+                        ->get();
+                }
+            } else {
+                if ($search) {
+                    $itens = DB::table('catalogos')
+                        ->select('id', 'id_tp_produto', 'titulo', 'descricao', 'area', 'valorVenda', 'valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
+                        ->where('titulo', 'like', '%' . $search . '%')
+                        ->get();
+                } else {
+                    $itens = DB::table('catalogos')
+                        ->select('id', 'id_tp_produto', 'titulo', 'descricao', 'area', 'valorVenda', 'valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
+                        ->get();
                 }
 
-            }else{
-                if($search){
-                    $itens = DB::table('catalogos')
-                                ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
-                                ->where('titulo', 'like','%'. $search .'%')
-                                ->get();
-                }else{
-                    $itens = DB::table('catalogos')
-                                    ->select('id','id_tp_produto','titulo','descricao','area','valorVenda','valorAluguel', 'vendidoAlugado', 'cod_imovel', 'tp_contrato')
-                                    ->get();
-                }
-
-                if($itens->isEmpty()){
+                if ($itens->isEmpty()) {
                     $imagem = new \stdClass();
                     $imagem->chave = 0;
-
-                }else{
+                } else {
                     $imagem = DB::table('imagens_principais')
-                                ->select('chave','path')
-                                ->get();
+                        ->select('chave', 'path')
+                        ->get();
                 }
-
             }
 
-            if($valor){
-                return view('admin/home',['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
-            }else{
+            if ($valor) {
+                return view('admin/home', ['itens' => $itens, 'paths' => $imagem, 'usuario' => $dadosUsuario]);
+            } else {
                 //Para limpar a sessão
                 session()->flush();
                 return redirect('login');
@@ -84,28 +80,30 @@ class adminController extends Controller
 
         $itens = false;
 
-        if($valor){
-            return view('admin/home',['itens' => $itens]);
-        }else{
+        if ($valor) {
+            return view('admin/home', ['itens' => $itens]);
+        } else {
             //Para limpar a sessão
             session()->flush();
             return redirect('login');
         }
     }
 
-    public function item(){
+    public function item()
+    {
         $valor = session('login');
 
-        if($valor){
+        if ($valor) {
             return view('admin/cadastro');
-        }else{
+        } else {
             //Para limpar a sessão
             session()->flush();
             return redirect('login');
         }
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $session = session();
 
         $session->put([
@@ -115,91 +113,76 @@ class adminController extends Controller
         return redirect('admin');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $valor = session('login');
         $id_cliente = session('id');
 
         // dd($request->all());
 
-        if($valor){
+        if ($valor) {
 
             $catalogo = new Catalogo();
 
-            if($request->id_produto == 1) {
-                $catalogo->cod_imovel = 'COD.TE'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 2) {
-                $catalogo->cod_imovel = 'COD.CA'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 3) {
-                $catalogo->cod_imovel = 'COD.AP'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 4) {
-                $catalogo->cod_imovel = 'COD.CH'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 5) {
-                $catalogo->cod_imovel = 'COD.BR'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 6) {
-                $catalogo->cod_imovel = 'COD.GA'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 7) {
-                $catalogo->cod_imovel = 'COD.PR'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 8) {
-                $catalogo->cod_imovel = 'COD.SL'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 9) {
-                $catalogo->cod_imovel = 'COD.SÃ'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 10) {
-                $catalogo->cod_imovel = 'COD.LJ'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 11) {
-                $catalogo->cod_imovel = 'COD.ST'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 12) {
-                $catalogo->cod_imovel = 'COD.HT'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 13) {
-                $catalogo->cod_imovel = 'COD.AR'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 14) {
-                $catalogo->cod_imovel = 'COD.CB'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 15) {
-                $catalogo->cod_imovel = 'COD.FT'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 16) {
-                $catalogo->cod_imovel = 'COD.KT'.substr(strval(hexdec(uniqid())),11,17);
-            }
-            else if($request->id_produto == 17) {
-                $catalogo->cod_imovel = 'COD.ST'.substr(strval(hexdec(uniqid())),11,17);
+            if ($request->id_produto == 1) {
+                $catalogo->cod_imovel = 'COD.TE' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 2) {
+                $catalogo->cod_imovel = 'COD.CA' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 3) {
+                $catalogo->cod_imovel = 'COD.AP' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 4) {
+                $catalogo->cod_imovel = 'COD.CH' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 5) {
+                $catalogo->cod_imovel = 'COD.BR' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 6) {
+                $catalogo->cod_imovel = 'COD.GA' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 7) {
+                $catalogo->cod_imovel = 'COD.PR' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 8) {
+                $catalogo->cod_imovel = 'COD.SL' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 9) {
+                $catalogo->cod_imovel = 'COD.SÃ' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 10) {
+                $catalogo->cod_imovel = 'COD.LJ' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 11) {
+                $catalogo->cod_imovel = 'COD.ST' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 12) {
+                $catalogo->cod_imovel = 'COD.HT' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 13) {
+                $catalogo->cod_imovel = 'COD.AR' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 14) {
+                $catalogo->cod_imovel = 'COD.CB' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 15) {
+                $catalogo->cod_imovel = 'COD.FT' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 16) {
+                $catalogo->cod_imovel = 'COD.KT' . substr(strval(hexdec(uniqid())), 11, 17);
+            } else if ($request->id_produto == 17) {
+                $catalogo->cod_imovel = 'COD.ST' . substr(strval(hexdec(uniqid())), 11, 17);
             }
 
             $catalogo->id_tp_produto = $request->id_produto;
             $catalogo->id_cliente = $id_cliente;
             $catalogo->titulo = $request->titulo;
             $catalogo->descricao = $request->descricao;
-            $catalogo->area = intval(explode(',',str_replace('.','',$request->area))[0]);
-            if($catalogo->valorVenda != doubleval(str_replace(',','.',str_replace('.','',$request->valorVenda)))) {
-                $catalogo->valorVenda = doubleval(str_replace(',','.',str_replace('.','',$request->valorVenda)));
+            $catalogo->area = intval(explode(',', str_replace('.', '', $request->area))[0]);
+            if ($catalogo->valorVenda != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorVenda)))) {
+                $catalogo->valorVenda = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorVenda)));
             }
-            $catalogo->valorVenda = doubleval(str_replace(',','.',$request->valorVenda));
-            if($catalogo->valorAluguel != doubleval(str_replace(',','.',str_replace('.','',$request->valorAluguel)))) {
-                $catalogo->valorAluguel = doubleval(str_replace(',','.',str_replace('.','',$request->valorAluguel)));
+            $catalogo->valorVenda = doubleval(str_replace(',', '.', $request->valorVenda));
+            if ($catalogo->valorAluguel != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorAluguel)))) {
+                $catalogo->valorAluguel = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorAluguel)));
             }
-            $catalogo->valorAluguel = doubleval(str_replace(',','.',$request->valorAluguel));
+            $catalogo->valorAluguel = doubleval(str_replace(',', '.', $request->valorAluguel));
 
-            if($catalogo->valorcondominio != doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)))) {
-                $catalogo->valorCondominio = doubleval(str_replace(',','.',str_replace('.','',$request->valorCondominio)));
+            if ($catalogo->valorcondominio != doubleval(str_replace(',', '.', str_replace('.', '', $request->valorCondominio)))) {
+                $catalogo->valorCondominio = doubleval(str_replace(',', '.', str_replace('.', '', $request->valorCondominio)));
             }
-            $catalogo->valorCondominio = doubleval(str_replace(',','.',$request->valorCondominio));
+            $catalogo->valorCondominio = doubleval(str_replace(',', '.', $request->valorCondominio));
 
-            if($catalogo->iptuMensal != doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)))) {
-                $catalogo->iptuMensal = doubleval(str_replace(',','.',str_replace('.','',$request->iptuMensal)));
+            if ($catalogo->iptuMensal != doubleval(str_replace(',', '.', str_replace('.', '', $request->iptuMensal)))) {
+                $catalogo->iptuMensal = doubleval(str_replace(',', '.', str_replace('.', '', $request->iptuMensal)));
             }
-            $catalogo->iptuMensal = doubleval(str_replace(',','.',$request->iptu));
+            $catalogo->iptuMensal = doubleval(str_replace(',', '.', $request->iptu));
             $catalogo->cidade = $request->cidade;
             $catalogo->bairro = $request->bairro;
             $catalogo->ruaNumero = $request->ruaNumero;
@@ -303,10 +286,10 @@ class adminController extends Controller
             $catalogo->comercio = ($request->comercio) ? true : false;
             $catalogo->qtdSalas = $request->qtdSalas;
             $catalogo->qtdDorms = $request->qtdDorms;
-            $catalogo->metragemFrente = intval(explode(',',str_replace('.','',$request->metragemFrente))[0]);
-            $catalogo->metragemFundo = intval(explode(',',str_replace('.','',$request->metragemFundo))[0]);
-            $catalogo->metragemDireita = intval(explode(',',str_replace('.','',$request->metragemDireita))[0]);
-            $catalogo->metragemEsquerda = intval(explode(',',str_replace('.','',$request->metragemEsquerda))[0]);
+            $catalogo->metragemFrente = intval(explode(',', str_replace('.', '', $request->metragemFrente))[0]);
+            $catalogo->metragemFundo = intval(explode(',', str_replace('.', '', $request->metragemFundo))[0]);
+            $catalogo->metragemDireita = intval(explode(',', str_replace('.', '', $request->metragemDireita))[0]);
+            $catalogo->metragemEsquerda = intval(explode(',', str_replace('.', '', $request->metragemEsquerda))[0]);
             $catalogo->formaTerreno = $request->formaTerreno;
             $catalogo->vegetacao = $request->vegetacao;
             $catalogo->protecao = $request->protecao;
@@ -333,49 +316,27 @@ class adminController extends Controller
 
             $catalogo->mobiliado_ddl = $request->mobiliado_ddl;
 
-            if($request->id_produto == 2 or $request->id_produto == 4){
-                $catalogo->tp_contrato = $request->tp_contrato;
-                $catalogo->qtdBanheiros = $request->qtd_banheiros;
-                $catalogo->qtdQuartos = $request->qtd_quartos;
-                $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
-                $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
-                $catalogo->areaUtil = intval(explode(',',str_replace('.','',$request->areaUtil))[0]);
-                $catalogo->areaConstruida = intval(explode(',',str_replace('.','',$request->areaConstruida))[0]);
-                $catalogo->areaTerreno = intval(explode(',',str_replace('.','',$request->areaTerreno))[0]);
-            }elseif($request->id_produto == 3 ){
-                $catalogo->tp_contrato = $request->tp_contrato;
-                $catalogo->qtdBanheiros = $request->qtd_banheiros;
-                $catalogo->qtdQuartos = $request->qtd_quartos;
-                $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
-                $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
-                $catalogo->areaUtil = 0;
-                $catalogo->areaConstruida = 0;
-            }
-            else{
-                $catalogo->tp_contrato = 'Venda';
-                $catalogo->qtdBanheiros = 0;
-                $catalogo->qtdQuartos = 0;
-                $catalogo->qtdGaragemCobertas = 0;
-                $catalogo->qtdGaragemNaoCobertas = 0;
-                $catalogo->areaUtil = 0;
-                $catalogo->areaConstruida = 0;
-                $catalogo->qtdSacadasCobertas = 0;
-                $catalogo->qtdNumAndares = 0;
-                $catalogo->qtdAndar = 0;
-                $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;
-                $catalogo->sistemaEsgoto = ($request->sistemaEsgoto) ? true : false;
-            }
+            $catalogo->tp_contrato = $request->tp_contrato;
+            $catalogo->qtdBanheiros = $request->qtd_banheiros;
+            $catalogo->qtdQuartos = $request->qtd_quartos;
+            $catalogo->qtdGaragemCobertas = $request->qtdGaragemCobertas;
+            $catalogo->qtdGaragemNaoCobertas = $request->qtdGaragemNaoCobertas;
+            $catalogo->areaUtil = intval(explode(',', str_replace('.', '', $request->areaUtil))[0]);
+            $catalogo->areaConstruida = intval(explode(',', str_replace('.', '', $request->areaConstruida))[0]);
+            $catalogo->areaTerreno = intval(explode(',', str_replace('.', '', $request->areaTerreno))[0]);
+
+
 
             $catalogo->save();
 
-            $folderName = $id_cliente.'_'.uniqid();
+            $folderName = $id_cliente . '_' . uniqid();
 
-            for($i = 0; $i < count($request->allFiles()['imagem']); $i++){
+            for ($i = 0; $i < count($request->allFiles()['imagem']); $i++) {
                 $file = $request->allFiles()['imagem'][$i];
 
-                $fileName = $file->store('public/img/'. $folderName);
+                $fileName = $file->store('public/img/' . $folderName);
 
-                $fileNameFormat = str_replace('public/img/','storage/img/',$fileName);
+                $fileNameFormat = str_replace('public/img/', 'storage/img/', $fileName);
 
                 $fileFormat = pathinfo($fileNameFormat);
 
@@ -389,8 +350,7 @@ class adminController extends Controller
                 // Verifica o formato da imagem e a carrega adequadamente
                 if ($fileFormat['extension'] === "png") {
                     $imagem = imagecreatefrompng($imagemOriginal);
-                }
-                else if ($fileFormat['extension'] === "jpg") {
+                } else if ($fileFormat['extension'] === "jpg") {
                     $imagem = imagecreatefromjpeg($imagemOriginal);
                 }
 
@@ -401,8 +361,8 @@ class adminController extends Controller
 
                 // Pega o x e y da imagem e da marca d'água
                 // Organizado em formato de array, por conveniência
-                $imagemOriginalInfo = [imagesx($imagem),imagesy($imagem)];
-                $marcaDaguaInfo = [imagesx($marcaDaguaImg),imagesy($marcaDaguaImg)];
+                $imagemOriginalInfo = [imagesx($imagem), imagesy($imagem)];
+                $marcaDaguaInfo = [imagesx($marcaDaguaImg), imagesy($marcaDaguaImg)];
 
 
                 // Calcula a posição X e Y da marca d'água
@@ -429,9 +389,9 @@ class adminController extends Controller
             /* Imagem Principal */
             $filePrincipal = $request->imagemCasaPrincipal;
 
-            $fileNamePrincipal = $filePrincipal->store('public/img/'. $folderName);
+            $fileNamePrincipal = $filePrincipal->store('public/img/' . $folderName);
 
-            $fileNamePrincipalFormat = str_replace('public/img/','storage/img/',$fileNamePrincipal);
+            $fileNamePrincipalFormat = str_replace('public/img/', 'storage/img/', $fileNamePrincipal);
 
             $imagem =  new ImagensPrincipais();
 
@@ -440,11 +400,11 @@ class adminController extends Controller
 
             $imagem->save();
 
-            if($request->id_produto == 1){
+            if ($request->id_produto == 1) {
                 $msg = 'Terreno cadastrado com sucesso';
-            }elseif($request->id_produto == 2){
+            } elseif ($request->id_produto == 2) {
                 $msg = 'Casa cadastrado com sucesso';
-            }else{
+            } else {
                 $msg = 'Apartamento cadastrado com sucesso';
             }
 
@@ -509,9 +469,7 @@ class adminController extends Controller
             // Carregar a Imagem Principal
             if ($path_info['extension'] === "png") {
                 $principalImage = imagecreatefrompng($fileNamePrincipalFormat);
-
-            }
-            else if ($path_info['extension'] === "jpg") {
+            } else if ($path_info['extension'] === "jpg") {
                 $principalImage = imagecreatefromjpeg($fileNamePrincipalFormat);
             }
 
@@ -554,23 +512,24 @@ class adminController extends Controller
             // // CODIGO FUNCIONAL
 
             return redirect('admin');
-        }else{
+        } else {
             //Para limpar a sessão
             session()->flush();
             return redirect('login');
         }
     }
 
-    public function vendidoAlugado(Request $request, $id){
+    public function vendidoAlugado(Request $request, $id)
+    {
         $valor = session('login');
 
-        if($valor){
+        if ($valor) {
             $catalogo = Catalogo::findOrFail($id);
 
-            if($request->type == '1'){
+            if ($request->type == '1') {
                 $catalogo->vendidoAlugado = null;
                 Session::flash('vendidoAlugado', 'O imovel está indisponivel');
-            }else{
+            } else {
                 $catalogo->vendidoAlugado = 'Indisponivel';
                 Session::flash('vendidoAlugado', 'O imovel está indisponivel');
             }
@@ -578,12 +537,10 @@ class adminController extends Controller
             $catalogo->save();
 
             return redirect()->back();
-        }else{
+        } else {
             //Para limpar a sessão
             session()->flush();
             return redirect('login');
         }
-
     }
-
 }
