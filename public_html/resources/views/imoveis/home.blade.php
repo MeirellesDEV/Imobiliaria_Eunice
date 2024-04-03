@@ -13,9 +13,6 @@
             <button type="button" id="painel-lateral-fechar" onclick="fecharPainel()">X</button>
             <p>Código do imóvel</p>
             <input type="text" name="cod_imovel" class="input-text" id="painel-titulo" placeholder="Código do imóvel">
-            <p>Título do imóvel:</p>
-            <input type="text" name="titulo" class="input-text" id="painel-titulo-lateral"
-                placeholder="Pesquisar imóvel">
             <p>Cidade:</p>
             <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                 placeholder="Pesquisar Localidade">
@@ -110,9 +107,6 @@
                         <p>Código do imóvel</p>
                         <input type="text" name="cod_imovel" class="input-text" id="painel-titulo"
                             placeholder="Código do imóvel">
-                        <p>Título do imóvel</p>
-                        <input type="text" name="titulo" class="input-text" id="painel-titulo"
-                            placeholder="Pesquisar imóvel">
                         <p>Cidade:</p>
                         <input type="text" name="localidade" id="painel-local-lateral" class="input-text"
                             placeholder="Pesquisar cidade">
