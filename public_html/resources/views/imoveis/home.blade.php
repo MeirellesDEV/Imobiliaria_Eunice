@@ -31,7 +31,6 @@
 
         <p>Tipo de imóvel</p>
         <select name="id_tp_produto" id="" class="input-text">
-            <option value="Todos" seleced>Todos</option>
             <option value="1">Residencial</option>
             <option value="2">Comercial</option>
             <option value="3">Misto</option>
@@ -92,7 +91,6 @@
                 @csrf
                 <p>Finalidade</p>
                 <select name="id_tp_produto" id="" class="input-text">
-                    <option value="Todos" seleced>Todos</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                     <option value="3">Misto</option>

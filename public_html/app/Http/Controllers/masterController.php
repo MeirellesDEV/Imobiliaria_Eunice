@@ -15,11 +15,28 @@ class masterController extends Controller
 
         $catalogo = DB::table('catalogos')
             ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro',
-                'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valorVenda','catalogos.valorAluguel', 'produtos.descricao',
-                'catalogos.qtdBanheiros', 'catalogos.qtdGaragemCobertas', 'catalogos.qtdGaragemNaoCobertas',
-                'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.cod_imovel',
-                'catalogos.areaConstruida', 'catalogos.tp_contrato', 'catalogos.qtdDorms', 'catalogos.qtdSuites')
+            ->select(
+                'catalogos.id',
+                'catalogos.titulo',
+                'catalogos.cidade',
+                'catalogos.bairro',
+                'catalogos.ruaNumero',
+                'catalogos.cep',
+                'catalogos.area',
+                'catalogos.valorVenda',
+                'catalogos.valorAluguel',
+                'produtos.descricao',
+                'catalogos.qtdBanheiros',
+                'catalogos.qtdGaragemCobertas',
+                'catalogos.qtdGaragemNaoCobertas',
+                'catalogos.qtdQuartos',
+                'catalogos.vendidoAlugado',
+                'catalogos.cod_imovel',
+                'catalogos.areaConstruida',
+                'catalogos.tp_contrato',
+                'catalogos.qtdDorms',
+                'catalogos.qtdSuites'
+            )
             ->where('catalogos.destaque', '=', True)
             ->limit(10)
             ->get();
@@ -44,7 +61,12 @@ class masterController extends Controller
 
         $imoveis = DB::table('catalogos')
             ->join('produtos', 'produtos.id', '=', 'catalogos.id_tp_produto')
-            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro', 'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valorVenda','catalogos.valorVenda', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado', 'catalogos.tp_contrato', 'produtos.descricao', 'catalogos.cod_imovel')
+            ->select('catalogos.id', 'catalogos.titulo', 'catalogos.cidade', 'catalogos.bairro',
+                    'catalogos.ruaNumero', 'catalogos.cep', 'catalogos.area', 'catalogos.valorVenda',
+                    'catalogos.valorVenda', 'catalogos.qtdBanheiros', 'catalogos.qtdQuartos', 'catalogos.vendidoAlugado',
+                    'catalogos.tp_contrato', 'produtos.descricao', 'catalogos.cod_imovel', 'catalogos.qtdDorms',
+                    'catalogos.qtdSuites','catalogos.qtdGaragemCobertas','catalogos.qtdGaragemNaoCobertas',
+                    'catalogos.areaConstruida')
             ->where('catalogos.tp_contrato', '=', $request->infoPesquisa)
             ->get();
 

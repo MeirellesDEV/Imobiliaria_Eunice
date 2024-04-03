@@ -67,9 +67,11 @@
                     <p id="imovel-titulo">{{ $item->titulo }}</p>
                     <p id="imovel-descricao" class="imovel-descricao">{{ $item->descricao }}</p>
                     @if($item->tp_contrato == "Venda")
-                    <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorVenda}}{{$item->tp_contrato }}</span></p>
+                        <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorVenda}}</span></p>
+                    @elseif($item->tp_contrato == "Aluguel")
+                        <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorAluguel }}</span></p>
                     @else
-                    <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorAluguel }}{{$item->tp_contrato }}</span></p>
+                        <p id="imovel-valor">R$ <span class="num-format troca-ponto">{{ $item->valorVenda }}</span> / R$<span class="num-format troca-ponto">{{ $item->valorAluguel }}</span></p>
                     @endif
                 </section>
 
