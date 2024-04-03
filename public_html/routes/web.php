@@ -14,6 +14,8 @@ use App\Http\Controllers\emailController;
 use App\Http\Controllers\imoveisController;
 use App\Http\Controllers\clienteController;
 
+Route::get('/404', function(){abort(404);});
+
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);
 
