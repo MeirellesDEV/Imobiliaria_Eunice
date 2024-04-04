@@ -366,7 +366,7 @@ class adminController extends Controller
 
 
                 // Calcula a posição X e Y da marca d'água
-                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]); // Centralizar horizontalmente
+                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]) / 2; // Centralizar horizontalmente
                 $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
 
                 // Junta a imagem com marca d'água com a imagem original
