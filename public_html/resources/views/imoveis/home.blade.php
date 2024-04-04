@@ -36,6 +36,13 @@
                 <option value="sim">Sim</option>
             </select>
 
+            <p>Mobiliado</p>
+            <select name="mobiliado_ddl" id="tipo-produto-ddl" class="input-text">
+                <option value="mobiliado" >Mobiliado</option>
+                <option value="semi-mobiliado">Semi Mobiliado</option>
+                <option value="vazio" selected>Vazio</option>
+            </select>
+
             <p>Tipo de imóvel</p>
             <select name="id_tp_produto" id="" class="input-text">
                 <option value="1">Residencial</option>
@@ -150,6 +157,13 @@
                         <option value="" selected></option>
                         <option value="não">Não</option>
                         <option value="sim">Sim</option>
+                    </select>
+
+                    <p>Mobiliado</p>
+                    <select name="mobiliado_ddl" id="tipo-produto-ddl" class="input-text">
+                        <option value="mobiliado" >Mobiliado</option>
+                        <option value="semi-mobiliado">Semi Mobiliado</option>
+                        <option value="vazio" selected>Vazio</option>
                     </select>
 
                     <p class="search-title input-title ">Quantidade de quartos</p>
