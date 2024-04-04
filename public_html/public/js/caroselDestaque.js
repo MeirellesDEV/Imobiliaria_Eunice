@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $(document).ready(function () {
 
-        let count = document.getElementById('count').value;
+        let count = document.getElementsByClassName('carousel-item').length
+        console.log(count.length)
         if(!widthLowerThan(610)) {
             count = 1;
         }
