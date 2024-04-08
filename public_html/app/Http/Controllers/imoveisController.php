@@ -301,6 +301,15 @@ class imoveisController extends Controller
 
     public function detalhe($id){
 
+        $checagem = DB::table('catalogos')
+                        ->select('id')
+                        ->where('id', '=', $id)
+                        ->first();
+
+        if($checagem == null) {
+            abort(404);
+        }
+
         $item =  DB::table('catalogos')
                     ->join('produtos','produtos.id','=','catalogos.id_tp_produto')
                     ->select('catalogos.id','catalogos.cod_imovel','catalogos.descricao as desc','catalogos.id_tp_produto',
