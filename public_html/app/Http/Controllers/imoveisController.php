@@ -43,6 +43,7 @@ class imoveisController extends Controller
             $tp_contrato = $search[0]->tp_contrato;
             $id_tp_produto = $search[0]->id_tp_produto;
             $condominio = $search[0]->condominio;
+            $mobiliado = $search[0]->mobiliado;
 
             if ($titulo != null) {
                 $imoveis->where('catalogos.titulo', 'like','%'.$titulo.'%');
@@ -122,7 +123,7 @@ class imoveisController extends Controller
                     $imoveis->where('catalogos.valorVenda','<',100000);
                 }
 
-                $filtro->valor[] = 'Valor';
+                $filtro->valor[] = 'valor';
                 $filtro->valor[] = 'Até R$100.000';
             }
 
@@ -138,7 +139,7 @@ class imoveisController extends Controller
                     $imoveis->whereBetween('catalogos.valorVenda',[100000, 300000]);
                 }
 
-                $filtro->valor[] = 'Valor';
+                $filtro->valor[] = 'valor';
                 $filtro->valor[] = 'Entre R$100.000 e R$ 300.000';
             }
 
@@ -154,7 +155,7 @@ class imoveisController extends Controller
                     $imoveis->where('catalogos.valorVenda','>',300000);
                 }
 
-                $filtro->valor[] = 'Valor';
+                $filtro->valor[] = 'valor';
                 $filtro->valor[] = 'Acima de R$ 300.000';
             }
 
@@ -221,6 +222,13 @@ class imoveisController extends Controller
                 $filtro->condominio[] = $condominio;
             }
 
+            if($mobiliado != "vazio"){
+                $imoveis->where('catalogos.mobiliado','=',$mobiliado);
+
+                $filtro->condominio[] = "mobiliado";
+                $filtro->condominio[] = $mobiliado;
+            }
+
         }
 
         if($nItens == null){
@@ -263,7 +271,7 @@ class imoveisController extends Controller
            $request->qtdQuartos != null or $request->qtdBanheiros != null or
            $request->vagas != null or $request->valor != null or $request->area != null or
            $request->cod_imovel != null or $request->id_tp_produto != "" or
-           $request->tp_contrato != "Todos" or $request->condominio != ""
+           $request->tp_contrato != "Todos" or $request->condominio != "" or $request->condominio != "Vazio"
         ){
 
             $search = [
@@ -279,7 +287,8 @@ class imoveisController extends Controller
                     'cod_imovel' => $request->cod_imovel,
                     'id_tp_produto' => $request->id_tp_produto,
                     'tp_contrato' => $request->tp_contrato,
-                    'condominio' => $request->condominio
+                    'condominio' => $request->condominio,
+                    'mobiliado' => $request->mobiliado
                 ],
             ];
 

@@ -129,10 +129,10 @@ body {
 
 #search {
     font-size: 15px;
-    text-align: center;
+    /* text-align: center; */
     width: 79.25vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    padding: 10px;
+    padding: 10px 10px 10px 30px;
     border-radius: 90px;
     border: none;
     padding-right: 40px; /*Aqui o icone entra onde esta certo*/
@@ -140,7 +140,7 @@ body {
 
 #search::placeholder{
     text-align: left;
-    padding-left: 30px;
+    padding-left: 10px;
 }
 
 #search-button {

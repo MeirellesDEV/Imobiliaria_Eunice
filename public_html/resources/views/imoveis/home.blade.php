@@ -37,7 +37,7 @@
             </select>
 
             <p>Mobiliado</p>
-            <select name="mobiliado_ddl" id="tipo-produto-ddl" class="input-text">
+            <select name="mobiliado" id="tipo-produto-ddl" class="input-text">
                 <option value="mobiliado" >Mobiliado</option>
                 <option value="semi-mobiliado">Semi Mobiliado</option>
                 <option value="vazio" selected>Vazio</option>
@@ -160,7 +160,7 @@
                     </select>
 
                     <p>Mobiliado</p>
-                    <select name="mobiliado_ddl" id="tipo-produto-ddl" class="input-text">
+                    <select name="mobiliado" id="tipo-produto-ddl" class="input-text">
                         <option value="mobiliado" >Mobiliado</option>
                         <option value="semi-mobiliado">Semi Mobiliado</option>
                         <option value="vazio" selected>Vazio</option>

@@ -49,7 +49,7 @@ class logoutController extends Controller
         }
 
         if($filtro == 'Tipo de contrato'){
-            $search[0]->tp_contrato = null;
+            $search[0]->tp_contrato = "Todos";
         }
 
         if($filtro == 'Tipo de imóvel'){
@@ -76,6 +76,10 @@ class logoutController extends Controller
             $search[0]->area = null;
         }
 
+        if($filtro == 'mobiliado'){
+            $search[0]->mobiliado = "Vazio";
+        }
+
         // dd($search[0]);
 
         if(
@@ -84,7 +88,7 @@ class logoutController extends Controller
             $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null and
             $search[0]->tp_contrato == "Todos" and $search[0]->bairro == null and
             $search[0]->condominio == null and $search[0]->cod_imovel == null and
-            $search[0]->id_tp_produto == null
+            $search[0]->id_tp_produto == null and $search[0]->mobiliado == "Vazio"
         ){
             Session::forget('search');
             // dd("cheguei");
