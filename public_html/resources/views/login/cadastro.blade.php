@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-<button id="voltar-btn" onclick="window.location.href = '/'"><span class="material-symbols-outlined">undo</span></button>
+<button id="voltar-btn" onclick="history.back();"><span class="material-symbols-outlined">undo</span></button>
     <div class="login-container">
         <form action="cadastro" class="register-content" method="POST">
             @csrf
