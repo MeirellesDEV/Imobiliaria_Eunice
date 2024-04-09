@@ -16,7 +16,6 @@ use App\Http\Controllers\clienteController;
 
 Route::get('/404', function(){abort(404);});
 
-// Route::get('/', [masterController::class, 'index']);
 Route::get('/', [masterController::class, 'index']);
 Route::post('/', [masterController::class, 'store']);
 

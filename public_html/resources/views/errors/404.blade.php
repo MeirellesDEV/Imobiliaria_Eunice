@@ -15,15 +15,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,1,-25" />
 
 <div id="error">
-    <h1 class="error-msg">O que você procura não está aqui!</h1>
-    <p class="error-txt">Volte a navegar</p>
+    <h1 class="error-msg">Ops...</h1>
+    <p class="error-txt">Esse Imovel não existe, volte a pagina principal</p>
 </div>
 
-<div class="options">
+{{-- <div class="options">
     <a href="/" class="option">Página principal</a>
     <a href="/imoveis" class="option">Imóveis</a>
     <a href="/contato" class="option">Contato</a>
-</div>
+</div> --}}
 </section>
 
 <style>
@@ -32,12 +32,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        height: 255px;
     }
 
     .options{
         display: flex;
         justify-content: center;
-        gap: 1rem;  
+        gap: 1rem;
+    }
+
+    h1{
+        font-size: 36px !important;
     }
 </style>
 
