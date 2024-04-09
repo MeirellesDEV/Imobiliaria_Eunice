@@ -27,7 +27,6 @@
             <option value="" data-url="/cadastro">Cadastrar usuário</option>
             <option value="" data-url="/admin/clientes">Página de clientes</option>
             <option value="" data-url="/logout">Sair</option>
-
         </select>
 
         <form action="logout" method="POST">
