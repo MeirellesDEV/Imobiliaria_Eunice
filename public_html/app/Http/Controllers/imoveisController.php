@@ -12,7 +12,6 @@ use function PHPUnit\Framework\isEmpty;
 class imoveisController extends Controller
 {
     public function index(){
-        // Session::forget('search');
         $search = session('search');
         $nItens = session('nItens');
 
@@ -26,8 +25,6 @@ class imoveisController extends Controller
                     'catalogos.tp_contrato', 'catalogos.qtdDorms', 'catalogos.qtdSuites');
 
         $filtro = new \stdClass();
-
-        // dd($search);
 
         if($search and $search != 'sem filtro' and $search != null){
 
@@ -257,8 +254,6 @@ class imoveisController extends Controller
             $imagem->id = 0;
         }
 
-        // Session::forget('nItens');
-
         return view('imoveis.home',['imoveis' => $imoveis, 'imagens' => $imagem, 'filtro' => $filtro]);
     }
 
@@ -355,8 +350,6 @@ class imoveisController extends Controller
         if($semelhante->isEmpty()){
             $semelhante = '0';
         }
-
-        // dd($semelhante);
 
         return view('imoveis/edit',['detalhes' => $item, 'imagens' => $imagem, 'imagemPrincipal' => $imagemPrincipal, 'semelhante' => $semelhante]);
     }

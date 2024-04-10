@@ -15,7 +15,7 @@ class anuncioController extends Controller
         return view('anuncio');
     }
 
-    
+
     public function store(Request $request){
 
         $anuncio = new Anuncio;
@@ -32,8 +32,6 @@ class anuncioController extends Controller
         $anuncio->cidade = $request->cidade;
         $anuncio->observacao = $request->observacao;
         $anuncio->resolvido = false;
-
-        // dd($anuncio);
 
         $anuncio->save();
 
