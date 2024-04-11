@@ -367,7 +367,7 @@ class adminController extends Controller
                 // Carrega a imagem da marca d'água
                 $marcaDaguaImg = imagecreatefrompng($marcaDagua);
 
-                $logoImgRedimensionada = imagescale($marcaDaguaImg, 150, 78);
+                $logoImgRedimensionada = imagescale($marcaDaguaImg, 300, 156);
 
                 // $imagem = imagescale($imagem, 1280, 720);
 
@@ -486,7 +486,7 @@ class adminController extends Controller
             }
 
             // Redimensionar a logo para 150x170
-            $logoImgRedimensionada = imagescale($logoImg, 150, 78);
+            $logoImgRedimensionada = imagescale($logoImg, 300, 156);
             // Calcula a posição X e Y da marca d'água
             // $posXLogo = ($principalImage[0] - $logoImgRedimensionada[0]) / 2; // Centralizar horizontalmente
             // $posYLogo = ($principalImage[1] - $logoImgRedimensionada[1]) / 2; // Centralizar verticalmente
