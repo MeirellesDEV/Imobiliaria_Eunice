@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1">
@@ -18,10 +19,13 @@
     <title>@yield('title')</title>
     <link rel="icon" href="{{ asset('img/favicon-16x16.png') }}" type="image/fav-icon">
 </head>
+
 <body>
     <div id="navbar" class="background-blur enable-dark">
         <div id="nav-logo">
-            <a href="/"><div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div></a>
+            <a href="/">
+                <div class="imgHeader" style="background-image: url('{{ asset('img/logo.png') }}')"></div>
+            </a>
 
         </div>
         <div id="nav-buttons">
@@ -29,7 +33,7 @@
             <a href="/sobre"><button class="nav-btn">Sobre nós</button></a>
             <a href="/contato"><button class="nav-btn">Contato</button></a>
 
-            
+
         </div>
     </div>
 
@@ -81,8 +85,8 @@
             <div>
                 <p onclick="window.location.href='/sobre'" class="footer-link">SAIBA MAIS</p>
                 <p id="conteudo">Sobre a empresa</p>
-                <p id="conteudo" ><a href="/info/termos-de-servico" style="text-decoration:none">Termos de serviços</a></p>
-                <p id="conteudo" ><a href="/info/politica-de-privacidade" style="text-decoration:none">Política de privacidade</a></p>
+                <p id="conteudo"><a href="/info/termos-de-servico" style="text-decoration:none">Termos de serviços</a></p>
+                <p id="conteudo"><a href="/info/politica-de-privacidade" style="text-decoration:none">Política de privacidade</a></p>
             </div>
             <div>
                 <p onclick="window.location.href='/contato';" class="footer-link">CONTATO</p>
@@ -97,7 +101,7 @@
                 <p id="conteudo">Área</p>
             </div>
             <div>
-                <a href="/"><img id="img-logo-footer" src="{{asset('img/logo.png')}}"></a> 
+                <a href="/"><img id="img-logo-footer" src="{{asset('img/logo.png')}}"></a>
             </div>
         </div>
 
@@ -108,7 +112,7 @@
                 <p id="color_squad">©2023 Desenvolvido por Pineapple Team</p>
             </div>
             <div class="separacao_icones">
-                <a href="https://www.facebook.com/EuniceSocolowskiImoveis/" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
+                <a href="https://www.facebook.com/eunicesocolowskimoveis/" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
                 <a href="https://wa.me/5512991852310" target="_blank"><img src="{{asset('img/whatsapp.svg')}}" alt=""></a>
             </div>
         </div>
@@ -116,26 +120,25 @@
 
     <script src="{{ asset('js/dropDown.js') }}"></script>
 
-<style>
-    .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-    }
-</style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+    </style>
 
-<script>
-    // let modal_identify = document.getElementById('modalContato');
-    // let modalButton = document.getElementById('contato-btn');
+    <script>
+        // let modal_identify = document.getElementById('modalContato');
+        // let modalButton = document.getElementById('contato-btn');
 
-    // // Adiciona um event listener ao documento para detectar cliques em qualquer lugar na página.
-    // document.addEventListener('click', function(event) {
-    // // Verifica se o clique ocorreu fora do elemento desejado.
-    // if (!modal_identify.contains(event.target) && !modalButton.contains(event.target)) {
-    //     clickClose()
-    // }
-    // });
-
-</script>
+        // // Adiciona um event listener ao documento para detectar cliques em qualquer lugar na página.
+        // document.addEventListener('click', function(event) {
+        // // Verifica se o clique ocorreu fora do elemento desejado.
+        // if (!modal_identify.contains(event.target) && !modalButton.contains(event.target)) {
+        //     clickClose()
+        // }
+        // });
+    </script>
