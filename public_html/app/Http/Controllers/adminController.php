@@ -367,12 +367,14 @@ class adminController extends Controller
                 // Carrega a imagem da marca d'água
                 $marcaDaguaImg = imagecreatefrompng($marcaDagua);
 
+                $logoImgRedimensionada = imagescale($marcaDaguaImg, 150, 78);
+
                 // $imagem = imagescale($imagem, 1280, 720);
 
                 // Pega o x e y da imagem e da marca d'água
                 // Organizado em formato de array, por conveniência
                 $imagemOriginalInfo = [imagesx($imagem), imagesy($imagem)];
-                $marcaDaguaInfo = [imagesx($marcaDaguaImg), imagesy($marcaDaguaImg)];
+                $marcaDaguaInfo = [imagesx($logoImgRedimensionada), imagesy($logoImgRedimensionada)];
 
 
                 // Calcula a posição X e Y da marca d'água
@@ -380,14 +382,14 @@ class adminController extends Controller
                 $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
 
                 // Junta a imagem com marca d'água com a imagem original
-                imagecopy($imagem, $marcaDaguaImg, $posX, $posY, 0, 0, $marcaDaguaInfo[0], $marcaDaguaInfo[1]);
+                imagecopy($imagem, $logoImgRedimensionada, $posX, $posY, 0, 0, $marcaDaguaInfo[0], $marcaDaguaInfo[1]);
 
                 // Salva a imagem
                 imagejpeg($imagem, $fileNameFormat);
 
                 // Libera memória
                 imagedestroy($imagem);
-                imagedestroy($marcaDaguaImg);
+                imagedestroy($logoImgRedimensionada);
 
                 $imagem = new Imagens();
                 $imagem->chave = $catalogo->id;
@@ -484,10 +486,12 @@ class adminController extends Controller
             }
 
             // Redimensionar a logo para 150x170
-            $logoImgRedimensionada = imagescale($logoImg, 100, 120);
-
-            // Calcular a posição X e Y para a logo no canto direito
-            $posXLogo = imagesx($principalImage) - imagesx($logoImgRedimensionada); // Canto direito
+            $logoImgRedimensionada = imagescale($logoImg, 150, 78);
+            // Calcula a posição X e Y da marca d'água
+            // $posXLogo = ($principalImage[0] - $logoImgRedimensionada[0]) / 2; // Centralizar horizontalmente
+            // $posYLogo = ($principalImage[1] - $logoImgRedimensionada[1]) / 2; // Centralizar verticalmente
+            // // Calcular a posição X e Y para a logo no canto direito
+            $posXLogo = (imagesx($principalImage) - imagesx($logoImgRedimensionada)) / 2; // Canto direito
             $posYLogo = (imagesy($principalImage) - imagesy($logoImgRedimensionada)) / 2; // Meio vertical
 
             // Mesclar a Imagem Principal com a Logo
