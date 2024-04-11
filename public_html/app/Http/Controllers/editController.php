@@ -48,6 +48,11 @@ class editController extends Controller
                 'catalogos.agua',
                 'catalogos.energia',
                 'catalogos.esgoto',
+
+                'catalogos.sisAlar',
+                'catalogos.sisTel',
+
+
                 'catalogos.murado',
                 'catalogos.pavimentacao',
                 'catalogos.areaServico',
@@ -84,9 +89,10 @@ class editController extends Controller
                 'catalogos.qtdAndar',
                 'catalogos.cozinhaConjugada',
                 'catalogos.porteiroEletronico',
-                'catalogos.quintal',
                 'catalogos.tvCabo',
                 'catalogos.arCondicionado',
+                'catalogos.arCondicionadoCentral',
+                'catalogos.sistemaIncendio',
                 'catalogos.alarme',
                 'catalogos.aguaSolar',
                 'catalogos.mobiliado',
@@ -141,10 +147,13 @@ class editController extends Controller
                 'catalogos.elevadores',
                 'catalogos.copa',
                 'catalogos.recepcao',
+                'catalogos.sistemaEsgoto',
+                'catalogos.laminado',
                 'catalogos.mesanino',
                 'catalogos.luminarias',
                 'catalogos.acessoDeficiente',
                 'catalogos.geradorEnergia',
+                'catalogos.geradorEnergiaImovel',
                 'catalogos.telefonia',
                 'catalogos.rede',
                 'catalogos.qtdSalas',
@@ -161,6 +170,7 @@ class editController extends Controller
                 'catalogos.tipoComercio',
                 'catalogos.sistemaIncendio',
                 'catalogos.aquecimentoCentral',
+                'catalogos.sistemaIncendio',
                 'catalogos.vigilancia24h',
                 'catalogos.vestiario',
                 'catalogos.extraInfo',
@@ -269,10 +279,14 @@ class editController extends Controller
         $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;
         $catalogo->energia = ($request->energia) ? true : false;
         $catalogo->esgoto = ($request->esgoto) ? true : false;
+
+        $catalogo->sisAlar = ($request->sisAlar) ? true : false;
+        $catalogo->sisTel = ($request->sisTel) ? true : false;
+
         $catalogo->murado = ($request->murado) ? true : false;
         $catalogo->pavimentacao = ($request->pavimentacao) ? true : false;
         $catalogo->areaServico = ($request->areaServico) ? true : false;
-        $catalogo->gasEncanado = ($request->banheiroAux) ? true : false;
+        $catalogo->gasEncanado = ($request->gasEncanado) ? true : false;
         $catalogo->banheiroEmpregada = ($request->banheiroEmpregada) ? true : false;
         $catalogo->cozinha = ($request->cozinha) ? true : false;
         $catalogo->cozinhaPlanejada = ($request->cozinhaPlanejada) ? true : false;
@@ -300,6 +314,8 @@ class editController extends Controller
         $catalogo->moveisPlanejados = ($request->moveisPlanejados) ? true : false;
         $catalogo->portaoEletronico = ($request->portaoEletronico) ? true : false;
         $catalogo->quintal = ($request->quintal) ? true : false;
+        $catalogo->vigilancia24h = ($request->vigilancia24h) ? true : false;
+        $catalogo->aquecimentoCentral = ($request->aquecimentoCentral) ? true : false;
         $catalogo->cozinhaConjugada = ($request->cozinhaConjugada) ? true : false;
         $catalogo->porteiroEletronico = ($request->porteiroEletronico) ? true : false;
         $catalogo->tvCabo = ($request->tvCabo) ? true : false;
@@ -307,6 +323,8 @@ class editController extends Controller
         /* NOVOS CAMPOS */
         $catalogo->extraInfo = $request->extraInfo;
         $catalogo->arCondicionado = ($request->arCondicionado) ? true : false;
+        $catalogo->arCondicionadoCentral = ($request->arCondicionadoCentral) ? true : false;
+        $catalogo->sistemaIncendio  = ($request->sistemaIncendio) ? true : false;
         $catalogo->alarme = ($request->alarme) ? true : false;
         $catalogo->aguaSolar = ($request->aguaSolar) ? true : false;
         $catalogo->mobiliado = ($request->mobiliado) ? true : false;
@@ -376,10 +394,12 @@ class editController extends Controller
         $catalogo->elevadores = ($request->elevadores) ? true : false;
         $catalogo->copa = ($request->copa) ? true : false;
         $catalogo->recepcao = ($request->recepcao) ? true : false;
+        $catalogo->laminado = ($request->laminado) ? true : false;
         $catalogo->mesanino = ($request->mesanino) ? true : false;
         $catalogo->luminarias = ($request->luminarias) ? true : false;
         $catalogo->acessoDeficiente = ($request->acessoDeficiente) ? true : false;
         $catalogo->geradorEnergia = ($request->geradorEnergia) ? true : false;
+        $catalogo->geradorEnergiaImovel = ($request->geradorEnergiaImovel) ? true : false;
         $catalogo->telefonia = ($request->telefonia) ? true : false;
         $catalogo->rede = ($request->rede) ? true : false;
         $catalogo->vestiario = ($request->vestiario) ? true : false;

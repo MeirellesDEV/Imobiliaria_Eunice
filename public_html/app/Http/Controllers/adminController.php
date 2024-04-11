@@ -196,6 +196,19 @@ class adminController extends Controller
             $catalogo->agua = ($request->agua) ? true : false;
             $catalogo->energia = ($request->energia) ? true : false;
             $catalogo->esgoto = ($request->esgoto) ? true : false;
+
+
+            $catalogo->sistemaEsgoto = ($request->sistemaEsgoto) ? true : false;
+            $catalogo->aguaEncanada = ($request->aguaEncanada) ? true : false;
+            $catalogo->laminado = ($request->laminado) ? true : false;
+            $catalogo->luminarias = ($request->luminarias) ? true : false;
+            $catalogo->acessoDeficiente = ($request->acessoDeficiente) ? true : false;
+            $catalogo->geradorEnergia = ($request->geradorEnergia) ? true : false;
+            $catalogo->geradorEnergiaImovel = ($request->geradorEnergiaImovel) ? true : false;
+            $catalogo->sisAlar = ($request->sisAlar) ? true : false;
+            $catalogo->sisTel = ($request->sisTel) ? true : false;
+            $catalogo->rede = ($request->rede) ? true : false;
+
             $catalogo->murado = ($request->murado) ? true : false;
             $catalogo->pavimentacao = ($request->pavimentacao) ? true : false;
             $catalogo->areaServico = ($request->areaServico) ? true : false;
@@ -233,6 +246,7 @@ class adminController extends Controller
             /* NOVOS CAMPOS */
             $catalogo->tvCabo = ($request->tvCabo) ? true : false;
             $catalogo->arCondicionado = ($request->arCondicionado) ? true : false;
+            $catalogo->arCondicionadoCentral = ($request->arCondicionadoCentral) ? true : false;
             $catalogo->alarme = ($request->alarme) ? true : false;
             $catalogo->aguaSolar = ($request->aguaSolar) ? true : false;
             $catalogo->mobiliado = ($request->mobiliado) ? true : false;
@@ -283,6 +297,7 @@ class adminController extends Controller
             $catalogo->estacionamentoVisita = ($request->estacionamentoVisita) ? true : false;
             $catalogo->acessoEnergia = ($request->acessoEnergia) ? true : false;
             $catalogo->escola = ($request->escola) ? true : false;
+            $catalogo->recepcao = ($request->recepcao) ? true : false;
             $catalogo->comercio = ($request->comercio) ? true : false;
             $catalogo->qtdSalas = $request->qtdSalas;
             $catalogo->qtdDorms = $request->qtdDorms;
@@ -298,13 +313,8 @@ class adminController extends Controller
             // $catalogo->elevadores = $request->elevadores;
             $catalogo->elevadores = ($request->elevadores) ? true : false;
             $catalogo->copa = ($request->copa) ? true : false;
-            $catalogo->recepcao = ($request->recepcao) ? true : false;
             $catalogo->mesanino = ($request->mesanino) ? true : false;
-            $catalogo->luminarias = ($request->luminarias) ? true : false;
-            $catalogo->acessoDeficiente = ($request->acessoDeficiente) ? true : false;
-            $catalogo->geradorEnergia = ($request->geradorEnergia) ? true : false;
             $catalogo->telefonia = ($request->telefonia) ? true : false;
-            $catalogo->rede = ($request->rede) ? true : false;
             $catalogo->sistemaIncendio = ($request->sistemaIncendio) ? true : false;
             $catalogo->aquecimentoCentral = ($request->aquecimentoCentral) ? true : false;
             $catalogo->vigilancia24h = ($request->vigilancia24h) ? true : false;

@@ -41,6 +41,10 @@ return new class extends Migration
             $table->boolean('agua');
             $table->boolean('energia');
             $table->boolean('esgoto');
+
+            $table->boolean('sisAlar');
+            $table->boolean('sisTel');
+
             $table->boolean('murado');
             $table->boolean('pavimentacao');
             $table->boolean('areaServico');
@@ -77,6 +81,7 @@ return new class extends Migration
 
             $table->boolean('tvCabo');
             $table->boolean('arCondicionado');
+            $table->boolean('arCondicionadoCentral');
             $table->boolean('alarme');
             $table->boolean('aguaSolar');
             $table->boolean('mobiliado');
@@ -140,11 +145,11 @@ return new class extends Migration
             $table->unsignedFloat('metragemFundo')->nullable();
             $table->unsignedFloat('metragemDireita')->nullable();
             $table->unsignedFloat('metragemEsquerda')->nullable();
-            $table->text('posTerreno',500)->nullable();
-            $table->text('formaTerreno',500)->nullable();
-            $table->text('vegetacao',500)->nullable();
-            $table->text('protecao',500)->nullable();
-            $table->text('topografia',500)->nullable();
+            $table->text('posTerreno', 500)->nullable();
+            $table->text('formaTerreno', 500)->nullable();
+            $table->text('vegetacao', 500)->nullable();
+            $table->text('protecao', 500)->nullable();
+            $table->text('topografia', 500)->nullable();
             $table->boolean('acessoEnergia')->nullable();
             $table->boolean('escola')->nullable();
             $table->boolean('comercio')->nullable();
@@ -153,22 +158,24 @@ return new class extends Migration
 
             // Opções do comércio
             $table->integer('elevadores')->nullable();
-            $table->string('tipoComercio',500)->nullable();
-            $table->boolean('copa');
-            $table->boolean('recepcao');
-            $table->boolean('mesanino');
-            $table->boolean('luminarias');
-            $table->boolean('acessoDeficiente');
-            $table->boolean('geradorEnergia');
-            $table->boolean('telefonia');
-            $table->boolean('rede');
-            $table->boolean('sistemaIncendio');
-            $table->boolean('aquecimentoCentral');
-            $table->boolean('vigilancia24h');
-            $table->boolean('vestiario');
-            
+            $table->string('tipoComercio', 500)->nullable();
+            $table->boolean('copa')->nullable();
+            $table->boolean('recepcao')->nullable();
+            $table->boolean('laminado')->nullable();
+            $table->boolean('mesanino')->nullable();
+            $table->boolean('luminarias')->nullable();
+            $table->boolean('acessoDeficiente')->nullable();
+            $table->boolean('geradorEnergia')->nullable();
+            $table->boolean('geradorEnergiaImovel')->nullable();
+            $table->boolean('telefonia')->nullable();
+            $table->boolean('rede')->nullable();
+            $table->boolean('sistemaIncendio')->nullable();
+            $table->boolean('aquecimentoCentral')->nullable();
+            $table->boolean('vigilancia24h')->nullable();
+            $table->boolean('vestiario')->nullable();
+
             $table->text('emCondominio');
-            $table->text('mobiliado_ddl') ->nullable();
+            $table->text('mobiliado_ddl')->nullable();
             $table->unsignedFloat('valorAluguel');
             $table->unsignedFloat('valorVenda');
 
@@ -177,7 +184,6 @@ return new class extends Migration
 
             $table->foreign('id_tp_produto')->references('id')->on('produtos')->onDelete('cascade');
             $table->foreign('id_cliente')->references('id')->on('usuarios')->onDelete('cascade');
-
         });
     }
 
