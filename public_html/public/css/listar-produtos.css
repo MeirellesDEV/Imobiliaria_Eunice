@@ -5,6 +5,7 @@
 body {
     margin: 0;
 }
+
 * {
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
@@ -29,6 +30,7 @@ body {
 
     margin: 20px 0;
 }
+
 .search-title {
     margin: 0;
     background-color: #585858;
@@ -38,11 +40,13 @@ body {
 
     margin-top: 10px;
 }
+
 .search-body {
     border-radius: 0 0 15px 15px;
     background-color: white;
     padding: 5px;
 }
+
 .input-text {
     width: 100%;
     border: none;
@@ -50,19 +54,24 @@ body {
     padding: 10px;
     background-color: white;
 }
+
 .input-title {
     text-align: center;
 }
+
 .input-search-group {
     width: 100%;
 }
+
 #localidade-titulo {
     margin-top: 15px;
 }
+
 #painel-pesquisa-float-completo {
     position: sticky;
     top: 0;
 }
+
 #painel-pesquisa-float-completo * {
     font-size: 13px;
 }
@@ -78,6 +87,7 @@ body {
     flex-direction: column;
     flex-shrink: 0;
 }
+
 #painel-pesquisa-titulo {
     padding: 10px 0;
     text-align: center;
@@ -86,21 +96,25 @@ body {
     border-radius: 15px 15px 0 0;
     margin-left: 50px;
 }
+
 #painel-pesquisa-opcoes {
     display: flex;
     flex-direction: column;
 }
+
 .radio-options {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 10px;
 }
+
 .radio-options-column {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 input[type="radio"]:checked:after {
     /* quando selecionado */
     width: 15px;
@@ -125,11 +139,12 @@ input[type="radio"]:checked:after {
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding: 20px 0px 200px;
     align-items: center;
-
     background-color: #d3d3d3;
+    overflow-y: scroll;
 }
+
 #painel-pesquisa-opcoes-lateral {
     /* layout */
     display: flex;
@@ -138,6 +153,7 @@ input[type="radio"]:checked:after {
     width: 80%;
     gap: 10px;
 }
+
 #painel-pesquisa-opcoes-lateral * {
     margin: 0;
 }
@@ -147,6 +163,7 @@ input[type="radio"]:checked:after {
     flex-direction: row;
     justify-content: space-around;
 }
+
 .radio-options-lateral-valor {
     display: flex;
     flex-direction: column;
@@ -158,6 +175,7 @@ input[type="radio"]:checked:after {
     border-radius: 0 0 15px 15px;
     padding: 5px;
 }
+
 .lateral-title {
     background-color: #585858;
     padding: 5px;
@@ -171,6 +189,7 @@ input[type="radio"]:checked:after {
     justify-content: center;
     align-items: center;
 }
+
 .busca-painel-btn {
     background-color: var(--laranja);
     color: white;
@@ -248,6 +267,7 @@ input[type="radio"]:checked:after {
     background-color: black;
     border-radius: 15px;
 }
+
 .produto-titulo {
     color: #1b657a;
     font-size: 16px;
@@ -265,6 +285,7 @@ input[type="radio"]:checked:after {
 .produto-descricao {
     text-align: center;
 }
+
 .produto-descricao {
     display: flex;
     justify-content: center;
@@ -276,6 +297,7 @@ input[type="radio"]:checked:after {
     overflow: hidden;
     color: #5e5e5e;
 }
+
 .produto-dados {
     width: 100%;
     display: flex;
@@ -292,6 +314,7 @@ input[type="radio"]:checked:after {
     flex: 1 0 20%;
     max-width: 20%;
 }
+
 #dados-dorms,
 #dados-banheiros,
 #dados-suites {
@@ -304,6 +327,7 @@ input[type="radio"]:checked:after {
 .botao-detalhes {
     width: 100%;
 }
+
 .produto-saber-mais {
     background-color: #1b657a;
     color: white;
@@ -313,6 +337,7 @@ input[type="radio"]:checked:after {
     width: 100%;
     /*transition:all 0.2s;*/
 }
+
 .produto-saber-mais:hover {
     cursor: pointer;
     /*background-color:#FFFFFF;*/
@@ -330,6 +355,7 @@ input {
 
     justify-content: center;
 }
+
 #btn-mostrar-mais {
     background-color: var(--laranja);
     color: white;
@@ -345,6 +371,7 @@ input {
 .search-show {
     display: flex;
 }
+
 .search-hidden {
     display: none;
 }
@@ -356,6 +383,7 @@ input {
     align-items: center;
     gap: 10px;
 }
+
 .filtro-content {
     display: flex;
     flex-direction: row;
@@ -366,6 +394,7 @@ input {
     padding: 5px;
     border-radius: 3px;
 }
+
 #pesquisa-result {
     display: flex;
     flex-direction: column;
@@ -379,15 +408,18 @@ input {
     #painel-pesquisa-float-completo {
         display: none;
     }
+
     .produto-container {
         width: 80%;
         margin: auto;
     }
+
     #mobile-buscar {
         display: block;
         z-index: 998;
     }
 }
+
 @media (min-width: 1265px) {
     #mobile-buscar {
         display: none;
