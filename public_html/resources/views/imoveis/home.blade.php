@@ -11,7 +11,7 @@
     @csrf
     <div id="painel-pesquisa-opcoes-lateral">
         <p>Finalidade</p>
-        <select name="finalidade" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
+        <select name="finalidade" id="finalidade" class="input-text" onchange="filtrarSegundoSelectMobile()">
             <option value="" selected></option>
             <option value="1">Residencial</option>
             <option value="2">Comercial</option>
@@ -176,7 +176,7 @@
             <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                 @csrf
                 <p>Finalidade</p>
-                <select name="finalidade" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
+                <select name="finalidade" id="finalidade2" class="input-text" onchange="filtrarSegundoSelect()">
                     <option value="" selected></option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
@@ -184,7 +184,7 @@
                 </select>
 
                 <p>Tipo de Imóvel</p>
-                <select name="id_tp_produto" id="tp_imoveis" class="input-text">
+                <select name="id_tp_produto" id="tp_imoveis2" class="input-text">
                     <option value="" selected></option>
                     <option value="1">Terreno</option>
                     <option value="2">Casa</option>
@@ -474,6 +474,183 @@
     trocaPonto()
 
     function filtrarSegundoSelect() {
+        var primeiroSelect = document.getElementById("finalidade2");
+        var segundoSelect = document.getElementById("tp_imoveis2");
+
+        segundoSelect.innerHTML = '';
+
+        if (primeiroSelect.value === "1") {
+            var opcoes2 = [{
+                    text: "Terreno",
+                    value: 1
+                },
+                {
+                    text: "Apartamento",
+                    value: 3
+                },
+                {
+                    text: "Casa",
+                    value: 2
+                },
+                {
+                    text: "Sitio",
+                    value: 11
+                },
+                {
+                    text: "Cobertura",
+                    value: 14
+                },
+                {
+                    text: "Flat",
+                    value: 15
+                },
+                {
+                    text: "Kitnet",
+                    value: 16
+                },
+                {
+                    text: "Prédio",
+                    value: 7
+                },
+                {
+                    text: "Studio",
+                    value: 17
+                },
+                {
+                    text: "Area",
+                    value: 13
+                }
+            ];
+
+        } else if (primeiroSelect.value === "2") {
+            var opcoes2 = [{
+                    text: "Casa",
+                    value: 2
+                },
+                {
+                    text: "Terreno",
+                    value: 1
+                },
+                {
+                    text: "Barracão",
+                    value: 5
+                },
+                {
+                    text: "Galpão",
+                    value: 6
+                },
+                {
+                    text: "Prédio",
+                    value: 7
+                },
+                {
+                    text: "Sala",
+                    value: 8
+                },
+                {
+                    text: "Salão",
+                    value: 9
+                },
+                {
+                    text: "Loja",
+                    value: 10
+                },
+                {
+                    text: "Chacara",
+                    value: 4
+                },
+                {
+                    text: "Sitio",
+                    value: 11
+                },
+                {
+                    text: "Hotel",
+                    value: 12
+                },
+                {
+                    text: "Area",
+                    value: 13
+                }
+            ];
+
+        } else if (primeiroSelect.value === "3") {
+            var opcoes2 = [{
+                    text: "Casa",
+                    value: 2
+                },
+                {
+                    text: "Terreno",
+                    value: 1
+                },
+                {
+                    text: "Barracão",
+                    value: 5
+                },
+                {
+                    text: "Galpão",
+                    value: 6
+                },
+                {
+                    text: "Prédio",
+                    value: 7
+                },
+                {
+                    text: "Sala",
+                    value: 8
+                },
+                {
+                    text: "Salão",
+                    value: 9
+                },
+                {
+                    text: "Loja",
+                    value: 10
+                },
+                {
+                    text: "Hotel",
+                    value: 12
+                },
+                {
+                    text: "Area",
+                    value: 13
+                },
+                {
+                    text: "Apartamento",
+                    value: 3
+                },
+                {
+                    text: "Chacara",
+                    value: 4
+                },
+                {
+                    text: "Cobertura",
+                    value: 14
+                },
+                {
+                    text: "Flat",
+                    value: 15
+                },
+                {
+                    text: "Kitnet",
+                    value: 16
+                },
+                {
+                    text: "Studio",
+                    value: 17
+                },
+            ];
+
+        }
+
+        for (var i = 0; i < opcoes2.length; i++) {
+            var option2 = document.createElement("option");
+            option2.text = opcoes2[i].text;
+            option2.value = opcoes2[i].value;
+            segundoSelect.add(option2);
+        }
+    }
+
+    function filtrarSegundoSelectMobile() {
         var primeiroSelect = document.getElementById("finalidade");
         var segundoSelect = document.getElementById("tp_imoveis");
 
