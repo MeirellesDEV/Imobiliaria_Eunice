@@ -58,4 +58,17 @@
     </div>
 @endif
 
+<style>
+    #flash-message {
+        position: fixed;
+        top: 0px;
+        padding: 10px 10vw;
+        font-size: 18px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.485);
+
+        background-color: rgb(37, 205, 37);
+        color: white;
+    }
+</style>
+
 @endsection
