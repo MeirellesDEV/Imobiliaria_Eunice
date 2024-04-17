@@ -17,7 +17,7 @@
             <option value="2">Comercial</option>
             <option value="3">Misto</option>
         </select>
-        <p>Tipo de Imovel</p>
+        <p>Tipo de Imóvel</p>
         <select name="id_tp_produto" id="tp_imoveis" class="input-text">
             <option value="" selected></option>
             <option value="1">Terreno</option>
@@ -77,49 +77,49 @@
         <!--</select>-->
 
         <div>
-        <p class="search-title input-title ">Quantidade de quartos</p>
-        <div class="radio-options search-body">
-            <div class="radio-option">
-                <input type="radio" name="qtdQuartos" id="" value="1"> <label for="">1</label>
+            <p class="search-title input-title ">Quantidade de quartos</p>
+            <div class="radio-options search-body">
+                <div class="radio-option">
+                    <input type="radio" name="qtdQuartos" id="" value="1"> <label for="">1</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="qtdQuartos" id="" value="2"> <label for="">2</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="qtdQuartos" id="" value="3"> <label for="">3+</label>
+                </div>
             </div>
-            <div class="radio-option">
-                <input type="radio" name="qtdQuartos" id="" value="2"> <label for="">2</label>
-            </div>
-            <div class="radio-option">
-                <input type="radio" name="qtdQuartos" id="" value="3"> <label for="">3+</label>
-            </div>
-        </div>
         </div>
 
         <div>
-        <p class="search-title input-title ">Quantidade de banheiros</p>
-        <div class="radio-options search-body">
-            <div class="radio-option">
-                <input type="radio" name="qtdBanheiros" id="" value="1"> <label for="">1</label>
+            <p class="search-title input-title ">Quantidade de banheiros</p>
+            <div class="radio-options search-body">
+                <div class="radio-option">
+                    <input type="radio" name="qtdBanheiros" id="" value="1"> <label for="">1</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="qtdBanheiros" id="" value="2"> <label for="">2</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="qtdBanheiros" id="" value="3"> <label for="">3+</label>
+                </div>
             </div>
-            <div class="radio-option">
-                <input type="radio" name="qtdBanheiros" id="" value="2"> <label for="">2</label>
-            </div>
-            <div class="radio-option">
-                <input type="radio" name="qtdBanheiros" id="" value="3"> <label for="">3+</label>
-            </div>
-        </div>
         </div>
 
         <div>
-        <p class="search-title input-title ">Quantidade de vagas</p>
-        <div class="radio-options search-body">
-            <div class="radio-option">
-                <input type="radio" name="vagas" id="" value="1"> <label for="">1</label>
-            </div>
-            <div class="radio-option">
-                <input type="radio" name="vagas" id="" value="2"> <label for="">2</label>
+            <p class="search-title input-title ">Quantidade de vagas</p>
+            <div class="radio-options search-body">
+                <div class="radio-option">
+                    <input type="radio" name="vagas" id="" value="1"> <label for="">1</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="vagas" id="" value="2"> <label for="">2</label>
 
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="vagas" id="" value="3"> <label for="">3+</label>
+                </div>
             </div>
-            <div class="radio-option">
-                <input type="radio" name="vagas" id="" value="3"> <label for="">3+</label>
-            </div>
-        </div>
         </div>
 
         <div class="radio-container">
@@ -183,7 +183,7 @@
                     <option value="3">Misto</option>
                 </select>
 
-                <p>Tipo de Imovel</p>
+                <p>Tipo de Imóvel</p>
                 <select name="id_tp_produto" id="tp_imoveis" class="input-text">
                     <option value="" selected></option>
                     <option value="1">Terreno</option>
