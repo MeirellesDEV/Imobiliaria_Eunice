@@ -275,8 +275,9 @@ class imoveisController extends Controller
             $request->titulo != null or $request->localidade != null or $request->bairro != null or
             $request->qtdQuartos != null or $request->qtdBanheiros != null or
             $request->vagas != null or $request->valor != null or $request->area != null or
-            $request->cod_imovel != null or $request->id_tp_produto != "" or
-            $request->tp_contrato != "Todos" or $request->condominio != "" or $request->condominio != "Vazio"
+            $request->cod_imovel != null or $request->id_tp_produto != null or
+            $request->tp_contrato != "Todos" or $request->condominio != null or
+            $request->mobiliado != "vazio"
         ) {
 
             $search = [
@@ -300,6 +301,7 @@ class imoveisController extends Controller
             $session->put([
                 'search' => $search
             ]);
+
         } else {
 
             $session->put([
