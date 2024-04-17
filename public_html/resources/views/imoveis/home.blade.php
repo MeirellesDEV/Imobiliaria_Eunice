@@ -53,6 +53,7 @@
             <option value="Todos" selected>Todos</option>
             <option value="Aluguel">Aluguel</option>
             <option value="Venda">Venda</option>
+            <option value="Aluguel/Venda">Aluguel/Venda</option>
         </select>
 
         <p>Em condominio</p>
@@ -218,6 +219,7 @@
                     <option value="Todos" selected>Todos</option>
                     <option value="Aluguel">Aluguel</option>
                     <option value="Venda">Venda</option>
+                    <option value="Aluguel/Venda">Aluguel/Venda</option>
                 </select>
 
                 <p>Em condominio</p>
