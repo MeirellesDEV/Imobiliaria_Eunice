@@ -22,8 +22,6 @@ class logoutController extends Controller
         $search = session('search');
         $filtro = $request->filtro;
 
-        // dd($filtro);
-
         if($filtro == 'titulo'){
             if(isset($search[0])){
                 $search[0]->titulo = null;
@@ -36,7 +34,7 @@ class logoutController extends Controller
             $search[0]->cod_imovel = null;
         }
 
-        if($filtro == 'localidade'){
+        if($filtro == 'cidade'){
             $search[0]->localidade = null;
         }
 
@@ -53,7 +51,7 @@ class logoutController extends Controller
         }
 
         if($filtro == 'Tipo de imóvel'){
-            $search[0]->id_tp_produto = null;
+            $search[0]->finalidade = null;
         }
 
         if($filtro == 'quartos'){
@@ -77,7 +75,11 @@ class logoutController extends Controller
         }
 
         if($filtro == 'mobiliado'){
-            $search[0]->mobiliado = "Vazio";
+            $search[0]->mobiliado = "vazio";
+        }
+
+        if($filtro == 'Tipo de imovel'){
+            $search[0]->id_tp_produto = null;
         }
 
         if(
@@ -86,7 +88,8 @@ class logoutController extends Controller
             $search[0]->vagas == null and $search[0]->valor == null and $search[0]->area == null and
             $search[0]->tp_contrato == "Todos" and $search[0]->bairro == null and
             $search[0]->condominio == null and $search[0]->cod_imovel == null and
-            $search[0]->id_tp_produto == null and $search[0]->mobiliado == "Vazio"
+            $search[0]->finalidade == null and $search[0]->mobiliado == "vazio" and
+            $search[0]->id_tp_produto == null
         ){
             Session::forget('search');
         }

@@ -59,6 +59,7 @@ class imoveisController extends Controller
             $valor = $search[0]->valor;
             $cod_imovel = $search[0]->cod_imovel;
             $tp_contrato = $search[0]->tp_contrato;
+            $finalidade = $search[0]->finalidade;
             $id_tp_produto = $search[0]->id_tp_produto;
             $condominio = $search[0]->condominio;
             $mobiliado = $search[0]->mobiliado;
@@ -73,7 +74,7 @@ class imoveisController extends Controller
             if ($cidade != null) {
                 $imoveis->where('catalogos.cidade', 'like', '%' . $cidade . '%');
 
-                $filtro->cidade[] = 'localidade';
+                $filtro->cidade[] = 'cidade';
                 $filtro->cidade[] = $cidade;
             }
             if ($bairro != null) {
@@ -196,22 +197,22 @@ class imoveisController extends Controller
                 $filtro->cod_imovel[] = $cod_imovel;
             }
 
-            if ($id_tp_produto != "") {
-                if ($id_tp_produto == 1) {
+            if ($finalidade != null) {
+                if ($finalidade == 1) {
                     $imoveis->whereIn('catalogos.id_tp_produto', [1, 3, 2, 4, 11, 14, 15, 16, 7, 17, 13]);
 
-                    $filtro->id_tp_produto[] = "Tipo de imóvel";
-                    $filtro->id_tp_produto[] = "Residencial";
-                } else if ($id_tp_produto == 2) {
+                    $filtro->finalidade[] = "Tipo de imóvel";
+                    $filtro->finalidade[] = "Residencial";
+                } else if ($finalidade == 2) {
                     $imoveis->whereIn('catalogos.id_tp_produto', [2, 1, 5, 6, 7, 8, 9, 10, 4, 11, 12, 13]);
 
-                    $filtro->id_tp_produto[] = "Tipo de imóvel";
-                    $filtro->id_tp_produto[] = "Comercial";
-                } else if ($id_tp_produto == 2) {
+                    $filtro->finalidade[] = "Tipo de imóvel";
+                    $filtro->finalidade[] = "Comercial";
+                } else if ($finalidade == 2) {
                     $imoveis->whereIn('catalogos.id_tp_produto', [2, 1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 3, 4, 14, 15, 16, 17]);
 
-                    $filtro->id_tp_produto[] = "Tipo de imóvel";
-                    $filtro->id_tp_produto[] = "Misto";
+                    $filtro->finalidade[] = "Tipo de imóvel";
+                    $filtro->finalidade[] = "Misto";
                 }
             }
 
@@ -227,6 +228,68 @@ class imoveisController extends Controller
 
                 $filtro->condominio[] = "Em condominio";
                 $filtro->condominio[] = $condominio;
+            }
+
+            if ($id_tp_produto != "") {
+                $imoveis->where('catalogos.id_tp_produto', '=', $id_tp_produto);
+                $nm_imovel = '';
+
+                switch ($id_tp_produto){
+                    case 1:
+                        $nm_imovel = 'Terreno';
+                        break;
+                    case 2:
+                        $nm_imovel = 'Casa';
+                        break;
+                    case 3:
+                        $nm_imovel = 'Apartamento';
+                        break;
+                    case 4:
+                        $nm_imovel = 'Chacara';
+                        break;
+                    case 5:
+                        $nm_imovel = 'Barracão';
+                        break;
+                    case 6:
+                        $nm_imovel = 'Galpão';
+                        break;
+                    case 7:
+                        $nm_imovel = 'Predio';
+                        break;
+                    case 8:
+                        $nm_imovel = 'Sala';
+                        break;
+                    case 9:
+                        $nm_imovel = 'Salão';
+                        break;
+                    case 10:
+                        $nm_imovel = 'Loja';
+                        break;
+                    case 11:
+                        $nm_imovel = 'Sitio';
+                        break;
+                    case 12:
+                        $nm_imovel = 'Hotal';
+                        break;
+                    case 13:
+                        $nm_imovel = 'Area';
+                        break;
+                    case 14:
+                        $nm_imovel = 'Cobertura';
+                        break;
+                    case 15:
+                        $nm_imovel = 'Flat';
+                        break;
+                    case 16:
+                        $nm_imovel = 'Kitnet';
+                        break;
+                    case 17:
+                        $nm_imovel = 'Studio';
+                        break;
+                }
+
+                $filtro->id_tp_produto[] = "Tipo de imovel";
+                $filtro->id_tp_produto[] = $nm_imovel;
             }
 
             if ($mobiliado != "vazio") {
@@ -275,9 +338,9 @@ class imoveisController extends Controller
             $request->titulo != null or $request->localidade != null or $request->bairro != null or
             $request->qtdQuartos != null or $request->qtdBanheiros != null or
             $request->vagas != null or $request->valor != null or $request->area != null or
-            $request->cod_imovel != null or $request->id_tp_produto != null or
+            $request->cod_imovel != null or $request->finalidade != null or
             $request->tp_contrato != "Todos" or $request->condominio != null or
-            $request->mobiliado != "vazio"
+            $request->mobiliado != "vazio" or $request->id_tp_produto != null
         ) {
 
             $search = [
@@ -291,10 +354,11 @@ class imoveisController extends Controller
                     'valor' => $request->valor,
                     'area' => $request->area,
                     'cod_imovel' => $request->cod_imovel,
-                    'id_tp_produto' => $request->id_tp_produto,
+                    'finalidade' => $request->finalidade,
                     'tp_contrato' => $request->tp_contrato,
                     'condominio' => $request->condominio,
-                    'mobiliado' => $request->mobiliado
+                    'mobiliado' => $request->mobiliado,
+                    'id_tp_produto' => $request->id_tp_produto
                 ],
             ];
 

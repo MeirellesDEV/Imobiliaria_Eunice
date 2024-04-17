@@ -11,7 +11,7 @@
     @csrf
     <div id="painel-pesquisa-opcoes-lateral">
         <p>Finalidade</p>
-        <select name="id_tp_produto" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
+        <select name="finalidade" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
             <option value="" selected></option>
             <option value="1">Residencial</option>
             <option value="2">Comercial</option>
@@ -74,7 +74,7 @@
         <!--    <option value="2">Comercial</option>-->
         <!--    <option value="3">Misto</option>-->
         <!--</select>-->
-        
+
         <div>
         <p class="search-title input-title ">Quantidade de quartos</p>
         <div class="radio-options search-body">
@@ -88,8 +88,8 @@
                 <input type="radio" name="qtdQuartos" id="" value="3"> <label for="">3+</label>
             </div>
         </div>
-        </div> 
-        
+        </div>
+
         <div>
         <p class="search-title input-title ">Quantidade de banheiros</p>
         <div class="radio-options search-body">
@@ -104,7 +104,7 @@
             </div>
         </div>
         </div>
-        
+
         <div>
         <p class="search-title input-title ">Quantidade de vagas</p>
         <div class="radio-options search-body">
@@ -120,7 +120,7 @@
             </div>
         </div>
         </div>
-        
+
         <div class="radio-container">
             <p class="lateral-title">Valor:</p>
             <div class="radio-options-lateral-valor">
@@ -175,7 +175,7 @@
             <form action="imoveis" method="post" id="painel-pesquisa-opcoes">
                 @csrf
                 <p>Finalidade</p>
-                <select name="id_tp_produto" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
+                <select name="finalidade" id="finalidade" class="input-text" onchange="filtrarSegundoSelect()">
                     <option value="" selected></option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
