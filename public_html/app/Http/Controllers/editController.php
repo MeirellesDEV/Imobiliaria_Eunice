@@ -416,7 +416,48 @@ class editController extends Controller
                 $fileName = $file->store('public/img/' . $folderName);
 
                 $fileNameFormat = str_replace('public/img/', 'storage/img/', $fileName);
+                $fileFormat = pathinfo($fileNameFormat);
 
+                $imagemOriginal = $fileNameFormat;
+
+                // Busca pela marca d'água, geralmente ela se encontra em public/img
+                $marcaDagua = 'img/watermark.png';
+
+                // dd($fileFormat);
+
+                // Verifica o formato da imagem e a carrega adequadamente
+                if ($fileFormat['extension'] === "png") {
+                    $imagem = imagecreatefrompng($imagemOriginal);
+                } else if ($fileFormat['extension'] === "jpg") {
+                    $imagem = imagecreatefromjpeg($imagemOriginal);
+                }
+
+                // Carrega a imagem da marca d'água
+                $marcaDaguaImg = imagecreatefrompng($marcaDagua);
+
+                $logoImgRedimensionada = imagescale($marcaDaguaImg, 300, 156);
+
+                // $imagem = imagescale($imagem, 1280, 720);
+
+                // Pega o x e y da imagem e da marca d'água
+                // Organizado em formato de array, por conveniência
+                $imagemOriginalInfo = [imagesx($imagem), imagesy($imagem)];
+                $marcaDaguaInfo = [imagesx($logoImgRedimensionada), imagesy($logoImgRedimensionada)];
+
+
+                // Calcula a posição X e Y da marca d'água
+                $posX = ($imagemOriginalInfo[0] - $marcaDaguaInfo[0]) / 2; // Centralizar horizontalmente
+                $posY = ($imagemOriginalInfo[1] - $marcaDaguaInfo[1]) / 2; // Centralizar verticalmente
+
+                // Junta a imagem com marca d'água com a imagem original
+                imagecopy($imagem, $logoImgRedimensionada, $posX, $posY, 0, 0, $marcaDaguaInfo[0], $marcaDaguaInfo[1]);
+
+                // Salva a imagem
+                imagejpeg($imagem, $fileNameFormat);
+
+                // Libera memória
+                imagedestroy($imagem);
+                imagedestroy($logoImgRedimensionada);
                 $imagem = new Imagens();
                 $imagem->chave = $id;
                 $imagem->path = $fileNameFormat;
