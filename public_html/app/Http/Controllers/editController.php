@@ -386,6 +386,7 @@ class editController extends Controller
         $catalogo->metragemFundo = intval(explode(',', str_replace('.', '', $request->metragemFundo))[0]);
         $catalogo->metragemDireita = intval(explode(',', str_replace('.', '', $request->metragemDireita))[0]);
         $catalogo->metragemEsquerda = intval(explode(',', str_replace('.', '', $request->metragemEsquerda))[0]);
+        $catalogo->posTerreno = $request->posTerreno;
         $catalogo->formaTerreno = $request->formaTerreno;
         $catalogo->vegetacao = $request->vegetacao;
         $catalogo->protecao = $request->protecao;
