@@ -188,53 +188,54 @@
                 @endif
 
                 @if ($detalhes->descricao == 'Terreno')
-                @if ($detalhes->metragemFrente != 0)
+                    @if ($detalhes->metragemFrente != 0)
+                        <div class="area-content">
+                            <p id="area"><span>Metragem dianteira:</span> {{ $detalhes->metragemFrente }} m²</p>
+                        </div>
+                    @endif
+                    @if ($detalhes->metragemFundo != 0)
                     <div class="area-content">
-                        <p id="area"><span>Metragem dianteira:</span> {{ $detalhes->metragemFrente }} m²</p>
+                        <p id="area"><span>Metragem Lateral:</span> {{ $detalhes->metragemFundo }} m²</p>
                     </div>
+                    @endif
+                    @if ($detalhes->metragemDireita != 0)
+                    <div class="area-content">
+                        <p id="area"><span>Metragem Direita:</span> {{ $detalhes->metragemDireita }} m²</p>
+                    </div>
+                    @endif
+                    @if ($detalhes->metragemEsquerda != 0)
+                    <div class="area-content">
+                        <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m²</p>
+                    </div>
+                    @endif
+                    @if ($detalhes->posTerreno and $detalhes->posTerreno != 'nao')
+                    <div class="area-content">
+                        <p id="area"><span>Posição do Terreno:</span> {{ $detalhes->posTerreno }}</p>
+                    </div>
+                    @endif
+                    @if ($detalhes->formaTerreno and $detalhes->formaTerreno != 'nao')
+                        <div class="area-content">
+                            <p id="area"><span>Forma do terreno:</span> {{ $detalhes->formaTerreno }}</p>
+                        </div>
+                    @endif
+                    @if ($detalhes->vegetacao and $detalhes->vegetacao != 'nao')
+                    <div class="area-content">
+                        <p id="area"><span>Vegetação:</span> {{ $detalhes->vegetacao }}</p>
+                    </div>
+                    @endif
+                    @if ($detalhes->protecao and $detalhes->protecao != 'nao')
+                        <div class="area-content">
+                            <p id="area"><span>Proteção:</span> {{ $detalhes->protecao }}</p>
+                        </div>
+                    @endif
+                    @if ($detalhes->topografia and $detalhes->topografia != 'nao')
+                        <div class="area-content">
+                            <p id="area"><span>Topografia:</span> {{ $detalhes->topografia }}</p>
+                        </div>
+                    @endif
                 @endif
-                @if ($detalhes->metragemFundo != 0)
-                <div class="area-content">
-                    <p id="area"><span>Metragem Lateral:</span> {{ $detalhes->metragemFundo }} m²</p>
-                </div>
-                @endif
-                @if ($detalhes->metragemDireita != 0)
-                <div class="area-content">
-                    <p id="area"><span>Metragem Direita:</span> {{ $detalhes->metragemDireita }} m²</p>
-                </div>
-                @endif
-                @if ($detalhes->metragemEsquerda != 0)
-                <div class="area-content">
-                    <p id="area"><span>Metragem Esquerda:</span> {{ $detalhes->metragemEsquerda }} m²</p>
-                </div>
-                @endif
-                @if ($detalhes->posTerreno or $detalhes->posTerreno != 'nao')
-                <div class="area-content">
-                    <p id="area"><span>Posição do Terreno:</span> {{ $detalhes->posTerreno }}</p>
-                </div>
-                @endif
-                @if ($detalhes->formaTerreno or $detalhes->formaTerreno != 'nao')
-                <div class="area-content">
-                    <p id="area"><span>Forma do terreno:</span> {{ $detalhes->formaTerreno }}</p>
-                </div>
-                @endif
-                @if ($detalhes->vegetacao or $detalhes->vegetacao != 'nao')
-                <div class="area-content">
-                    <p id="area"><span>Vegetação:</span> {{ $detalhes->vegetacao }}</p>
-                </div>
-                @endif
-                @if ($detalhes->protecao or $detalhes->protecao != 'nao')
-                <div class="area-content">
-                    <p id="area"><span>Proteção:</span> {{ $detalhes->protecao }}</p>
-                </div>
-                @endif
-                @if ($detalhes->topografia or $detalhes->topografia != 'nao')
-                <div class="area-content">
-                    <p id="area"><span>Topografia:</span> {{ $detalhes->topografia }}</p>
-                </div>
-                @endif
-                @endif
-
+                    
+                {{-- dd($detalhes->vegetacao, $detalhes->protecao, $detalhes->topografia) --}}
             </div>
     </div>
 
