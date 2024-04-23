@@ -74,6 +74,19 @@
                     <p for="" id="desc-label" class="add-label">Descrição</p>
                     <textarea name="descricao" id="casa-desc-input" cols="30" rows="10" class="add-input" required>{{ $item->desc }}</textarea>
 
+                    <p>Em condomínio</p>
+                    <select name="emCondominio" id="tipo-produto-ddl" class="add-input">
+                        <option value="sim" @if($item->emCondominio == "sim") selected @endif >Sim</option>
+                        <option value="não" @if($item->emCondominio == "nao") selected @endif >Não</option>
+                    </select>
+
+                    <p>Mobiliado</p>
+                    <select name="mobiliado_ddl" id="tipo-produto-ddl" class="add-input">
+                        <option value="mobiliado"  @if($item->mobiliado_ddl == "mobiliado") selected @endif >Mobiliado</option>
+                        <option value="semi-mobiliado" @if($item->mobiliado_ddl == "semi-mobiliado") selected @endif >Semi Mobiliado</option>
+                        <option value="vazio" selected @if($item->mobiliado_ddl == "vazio") selected @endif >Vazio</option>
+                    </select>
+
                     <p id="qtd-banheiros-label" class="slider-label">Quantidade de banheiros:</p>
                     <input type="number" name="qtd_banheiros" min="0" max="50" value="{{ $item->qtdBanheiros }}" id="sliderBanheiroCasa" class="add-input">
 

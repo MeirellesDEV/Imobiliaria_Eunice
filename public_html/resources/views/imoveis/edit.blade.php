@@ -129,11 +129,12 @@
                 <p id="desc-texto" class="alinhado">{{ $detalhes->emCondominio }}</p>
             </div>
 
-            <div id="descricao-container" class="margin-spaced padding-spaced">
-                <h2 class="detalhes-titulo">Mobiliado</h2>
-                <p id="desc-texto" class="alinhado">{{ $detalhes->mobiliado_ddl }}</p>
-            </div>
-
+            @if($detalhes->mobiliado_ddl != "vazio")
+                <div id="descricao-container" class="margin-spaced padding-spaced">
+                    <h2 class="detalhes-titulo">Mobiliado</h2>
+                    <p id="desc-texto" class="alinhado">{{ $detalhes->mobiliado_ddl }}</p>
+                </div>
+            @endif
             <div id="descricao-container" class="margin-spaced padding-spaced aviso">
                 <h2 class="detalhes-titulo">Aviso</h2>
                 <p>Os valores e demais informações poderão sofrer alterações sem prévio aviso</p>
