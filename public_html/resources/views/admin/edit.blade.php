@@ -561,7 +561,7 @@
 
                     <div id="imagemPreviewEdit"></div>
 
-                    <button type="submit" id="salvar">Salvar</button>
+                    <button type="submit" id="salvar" class="button-float">Salvar</button>
                 </form>
                 
                 <!-- <form action="/salvar/{{ $item->id }}" method="post" enctype="multipart/form-data" class="add-layout">

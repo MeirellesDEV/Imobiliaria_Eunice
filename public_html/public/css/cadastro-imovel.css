@@ -429,6 +429,13 @@ h1 {
   border-radius: 15px;
 }
 
+.button-float {
+  position: sticky;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 0.5);
+}
+
 /* media queries */
 
 @media (max-width:600px) {
