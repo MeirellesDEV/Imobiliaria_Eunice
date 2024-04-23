@@ -176,7 +176,18 @@ class editController extends Controller
                 'catalogos.extraInfo',
                 'catalogos.aguaEncanada',
                 'catalogos.sistemaEsgoto',
-                'catalogos.destaque'
+                'catalogos.destaque',
+                'catalogos.emCondominio',
+                'catalogos.mobiliado_ddl',
+                'catalogos.qtdBanheiros',
+                'catalogos.qtdSuites',
+                'catalogos.qtdGaragemCobertas',
+                'catalogos.qtdGaragemNaoCobertas',
+                'catalogos.qtdSalas',
+                'catalogos.qtdDorms',
+                'catalogos.qtdNumAndares',
+                'catalogos.qtdAndar',
+                'catalogos.tp_contrato'
             )
             ->where('catalogos.id', '=', $id)
             ->first();

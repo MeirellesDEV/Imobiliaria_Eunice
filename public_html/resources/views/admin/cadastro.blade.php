@@ -17,14 +17,9 @@
     <h2>Adicionar</h2>
 </div>
 
-<!-- <div id="abas">
-        <button id="btn-aba-casa" onclick="openCasa()" class="aba-option">Casa/Ap/Chácara</button>
-        <button id="btn-aba-terreno" onclick="openTerreno()" class="aba-option">Terreno</button>
-    </div> -->
 
 <form id="adicionar-casa-container" class="add-layout" action="cadastrar" method="post" enctype="multipart/form-data" autocomplete="off">
     @csrf
-    <!-- <input type="hidden" name="id_produto" value="2" > -->
 
     <p style="font-size: 20px !important;">Destaque</p>
     <div class="check-item">
@@ -80,9 +75,6 @@
     <p id="qtd-banheiros-label" class="slider-label">Quantidade de suites:</p>
     <input type="number" name="qtd_suites" min="0" max="20" value="1" id="sliderSuite" class="add-input">
 
-    <!--<p id="qtd-quartos-label" class="slider-label">Quantidade de quartos:</p>-->
-    <!--<input type="number" name="qtd_quartos" min="0" max="20" value="1" id="sliderQuartos" class="add-input">-->
-
     <p id="qtd-vagas-label" class="slider-label">Quantidade de Garagem com Cobertura:</p>
     <input type="number" name="qtdGaragemCobertas" min="0" max="20" value="1" id="sliderVagas" class="add-input">
 
@@ -119,7 +111,7 @@
     <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
     <input name="area" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
-    <p id="tam-area-label">Tamanho da área util (m<sup>2</sup>)</p>
+    <p id="tam-area-label">Tamanho da área útil (m<sup>2</sup>)</p>
     <input name="areaUtil" type="text" id="casa-tam-area-input" min="1" class="add-input input-format" step=".01" lang="pt-BR">
 
     <p id="tam-area-label">Tamanho da área construída (m<sup>2</sup>)</p>
@@ -299,9 +291,6 @@
         <div class="check-item">
             <input type="checkbox" name="closet" id="closet"><label for="closet">Closet</label>
         </div>
-        <!--<div class="check-item">-->
-        <!--    <input type="checkbox" name="entradaServico" id="entradaServico"><label for="entradaServico">Entrada de serviço</label>-->
-        <!--</div>-->
         <div class="check-item">
             <input type="checkbox" name="escritorio" id="escritorio"><label for="escritorio">Escritorio</label>
         </div>
@@ -607,178 +596,6 @@
         </div>
     </div>
 
-    <!-- <p for="" id="titulo-label" class="add-label">Título</p>
-        <input name="titulo" type="text" id="trn-titulo-input" class="add-input" required> -->
-
-    <!-- <p for="" id="desc-label" class="add-label">Descrição</p>
-        <textarea name="descricao" id="trn-desc-input" cols="30" rows="10" class="add-input" required></textarea> -->
-
-    <!-- <p id="local-label">Cidade</p>
-        <input name="cidade" type="text" id="casa-local-input" min="1" class="add-input" required>
-
-        <p id="local-label">Bairro</p>
-        <input name="bairro" type="text" id="casa-local-input" min="1" class="add-input" required>
-
-        <p id="local-label">Rua e Numero</p>
-        <input name="ruaNumero" type="text" id="casa-local-input" min="1" class="add-input" required>
-
-        <p id="local-label">CEP</p>
-        <input name="cep" maxlength="8" minlength="8" type="text" id="casa-local-input" min="1" class="add-input" oninput="formatarCEP(this)" required> -->
-
-    <!-- <p id="tam-area-label">Tamanho da área (m<sup>2</sup>)</p>
-        <input name="area" type="text" id="trn-tam-area-input" min="1" class="add-input input-format" required> -->
-
-    <!-- <p id="tam-area-label">Metragem da Frente</p>
-        <input name="metragemFrente" type="text" id="trn-tam-area-input" min="1" class="add-input input-format">
-
-        <p id="tam-area-label">Metragem Lateral</p>
-        <input name="metragemFundo" type="text" id="trn-tam-area-input" min="1" class="add-input input-format">
-
-        <p id="tam-area-label">Lateral Esquerda</p>
-        <input name="metragemDireita" type="text" id="trn-tam-area-input" min="1" class="add-input input-format">
-
-        <p id="tam-area-label">Lateral Direita</p>
-        <input name="metragemEsquerda" type="text" id="trn-tam-area-input" min="1" class="add-input input-format"> -->
-
-    <!-- <p id="tam-area-label">Posição do terreno</p>
-        <select name="posTerreno" id="tipo-produto-ddl" class="add-input">
-            <option value="nao" selected>Não assinalada</option>
-            <option value="meio de quadra">meio de quadra</option>
-            <option value="esquina">esquina</option>
-            <option value="divisa com muro">divisa com muro</option>
-        </select>
-
-        <p id="tam-area-label">Forma do terreno</p>
-        <select name="formaTerreno" id="tipo-produto-ddl" class="add-input">
-            <option value="nao" selected>Não assinalada</option>
-            <option value="regular">regular</option>
-            <option value="irregular">irregular</option>
-            <option value="poligonal">poligonal</option>
-        </select>
-
-        <p id="tam-area-label">Vegetação</p>
-        <select name="vegetacao" id="tipo-produto-ddl" class="add-input">
-            <option value="nao" selected>Não assinalada</option>
-            <option value="mato">mato</option>
-            <option value="gramado">gramado</option>
-            <option value="limpo">limpo</option>
-        </select>
-
-        <p id="tam-area-label">Proteção</p>
-        <select name="protecao" id="tipo-produto-ddl" class="add-input">
-            <option value="nao" selected>Não assinalada</option>
-            <option value="muro">muro</option>
-            <option value="cerca">cerca</option>
-            <option value="divisão com prédio">divisão com prédio</option>
-        </select>
-
-        <p id="tam-area-label">Topografia</p>
-        <select name="topografia" id="tipo-produto-ddl" class="add-input">
-            <option value="nao" selected>Não assinalada</option>
-            <option value="plano">plano</option>
-            <option value="aclive">aclive</option>
-            <option value="declive">declive</option>
-        </select> -->
-
-    <!-- <p id="valor-label">Valor</p>
-        <input type="text" name="valor" id="trn-valor-input" class="add-input input-format" lang="pt-BR" required>
-
-        <p id="valor-label">Valor condominio</p>
-        <input type="text" name="valorCondominio" id="casa-valor-input" class="add-input input-format" lang="pt-BR">
-
-        <p id="valor-label">IPTU mensal</p>
-        <input type="text" name="iptu" id="casa-valor-input" class="add-input input-format" lang="pt-BR"> -->
-
-    <!-- <p>Características do Terreno</p>
-        <div class="checkbox">
-            <div class="check-item">
-                <input type="checkbox" name="acessoEnergia" id="acessoEnergia"><label for="acessoEnergia">Acesso a Energia Elétrica</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="escola" id="escola"><label for="escola">Escola</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="comercio" id="comercio"><label for="comercio">Comércio</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="aguaEncanada" id="aguaEncanada"><label for="aguaEncanada">Água Encanada</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="sistemaEsgoto" id="sistemaEsgoto"><label for="sistemaEsgoto">Sistema de Esgoto</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="pavimentacao" id="pavimentacao"><label for="pavimentacao">Pavimentação</label>
-            </div>
-        </div> -->
-
-    <!-- <p id="valor-label">Infraestrutura da área comum</p>
-        <div class="checkbox">
-            <div class="check-item">
-                <input type="checkbox" name="churrasqueira" id="churrasqueira"><label for="churrasqueira">Churrasqueira</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="adega" id="adega"><label for="adega">Adega</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="quadra" id="quadra"><label for="quadra">Quadra Esportiva</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="sauna" id="sauna"><label for="sauna">Sauna</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="vestiario" id="vestiario"><label for="vestiario">Vestiário</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="campFut" id="campFut"><label for="campFut">Campo de Futebol</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="quintal" id="quintal"><label for="quintal">Quintal</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="piscina" id="piscina"><label for="piscina">Piscina</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="salaJogos" id="salaJogos"><label for="salaJogos">Sala de Jogos</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="salaFestas" id="salaFestas"><label for="salaFestas">Salão de Festas</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="salaGinastica" id="salaGinastica"><label for="salaGinastica">Sala de Ginástica</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="playground" id="playground"><label for="playground">Playground</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="portaria24" id="portaria24"><label for="portaria24">Portaria 24h</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="estacionamentoVisita" id="estacionamentoVisita"><label for="estacionamentoVisita">Estacionamento para Visita</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="portaoEletronico" id="portaoEletronico"><label for="portaoEletronico">Portão eletronico</label>
-            </div>
-            <div class="check-item">
-                <input type="checkbox" name="alarme" id="alarme"><label for="alarme">Alarme</label>
-            </div>
-
-
-        </div> -->
-
-    <!-- <p id="local-label">Informações extras (separar por ponto e vírgula)</p>
-        <input name="extraInfo" type="text" id="casa-local-input" class="add-input" maxlength="3000">
-
-        <hr class="cadastro-divisor">
-        <p>Imagem <span class="image-warning">(Adicionar todas as imagens de uma vez)</span></p>
-        <input type="file" name="imagem[]" id="imagemTerreno" multiple required>
-
-        <input type="file" name="imagemTerrenoPrincipal" id="imagemTerrenoPrincipal" style="display: none">
-
-        <div id="imagePreviewTerreno"></div>
-
-        <div class="divBtnEnviar">
-            <button type="submit" id="btn-trn-enviar" class="btn-add-prod">SALVAR</button>
-        </div> -->
 </form>
 
 <script src="{{ asset('js/cadastro-abas.js') }}"></script>
