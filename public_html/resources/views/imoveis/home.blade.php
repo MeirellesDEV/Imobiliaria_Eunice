@@ -45,8 +45,6 @@
         <input type="text" name="localidade" id="painel-local-lateral" class="input-text" placeholder="Pesquisar Localidade">
         <p>Bairro:</p>
         <input type="text" name="bairro" id="painel-local-lateral" class="input-text" placeholder="Pesquisar Localidade">
-        <!--<p>Endereço:</p>-->
-        <!--<input type="text" name="ruaNumero" id="painel-local-lateral" class="input-text" placeholder="Pesquisar Localidade">-->
 
         <p>Tipo de contrato</p>
         <select name="tp_contrato" id="" class="input-text">

@@ -143,7 +143,6 @@
                 <h2 class="detalhes-titulo">Localização</h2>
                 <p id="desc-texto">Cidade: {{ $detalhes->cidade }}</p>
                 <p id="desc-texto">Bairro: {{ $detalhes->bairro }}</p>
-                <p id="desc-texto">Endereço: {{ $detalhes->ruaNumero }}</p>
                 <p id="desc-texto">CEP: {{ $detalhes->cep }}</p>
 
             </div>
@@ -152,17 +151,6 @@
                 <h2 class="detalhes-titulo">Informações sobre área</h2>
 
                 <div class="area-container">
-                    <!-- <div class="area-content">
-                        @if ($detalhes->id_tp_produto == 2)
-                        @if($detalhes->area != 0)
-                        <p id="area"><span>Área total:</span> {{ $detalhes->area }} m²</p>
-                        @endif
-                        @else ($detalhes->id_tp_produto == 3)
-                        @if($detalhes->area != 0)
-                        <p id="area"><span>Área total:</span> {{ $detalhes->area }} m²</p>
-                        @endif
-                        @endif
-                    </div> -->
 
                     @if ($detalhes->area != 0)
                     <div class="area-content">
@@ -188,11 +176,6 @@
                     </div>
                     @endif
 
-                    {{-- @if ($detalhes->elevadores != '')
-                                <div class="area-content">
-                                    <p id="area"><span>Elevador(es):</span> {{ $detalhes->elevadores }}</p>
-                </div>
-                @endif --}}
 
 
 
