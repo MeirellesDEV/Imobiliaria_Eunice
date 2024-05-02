@@ -107,7 +107,7 @@
                 @csrf
 
                 <input type="text" name="nome" id="nome" placeholder="Insira o nome" class="cliente-input" required>
-                <input type="text" name="email" id="email" placeholder="Insira o email" class="cliente-input" required>
+                <input type="text" name="email" id="email" placeholder="Insira o email" class="cliente-input">
                 <input type="text" name="telefone" id="telefone" placeholder="Insira o telefone" class="cliente-input" required>
                 <select name="tp_cliente" class="cliente-input cliente-btn" id="tipo-form">
                     <option value="proprietario">Proprietario</option>
