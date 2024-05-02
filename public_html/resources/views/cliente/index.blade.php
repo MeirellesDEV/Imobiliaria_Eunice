@@ -106,16 +106,16 @@
                 <img src="{{ asset('img/watermark.png') }}" alt="" style="width:150px">
                 @csrf
 
-                <input type="text" name="nome" id="nome" placeholder="Insira o nome" class="cliente-input">
-                <input type="text" name="email" id="email" placeholder="Insira o email" class="cliente-input">
-                <input type="text" name="telefone" id="telefone" placeholder="Insira o telefone" class="cliente-input">
+                <input type="text" name="nome" id="nome" placeholder="Insira o nome" class="cliente-input" required>
+                <input type="text" name="email" id="email" placeholder="Insira o email" class="cliente-input" required>
+                <input type="text" name="telefone" id="telefone" placeholder="Insira o telefone" class="cliente-input" required>
                 <select name="tp_cliente" class="cliente-input cliente-btn" id="tipo-form">
                     <option value="proprietario">Proprietario</option>
                     <option value="cliente">Cliente</option>
                 </select>
                 <input type="text" name="data_contato_atendimento" id="idData-atendimento" placeholder="Data de atendimento" class="cliente-input">
                 <input type="text" name="data_contato_captacao" id="idData-captacao" placeholder="Data de captacao" class="cliente-input">
-                <input type="text" name="cod_imovel" id="idImovel" placeholder="Insira o código do Imovel" class="cliente-input">
+                <input type="text" name="cod_imovel" id="idImovel" placeholder="Insira o código do Imovel" class="cliente-input" required>
                 <textarea name="comentario" placeholder="Comentário" id="idComentario" class="cliente-input" cols="30" rows="10" style="resize: none;"></textarea>
                 <button type="submit" class="cliente-input cliente-btn">Cadastrar</button>
             </form>
