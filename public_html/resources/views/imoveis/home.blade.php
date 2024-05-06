@@ -478,7 +478,12 @@
         segundoSelect.innerHTML = '';
 
         if (primeiroSelect.value === "1") {
-            var opcoes2 = [{
+            var opcoes2 = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Terreno",
                     value: 1
                 },
@@ -521,7 +526,12 @@
             ];
 
         } else if (primeiroSelect.value === "2") {
-            var opcoes2 = [{
+            var opcoes2 = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Casa",
                     value: 2
                 },
@@ -572,7 +582,12 @@
             ];
 
         } else if (primeiroSelect.value === "3") {
-            var opcoes2 = [{
+            var opcoes2 = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Casa",
                     value: 2
                 },
@@ -655,7 +670,12 @@
         segundoSelect.innerHTML = '';
 
         if (primeiroSelect.value === "1") {
-            var opcoes = [{
+            var opcoes = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Terreno",
                     value: 1
                 },
@@ -698,7 +718,12 @@
             ];
 
         } else if (primeiroSelect.value === "2") {
-            var opcoes = [{
+            var opcoes = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Casa",
                     value: 2
                 },
@@ -749,7 +774,12 @@
             ];
 
         } else if (primeiroSelect.value === "3") {
-            var opcoes = [{
+            var opcoes = [
+                {
+                    text: "",
+                    value: ""
+                },
+                {
                     text: "Casa",
                     value: 2
                 },
