@@ -298,14 +298,16 @@ input[type="radio"]:checked:after {
 }
 
 .produto-dados {
-    width: 100%;
+    width: 80%;
     display: flex;
     text-align: center;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    flex-direction:row;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    flex-direction:row;
     flex-wrap: wrap;
+    
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    gap: 15px;
     color: #1b657a;
 }
 
